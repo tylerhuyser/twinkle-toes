@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+
 import { getProducts } from '../../services/products'
 import Sort from '../../components/Sort/Sort'
 
@@ -19,7 +20,7 @@ const Home = () => {
 
     return (
         <div>
-            
+           
         </div>
     );
 };
