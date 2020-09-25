@@ -9,7 +9,7 @@ const Nav = () => {
     <nav>
       <div className="nav">
 
-        <img src="https://i.imgur.com/F522Y7n.jpg" alt="Logo" to="/"></img>
+        <img src="https://i.imgur.com/LUBayko.png" alt="Logo" to="/"></img>
 
         <NavLink className="site-name" to="/">TWINKLE TOES</NavLink>
         {/* <Search classname="search" /> */}
