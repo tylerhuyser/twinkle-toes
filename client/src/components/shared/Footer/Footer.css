@@ -1,0 +1,41 @@
+
+
+.footer-div {
+  display: flex;
+  padding: 20px 0;
+  flex-direction: row;
+  width: 100%;
+  background-color: rgb(175, 136, 181);
+}
+
+p{
+  color:white;
+}
+.bottom-logo {
+  position: absolute;
+  bottom:0;
+  right:0;
+}
+.site-name{
+flex: 1;
+text-align: center;
+font-size: 40px;
+letter-spacing: -3px;
+}
+
+
+.contact {
+  flex: 3;
+  max-width: 30vw;
+  align-items: center;
+  font-size: 14px;
+  display: flex;
+  justify-content: left;
+}
+
+.link {
+  flex: 1;
+}
+
+
+
