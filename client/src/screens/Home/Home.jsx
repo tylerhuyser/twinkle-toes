@@ -1,10 +1,23 @@
 import React, {useState, useEffect} from 'react';
-import { getProducts } from '../../services/products'
+
+import { getProducts } from '../../services/products';
+import HeroCarousel from "../../components/HeroCarousel/HeroCarousel.jsx";
 import './Home.css';
 
 const Home = () => {
 
-    const [allProducts, setAllProducts] = useState([])
+  const [allProducts, setAllProducts] = useState([])
+
+  // function createHeroSlides() {
+  //   return (
+  //     <div className="mySlides fade">
+  //       <div className="numbertext">1 / 5</div>
+  //       <img src="https://i.imgur.com/DZm54TS.jpeg" alt="hero-1" style={{
+  //       width: "100%",
+  //     }} />
+  //     </div>
+  //     )
+  // }
 
   
     useEffect(() => {
@@ -14,97 +27,14 @@ const Home = () => {
         console.log(products)
       }
       fetchProducts()
-      showSlides(slideIndex)
     }, [])
-  
-    // Hero Carousel Functionality Below:
-  
-  let slideIndex = 1;
-  showSlides(slideIndex);
 
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-
-  function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    console.log(slides);
-    let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-  }
     
 
     return (
       <div className="home-container">
 
-          <div classname="hero-carousel-container">
-
-            <div class="mySlides fade">
-              <div class="numbertext">1 / 5</div>
-              <img src="https://i.imgur.com/DZm54TS.jpeg" alt="hero-1" style={{
-              width: "100%",
-            }} />
-            </div>
-
-            <div class="mySlides fade">
-              <div class="numbertext">2 / 5</div>
-            <img src="https://i.imgur.com/RgAkNr1.jpg" alt="hero-2" style={{
-              width: "100%",
-            }} />
-            </div>
-
-            <div class="mySlides fade">
-              <div class="numbertext">3 / 5</div>
-              <img src="https://i.imgur.com/V9x68t8.jpg" alt="hero-3" style={{
-              width: "100%",
-            }} />
-            </div>
-          
-            <div class="mySlides fade">
-              <div class="numbertext">4 / 5</div>
-              <img src="https://i.imgur.com/MlLrEWk.jpg" alt="hero-4" style={{
-              width: "100%",
-            }} />
-            </div>
-          
-            <div class="mySlides fade">
-              <div class="numbertext">5 / 5</div>
-              <img src="https://i.imgur.com/x8emXbx.jpg" alt="hero-5" style={{
-              width: "100%",
-            }} />
-            </div>
-          
-          <a class="prev" onClick={plusSlides(-1)} > &#10094;</a>
-          <a class="next" onClick={plusSlides(1)} > &#10095;</a>
-                
-              
-            <br></br>
-
-            <div className="hero-carousel-buttons" style={{
-              textAlign: "center",
-            }}>
-            <span class="dot" onClick={currentSlide(1)}></span>
-            <span class="dot" onClick={currentSlide(2)}></span>
-            <span class="dot" onClick={currentSlide(3)}></span>
-            <span class="dot" onClick={currentSlide(4)}></span>
-            <span class="dot" onClick={currentSlide(5)}></span>
-            </div>
-        
-          </div>
+          <HeroCarousel  />
         
           <div className="hero-copy">
             <div className="tagline">We Sparkle. You Shine.</div>
@@ -115,9 +45,7 @@ const Home = () => {
           
             <div className="popular-items-title">Popular Items</div>
                 
-            <div className="popular-items-carousel">
-            
-            </div>
+            <div className="popular-items-carousel"></div>
           
           </div>
         
