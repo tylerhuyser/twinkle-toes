@@ -10,7 +10,8 @@ import { AZ, ZA, lowestFirst, highestFirst } from "../../utils/sort";
 import { getProducts } from "../../services/products";
 
 const Products = (props) => {
-  const [allProducts, setAllProducts] = useState([]);
+
+  const { allProducts, setAllProducts } = props;
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
 

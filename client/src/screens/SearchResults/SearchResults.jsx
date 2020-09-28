@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Search from "../../components/Search.jsx"
+import Search from "../../components/Search/Search.jsx";
+import Product from "../../components/Product/Product.jsx";
 
 import { getProducts } from '../../services/products';
 
 const SearchResults = (props) => {
 
+  const { allProducts, setAllProducts } = props;
   const { queriedProducts } = props
 
   const searchResultCards = queriedProducts.map((product, index) =>

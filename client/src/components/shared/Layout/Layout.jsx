@@ -3,14 +3,23 @@ import './Layout.css'
 import Nav from '../Nav/Nav'
 import Footer from '../Footer/Footer'
 
-const Layout = (props) => (
-  <div className='layout'>
-    <Nav />
-    <div className="layout-children">
-      {props.children}
+const Layout = (props) => {
+
+  const { allProducts, setAllProducts } = props;
+
+
+  return (
+    <div className='layout'>
+      <Nav
+        allProducts={allProducts}
+        setAllProducts={setAllProducts}
+      />
+      <div className="layout-children">
+        {props.children}
+      </div>
+      <Footer />
     </div>
-    <Footer />
-  </div>
-)
+  )
+}
 
 export default Layout

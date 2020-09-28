@@ -13,7 +13,7 @@ export default function Footer() {
           2654 Addmont St, Brooklyn NY, 22321<br />
           347.677.3427</p>
         </div>
-        <img classnName="bottom-logo" src="https://i.imgur.com/i9W8vlB.png" alt="Logo" to="/"></img>
+        <img className="bottom-logo" src="https://i.imgur.com/i9W8vlB.png" alt="Logo" to="/"></img>
       </div>
 
     </footer>
