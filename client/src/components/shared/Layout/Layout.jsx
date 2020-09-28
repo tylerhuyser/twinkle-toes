@@ -6,7 +6,6 @@ import Footer from '../Footer/Footer'
 const Layout = (props) => {
 
   const { allProducts, setAllProducts } = props;
-  console.log(allProducts)
 
   return (
     <div className='layout'>

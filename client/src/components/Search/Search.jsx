@@ -1,29 +1,41 @@
-import React, { useState } from 'react'
-import Sort from '../../components/Sort/Sort'
-import './Search.css'
+import React, { useState } from 'react';
+import Sort from '../../components/Sort/Sort';
+import './Search.css';
+import SearchResults from '../../screens/SearchResults/SearchResults';
+import { Redirect } from 'react-router-dom';
 
 const Search = (props) => {
 
-  const [queriedProducts, setQueriedProducts] = useState([])
+
   const [search, setSearch] = useState('')
   const { allProducts, setAllProducts } = props;
 
-  const handleSearch = event => {
-    setSearch(event.target.value)
-    const newQueriedProducts = allProducts.filter(product => product.name.toLowerCase().includes(event.target.value.toLowerCase()))
-    setQueriedProducts(newQueriedProducts)
+
+  const [isSearched, setSearched] = useState(false)
+
+
+  const handleSubmit = event => {
+    event.preventDefault()
+    setSearched({ search })
   }
 
+  if (isSearched) {
+    return (
 
-  const handleSubmit = event => event.preventDefault()
+      <Redirect to={`/search-results`}>
+        <SearchResults
+          search={search}
+        />
+      </Redirect>
 
-
+    )
+  }
   return (
-    <form className="search-form" onSubmit={(e) => handleSubmit(e)} onChange={(e) => handleSearch(e)}>
+    <form className="search-form" onChange={(e) => handleSubmit(e)} >
       <input
         className="search-input"
         value={search}
-        onChange={(e) => handleSearch(e)}
+        onChange={(e) => setSearch(e.target.value)}
         name="Search"
         placeholder="Search"
         type="text"
