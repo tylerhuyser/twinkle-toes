@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-
+import Layout from '../../components/shared/Layout/Layout'
+        
 import { getProducts } from '../../services/products';
 import HeroCarousel from "../../components/HeroCarousel/HeroCarousel.jsx";
 import PopularCarousel from "../../components/PopularCarousel/PopularCarousel.jsx";
@@ -21,6 +22,7 @@ const Home = () => {
     }, [])
 
     return (
+      <Layout>
       <div className="home-container" style={{
 
         display: "flex",
@@ -90,6 +92,7 @@ const Home = () => {
           }}>Products</button>
      
       </div>
+      </Layout>
     );
 };
 

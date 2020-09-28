@@ -1,0 +1,9 @@
+
+.create-form,.review-container{
+  display:flex;
+  flex-direction:column;
+  margin: 25px;
+}
+input,textarea{
+  margin:5px;
+}

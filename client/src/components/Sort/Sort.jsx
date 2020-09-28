@@ -1,4 +1,4 @@
-//Sort component for SearchResults.jsx
+//Sort component for SearchResults.jsx and Products.jsx
 
 import React from 'react';
 
