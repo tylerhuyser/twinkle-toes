@@ -2,29 +2,14 @@ import React, {useState, useEffect} from 'react';
 
 import { getProducts } from '../../services/products';
 import HeroCarousel from "../../components/HeroCarousel/HeroCarousel.jsx";
+import PopularCarousel from "../../components/PopularCarousel/PopularCarousel.jsx";
 
 const Home = () => {
 
   const [allProducts, setAllProducts] = useState([])
+  const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
+  const [currentPopularIndex, setCurrentPopularIndex] = useState(0);
 
-  const [update, setUpdate] = useState(false);
-
-  // function createHeroSlides() {
-  //   return (
-  //     <div className="mySlides fade">
-  //       <div className="numbertext">1 / 5</div>
-  //       <img src="https://i.imgur.com/DZm54TS.jpeg" alt="hero-1" style={{
-  //       width: "100%",
-  //     }} />
-  //     </div>
-  //     )
-  // }
-
-  const updateFunction = () => {
-    setUpdate(!update)
-  }
-
-  
     useEffect(() => {
       const fetchProducts = async () => {
         const products = await getProducts()
@@ -34,12 +19,10 @@ const Home = () => {
       fetchProducts()
     }, [])
 
-    
-
     return (
       <div className="home-container">
 
-          <HeroCarousel update={update} setUpdate={setUpdate} updateFunction={updateFunction}  />
+          <HeroCarousel currentIndex={currentHeroIndex} setCurrentIndex={setCurrentHeroIndex}  />
         
           <div className="hero-copy">
             <div className="tagline">We Sparkle. You Shine.</div>
@@ -49,8 +32,8 @@ const Home = () => {
           <div className="popular-items-carousel-container">
           
             <div className="popular-items-title">Popular Items</div>
-                
-            <div className="popular-items-carousel"></div>
+              
+              <PopularCarousel allProducts={allProducts} currentPopularIndex={currentPopularIndex} setCurrentPopularIndex={setCurrentPopularIndex} />
           
           </div>
         
