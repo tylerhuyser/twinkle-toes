@@ -12,6 +12,8 @@ const Layout = (props) => {
       <Nav
         allProducts={allProducts}
         setAllProducts={setAllProducts}
+        handleChange={props.handleChange}
+        handleSubmit={props.handleSubmit}
       />
       <div className="layout-children">
         {props.children}

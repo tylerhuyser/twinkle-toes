@@ -41,7 +41,9 @@ const ProductCreate = (props) => {
     return <Redirect to={`/products`} />
   }
   return (
-    <Layout user={props.user}>
+    <Layout user={props.user}
+      handleChange={props.handleChange}
+      handleSubmit={props.handleSubmit}>
       <form className="create-form" onSubmit={handleSubmit}>
         <input
           className="input-image-link"

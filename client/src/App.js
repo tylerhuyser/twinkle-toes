@@ -5,13 +5,15 @@ import Products from './screens/Products/Products';
 import ProductCreate from './screens/ProductCreate/ProductCreate';
 import ProductDetail from './screens/ProductDetail/ProductDetail';
 import SearchResults from './screens/SearchResults/SearchResults';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import { getProducts } from './services/products';
 
 
 function App() {
 
-  const [allProducts, setAllProducts] = useState([])
+  const [allProducts, setAllProducts] = useState([]);
+  const history = useHistory();
+  const [queriedProducts, setQueriedProducts] = useState([]);
 
   useEffect(() => {
 
@@ -23,6 +25,24 @@ function App() {
     fetchProducts()
   }, [])
 
+  const handleChange = (e) => {
+
+    if (e.target.value.length > 2) {
+      const newQueriedProducts = allProducts.filter(product => product.name.toLowerCase().includes(e.target.value.toLowerCase()))
+      setQueriedProducts(newQueriedProducts)
+
+    }
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    handleSearch(e)
+  }
+  const handleSearch = (e) => {
+
+    history.push('/search-results')
+  }
+
   return (
     <div className="App">
       <Switch>
@@ -30,6 +50,8 @@ function App() {
           <Home
             allProducts={allProducts}
             setAllProducts={setAllProducts}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
           />
         </Route>
 
@@ -37,17 +59,24 @@ function App() {
           <Products
             allProducts={allProducts}
             setAllProducts={setAllProducts}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
           />
         </Route>
 
         <Route path="/add-product" >
-          <ProductCreate />
+          <ProductCreate
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+          />
         </Route>
 
         <Route exact path="/products/:id">
           <ProductDetail
             allProducts={allProducts}
             setAllProducts={setAllProducts}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
           />
         </Route>
 
@@ -55,6 +84,9 @@ function App() {
           <SearchResults
             allProducts={allProducts}
             setAllProducts={setAllProducts}
+            queriedProducts={queriedProducts}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
           />
         </Route>
       </Switch>

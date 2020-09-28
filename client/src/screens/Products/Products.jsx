@@ -66,7 +66,9 @@ const Products = (props) => {
 
   return (
     <>
-      <Layout>
+      <Layout
+        handleChange={props.handleChange}
+        handleSubmit={props.handleSubmit}>
         <Sort onSubmit={handleSubmit} onChange={handleSort} />
         <div className="products">{productsJSX}</div>
       </Layout>

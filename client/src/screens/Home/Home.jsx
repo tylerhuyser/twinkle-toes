@@ -14,6 +14,8 @@ const Home = (props) => {
     <Layout
       allProducts={allProducts}
       setAllProducts={setAllProducts}
+      handleChange={props.handleChange}
+      handleSubmit={props.handleSubmit}
     >
       <div className="home-container" style={{
 

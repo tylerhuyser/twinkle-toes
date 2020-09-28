@@ -16,7 +16,10 @@ const Nav = (props) => {
         <NavLink className="site-name" to="/">TWINKLE TOES</NavLink>
         <Search classname="search"
           allProducts={allProducts}
-          setAllProducts={setAllProducts} />
+          setAllProducts={setAllProducts}
+          handleChange={props.handleChange}
+          handleSubmit={props.handleSubmit}
+        />
         <div className="links">
           <NavLink className="link" to="/products">Products</NavLink>
           <NavLink className="link" to="/add-product">Add Product</NavLink>

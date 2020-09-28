@@ -52,7 +52,9 @@ const ProductDetail = (props) => {
   }
   showSlides(slideIndex)
   return (
-    <Layout>
+    <Layout
+      handleChange={props.handleChange}
+      handleSubmit={props.handleSubmit}>
       <div className="product-detail">
         <div>
           <img className="product-detail-image" src={product.imgURL} alt={product.name} />
