@@ -1,7 +1,7 @@
 
 
 nav {
-    flex: 1;
+    flex: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.0);
     z-index: 1;

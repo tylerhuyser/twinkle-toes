@@ -7,13 +7,13 @@ import { createProduct } from '../../services/products'
 const ProductCreate = (props) => {
 
   const [product, setProduct] = useState({
-    name: { type: String, required: true },
-    imgURL: { type: String, required: true },
-    imgURL2: { type: String, required: true },
-    imgURL3: { type: String, required: true },
-    description: { type: String, required: true },
-    price: { type: String, required: true },
-    rating: { type: Number, required: true }, //using function
+    name: "",
+    imgURL: "",
+    imgURL2: "",
+    imgURL3: "",
+    description: "",
+    price: "",
+    rating: "",
     reviews: [{
       author: String,
       rating: Number,
@@ -36,7 +36,7 @@ const ProductCreate = (props) => {
     const created = await createProduct(product)
     setCreated({ created })
   }
-
+  console.log(product)
   if (isCreated) {
     return <Redirect to={`/products`} />
   }
@@ -70,7 +70,7 @@ const ProductCreate = (props) => {
         />
         <input
           className="input-name"
-          placeholder='Name'
+          placeholder='Product Name'
           value={product.name}
           name='name'
           required
