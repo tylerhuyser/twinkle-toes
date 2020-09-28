@@ -85,6 +85,7 @@ function App() {
             allProducts={allProducts}
             setAllProducts={setAllProducts}
             queriedProducts={queriedProducts}
+            setQueriedProducts={setQueriedProducts}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
           />

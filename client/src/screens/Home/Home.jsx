@@ -3,6 +3,8 @@ import Layout from '../../components/shared/Layout/Layout'
 import HeroCarousel from "../../components/HeroCarousel/HeroCarousel.jsx";
 import PopularCarousel from "../../components/PopularCarousel/PopularCarousel.jsx";
 
+import { Link } from 'react-router-dom';
+
 const Home = (props) => {
 
   const { allProducts, setAllProducts } = props;
@@ -70,7 +72,7 @@ const Home = (props) => {
 
         </div>
 
-        <button style={{
+        <Link to="/products"><button style={{
 
           width: "260px",
           height: "45px",
@@ -83,7 +85,7 @@ const Home = (props) => {
           borderRadius: "12px",
           margin: "150px auto"
 
-        }}>Products</button>
+        }}>Products</button></Link>
 
       </div>
     </Layout>
