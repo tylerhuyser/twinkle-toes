@@ -25,7 +25,13 @@ const HeroCarousel = (props) => {
   // Below creates a set of divs containing each hero slide
   let heroSlides = heroImages.map((element, idx) => {
     return (
-      <div className="invisible fade" key={idx}>
+      <div className="invisible fade" key={idx} style={{
+
+        width: "100vw",
+        height: "auto",
+        display: "flex",
+
+      }}>
         <div className="number-text">{idx} / 5</div>
         <img src={element} alt={idx} key={idx} style={{
 
@@ -120,6 +126,8 @@ function currentSlide(n) {
   
       <div className="hero-carousel-buttons" style={{
           textAlign: "center",
+          
+
         }}>
         {heroCarouselButtons}
       </div>

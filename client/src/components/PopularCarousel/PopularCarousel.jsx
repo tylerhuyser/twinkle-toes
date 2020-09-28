@@ -29,7 +29,7 @@ const PopularCarousel = (props) => {
 
   useEffect(() => {
     showSlides(popularUpperIndex, popularLowerIndex)
-  }, [popularLowerIndex || popularLowerIndex])
+  }, [popularLowerIndex || popularLowerIndex ])
 
 
   let popularItemCards = popularProducts.map((element, idx) => {
@@ -39,13 +39,20 @@ const PopularCarousel = (props) => {
         height: "auto",
         display: "flex",
         alignItems: "center",
+        alignContent: "center",
         justifyContent: "center",
-
+        padding: "5px",
+        background: "#F7ECEC",
+        borderRadius: "8px",
+        border: "3px solid #D091C9"
       }}>
         <img src={element.imgURL} alt={idx} key={idx} style={{
 
           // flexGrow: "1",
           objectFit: "scale-down",
+          maxWidth: "15vw",
+          maxHeight: "15vh",
+          borderRadius: "8px",
           
       }} />
       </div>
@@ -101,15 +108,29 @@ const PopularCarousel = (props) => {
   return (
 
 
-    <div className="popular-items-carousel">
+    <div className="popular-items-carousel" style={{
+      display: "flex",
+      flexDirection: "row",
+      minWidth: "100vw",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "150px",
 
-      <a className="prev" onClick={() => plusSlides(-1)} > &#10094;</a>
+    }}>
 
-      <div className="popularItemsCards">
+      <a className="prevPopular" onClick={() => plusSlides(-1)} > &#10094;</a>
+
+      <div className="popularItemsCards" style={{
+        minWidth: "80vw",
+        flexGrow: "1",
+        display: "flex",
+        flexDirection: "row",
+
+      }}>
         {popularCarousel}
       </div>
 
-      <a className="next" onClick={() => plusSlides(1)} > &#10095;</a>
+      <a className="nextPopular" onClick={() => plusSlides(1)} > &#10095;</a>
       
     </div>
 
