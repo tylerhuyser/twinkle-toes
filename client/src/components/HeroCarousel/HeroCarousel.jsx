@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './HeroCarousel.css';
+import Sort from '../../utils/sort.js'
 
 const HeroCarousel = (props) => {
 
@@ -66,7 +67,7 @@ const HeroCarousel = (props) => {
       }
       if (idx !== n) {
         const selectedSlide = heroSlides[idx].props.children
-        
+
         heroSlides[idx] = {
           ...heroSlides[idx], props: {
             className: "invisible fade", children:

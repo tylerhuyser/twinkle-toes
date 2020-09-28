@@ -8,7 +8,8 @@ const Home = () => {
 
   const [allProducts, setAllProducts] = useState([])
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
-  const [currentPopularIndex, setCurrentPopularIndex] = useState(0);
+  const [popularUpperIndex, setPopularUpperIndex] = useState(4);
+  const [popularLowerIndex, setPopularLowerIndex] = useState(0);
 
     useEffect(() => {
       const fetchProducts = async () => {
@@ -33,7 +34,7 @@ const Home = () => {
           
             <div className="popular-items-title">Popular Items</div>
               
-              <PopularCarousel allProducts={allProducts} currentPopularIndex={currentPopularIndex} setCurrentPopularIndex={setCurrentPopularIndex} />
+              <PopularCarousel allProducts={allProducts} setPopularUpperIndex={setPopularUpperIndex} popularUpperIndex={popularUpperIndex} setPopularLowerIndex={setPopularLowerIndex} popularLowerIndex={popularLowerIndex} />
           
           </div>
         
