@@ -1,11 +1,16 @@
-
+footer{
+  width: 100%;
+  flex:5;
+}
 
 .footer-div {
   display: flex;
-  padding: 20px 0;
+  padding: 20px;
   flex-direction: row;
   width: 100%;
   background-color: rgb(175, 136, 181);
+  justify-content:space-around;
+  align-items: center;
 }
 
 p{
@@ -28,11 +33,15 @@ letter-spacing: -3px;
   flex: 3;
   max-width: 30vw;
   align-items: center;
-  font-size: 14px;
+  font-size: 10px;
   display: flex;
-  justify-content: left;
+  flex-direction:column;
+  position:relative;
+  
 }
-
+p{
+  text-align: left;
+}
 .link {
   flex: 1;
 }
