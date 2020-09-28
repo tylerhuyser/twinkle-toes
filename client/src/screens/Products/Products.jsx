@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 // Did not import search component since it's part of the layout component
 import Product from "../../components/Product/Product";
-// import Layout from '../../components/shared/Layout/Layout'
+import Layout from '../../components/shared/Layout/Layout'
 // Where will Sort component be if it will be passed down to Products and
 // SearchResult component?
 import Sort from "../../components/Sort/Sort";
@@ -66,10 +66,10 @@ const Products = (props) => {
 
   return (
     <>
-      {/* <Layout> */}
-      <Sort onSubmit={handleSubmit} onChange={handleSort} />
-      <div className="products">{productsJSX}</div>
-      {/* </Layout> */}
+      <Layout>
+        <Sort onSubmit={handleSubmit} onChange={handleSort} />
+        <div className="products">{productsJSX}</div>
+      </Layout>
     </>
   );
 };

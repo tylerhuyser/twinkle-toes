@@ -6,6 +6,7 @@ import Search from '../../Search/Search.jsx'
 const Nav = (props) => {
 
   const { allProducts, setAllProducts } = props;
+  console.log(allProducts)
 
   return (
     <nav>

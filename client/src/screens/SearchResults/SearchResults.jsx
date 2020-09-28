@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Search from "../../components/Search/Search.jsx";
 import Product from "../../components/Product/Product.jsx";
-
+import Layout from '../../components/shared/Layout/Layout'
 import { getProducts } from '../../services/products';
 
 const SearchResults = (props) => {
@@ -14,9 +14,11 @@ const SearchResults = (props) => {
   )
 
   return (
-    <div className="search-results-container">
-      {searchResultCards}
-    </div>
+    <Layout>
+      <div className="search-results-container">
+        {searchResultCards}
+      </div>
+    </Layout>
   )
 }
 
