@@ -2,11 +2,12 @@ import React, {useState, useEffect} from 'react';
 
 import { getProducts } from '../../services/products';
 import HeroCarousel from "../../components/HeroCarousel/HeroCarousel.jsx";
-import './Home.css';
 
 const Home = () => {
 
   const [allProducts, setAllProducts] = useState([])
+
+  const [update, setUpdate] = useState(false);
 
   // function createHeroSlides() {
   //   return (
@@ -18,6 +19,10 @@ const Home = () => {
   //     </div>
   //     )
   // }
+
+  const updateFunction = () => {
+    setUpdate(!update)
+  }
 
   
     useEffect(() => {
@@ -34,7 +39,7 @@ const Home = () => {
     return (
       <div className="home-container">
 
-          <HeroCarousel  />
+          <HeroCarousel update={update} setUpdate={setUpdate} updateFunction={updateFunction}  />
         
           <div className="hero-copy">
             <div className="tagline">We Sparkle. You Shine.</div>
