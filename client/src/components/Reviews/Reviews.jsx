@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Reviews = (props) => {
-    git 
+    
     const { reviews } = props
     
     const REVIEW = reviews.map((review, idx) => {
