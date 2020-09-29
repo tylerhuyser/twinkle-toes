@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import Sort from '../../components/Sort/Sort';
 import './Search.css';
-import { Redirect, Link, Route } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 const Search = (props) => {
-
 
   let search = props.search;
   const { allProducts, setAllProducts } = props;
@@ -12,29 +10,11 @@ const Search = (props) => {
 
   const [isSearched, setSearched] = useState(false)
 
-  // const handleSearch = e => {
-  //   e.preventDefault()
-  //   console.log(search)
-  //   const newQueriedProducts = allProducts.filter(product => product.name.toLowerCase().includes(search.toLowerCase()))
-  //   setQueriedProducts(newQueriedProducts)
-  //   setSearched(!isSearched)
-  // }
-
-  console.log(queriedProducts)
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   handleSearch(e)
-  // }
-
   if (isSearched) {
     return (
       <Redirect to={`/search-results`} />
     )
   }
-
-  console.log(search)
-
 
   return (
     <form className="search-form" onSubmit={(e) => props.handleSubmit(e)} >
@@ -47,6 +27,16 @@ const Search = (props) => {
         type="text"
         autoFocus
       />
+      <button className="search-button" style={{
+        
+        backgroundColor: "transparent",
+        color: "#E67CDA",
+        border: "none",
+
+      }}>
+        <i className="fas fa-search"></i>
+      </button>
+
     </form>
   )
 }

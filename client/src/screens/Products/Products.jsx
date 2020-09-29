@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import './Products.css'
 // Did not import search component since it's part of the layout component
 import Product from "../../components/Product/Product";
 import Layout from '../../components/shared/Layout/Layout'
@@ -58,6 +58,7 @@ const Products = (props) => {
     <Product
       _id={product._id}
       name={product.name}
+      rating={product.rating}
       imgURL={product.imgURL}
       price={product.price}
       key={index}
@@ -70,7 +71,7 @@ const Products = (props) => {
         handleChange={props.handleChange}
         handleSubmit={props.handleSubmit}>
         <Sort onSubmit={handleSubmit} onChange={handleSort} />
-        <div className="products">{productsJSX}</div>
+        <div className="products-container">{productsJSX}</div>
       </Layout>
     </>
   );
