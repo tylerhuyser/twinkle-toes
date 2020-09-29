@@ -2,19 +2,23 @@
   margin:0 auto;
   display:flex;
   flex-direction:column;
-  width: 100vw;
+  width: 65vw;
   height: 100vh;
-  align-items:center;
-  background-color:rgba(255,255,255,.8);
+  justify-content:center;
+  border: 3px solid #D091C9;
+  border-radius: 12px;
 }
 
-
+.edit-component{
+  background-color:rgba(255,255,255,.8);
+  width:100vw;
+}
 .edit-button-container{
   margin: 10px;
 }
 
 .edit-update-button, .edit-cancel-button{
-    margin:10px 20px;
+    margin:10px 30px;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
@@ -24,7 +28,31 @@
     align-self: center;
     background-color: pink;
     color: white;
-    border: none;
+    border: 1px solid #D091C9;
     box-shadow: 2px 2px 10px 2px #CECECE;
     cursor: pointer;
+}
+
+.edit-input{
+  background: #F7ECEC;
+  padding: 10px;
+}
+
+.edit-description,
+.edit-name,
+.edit-image-link{
+  width:35vw;
+  cursor: pointer;
+  border: 1px solid #D091C9;
+  border-radius: 15px;
+}
+
+.edit-image-link,
+.edit-name,
+.edit-price,
+.edit-rating{
+  text-align:center;
+  cursor: pointer;
+  border: 1px solid #D091C9;
+  border-radius: 15px;
 }

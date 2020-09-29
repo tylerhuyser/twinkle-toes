@@ -49,12 +49,13 @@ export default function ProductEdit(props) {
 
   return (
 
-    <div>
+    <div className="edit-component">
       <form className="edit-container" onSubmit={handleSubmit}>
-        <div>Primary Photo:
+
+        <div className="edit-input">Display Photo:
          <br />
           <input
-            className="input-image-link"
+            className="edit-image-link"
             placeholder="Primary Preview Link"
             value={product.imgURL}
             name='imgURL'
@@ -64,10 +65,10 @@ export default function ProductEdit(props) {
           />
         </div>
 
-        <div>Second Angle:
+        <div className="edit-input">Second Angle:
         <br />
           <input
-            className="input-image-link"
+            className="edit-image-link"
             placeholder='Image Link'
             value={product.imgURL2}
             name='imgURL2'
@@ -76,10 +77,10 @@ export default function ProductEdit(props) {
           />
         </div>
 
-        <div>Third Angle:
+        <div className="edit-input">Third Angle:
         <br />
           <input
-            className="input-image-link"
+            className="edit-image-link"
             placeholder='Image Link'
             value={product.imgURL3}
             name='imgURL3'
@@ -88,10 +89,10 @@ export default function ProductEdit(props) {
           />
         </div>
 
-        <div>Name:
+        <div className="edit-input">Shoe Name:
         <br />
           <input
-            className="input-name"
+            className="edit-name"
             placeholder='Product Name'
             value={product.name}
             name='name'
@@ -100,10 +101,10 @@ export default function ProductEdit(props) {
           />
         </div>
 
-        <div>Price:
+        <div className="edit-input">Price:
         <br />
           <input
-            className="input-price"
+            className="edit-price"
             placeholder='Price'
             value={product.price}
             name='price'
@@ -112,10 +113,10 @@ export default function ProductEdit(props) {
           />
         </div>
 
-        <div>Description:
+        <div className="edit-input">Description:
         <br />
           <textarea
-            className="textarea-description"
+            className="edit-description"
             rows={10}
             placeholder='Description'
             value={product.description}
@@ -125,10 +126,10 @@ export default function ProductEdit(props) {
           />
         </div>
 
-        <div>Rating:
+        <div className="edit-input">Rating:
         <br />
           <input
-            className="input-rating"
+            className="edit-rating"
             placeholder='Rated _/5'
             value={product.rating}
             name='rating'
@@ -144,6 +145,7 @@ export default function ProductEdit(props) {
           <button type='submit' className="edit-update-button" onClick={(e) => handleSubmit(e)}>Update</button>
           <button type='cancel' className="edit-cancel-button" onClick={changeVisibility}>Cancel</button>
         </div>
+
       </form>
     </div>
 
