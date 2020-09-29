@@ -1,5 +1,4 @@
 import React from 'react'
-import './Nav.css'
 import { Link } from 'react-router-dom'
 import Search from '../../Search/Search.jsx'
 
@@ -17,7 +16,7 @@ const Nav = (props) => {
         padding: "20px 50px",
 
         // Position Properties
-        zIndex: "2",
+        zIndex: "5",
         top: "0",
       
         // Container Properties

@@ -41,58 +41,68 @@ function App() {
   const handleSearch = (e) => {
 
     history.push('/search-results')
+
   }
 
   return (
-    <div className="App">
-      <Switch>
-        <Route exact path="/">
-          <Home
-            allProducts={allProducts}
-            setAllProducts={setAllProducts}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-          />
-        </Route>
+  
+  <>
 
-        <Route exact path="/products" >
-          <Products
-            allProducts={allProducts}
-            setAllProducts={setAllProducts}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-          />
-        </Route>
+      { allProducts.length === 0 ? <div>"Loading..."</div>
 
-        <Route path="/add-product" >
-          <ProductCreate
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-          />
-        </Route>
+        :
 
-        <Route exact path="/products/:id">
-          <ProductDetail
-            allProducts={allProducts}
-            setAllProducts={setAllProducts}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-          />
-        </Route>
+        <div className="App">
+          <Switch>
+            <Route exact path="/">
+              <Home
+                allProducts={allProducts}
+                setAllProducts={setAllProducts}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+              />
+            </Route>
 
-        <Route exact path="/search-results">
-          <SearchResults
-            allProducts={allProducts}
-            setAllProducts={setAllProducts}
-            queriedProducts={queriedProducts}
-            setQueriedProducts={setQueriedProducts}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-          />
-        </Route>
-      </Switch>
-    </div>
-  );
+            <Route exact path="/products" >
+              <Products
+                allProducts={allProducts}
+                setAllProducts={setAllProducts}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+              />
+            </Route>
+
+            <Route path="/add-product" >
+              <ProductCreate
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+              />
+            </Route>
+
+            <Route exact path="/products/:id">
+              <ProductDetail
+                allProducts={allProducts}
+                setAllProducts={setAllProducts}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+              />
+            </Route>
+
+            <Route exact path="/search-results">
+              <SearchResults
+                allProducts={allProducts}
+                setAllProducts={setAllProducts}
+                queriedProducts={queriedProducts}
+                setQueriedProducts={setQueriedProducts}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+              />
+            </Route>
+          </Switch>
+        </div>
+      }
+      </>
+  );   
 }
 
 export default App;
