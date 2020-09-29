@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { useParams, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import './ProductEdit.css';
 import { updateProduct } from '../../services/products.js';
-import Layout from '../shared/Layout/Layout.jsx';
+import { set } from 'mongoose';
 
 export default function ProductEdit(props) {
 
@@ -15,7 +15,8 @@ export default function ProductEdit(props) {
     price,
     description,
     id,
-    changeVisibility
+    changeVisibility,
+    loadUpdate
   } = props;
 
   const handleChange = (e) => {
@@ -36,15 +37,13 @@ export default function ProductEdit(props) {
     rating: rating
   })
 
-  const [isUpdated, setUpdated] = useState(false)
-  if (isUpdated) {
-    return <Redirect to={`/products/${props.id}`} />
-  }
+
+
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const updated = await updateProduct(id, product)
-    setUpdated(updated)
+    await updateProduct(id, product)
+    loadUpdate()
   }
 
 
@@ -52,69 +51,99 @@ export default function ProductEdit(props) {
 
     <div>
       <form className="edit-container" onSubmit={handleSubmit}>
-        <input
-          className="input-image-link"
-          placeholder="Primary Preview Link"
-          value={product.imgURL}
-          name='imgURL'
-          required
-          onChange={handleChange}
-          type='text'
-        />
-        <input
-          className="input-image-link"
-          placeholder='Image Link'
-          value={product.imgURL2}
-          name='imgURL2'
-          required
-          onChange={handleChange}
-        />
-        <input
-          className="input-image-link"
-          placeholder='Image Link'
-          value={product.imgURL3}
-          name='imgURL3'
-          required
-          onChange={handleChange}
-        />
-        <input
-          className="input-name"
-          placeholder='Product Name'
-          value={product.name}
-          name='name'
-          required
-          onChange={handleChange}
-        />
-        <input
-          className="input-price"
-          placeholder='Price'
-          value={product.price}
-          name='price'
-          required
-          onChange={handleChange}
-        />
-        <textarea
-          className="textarea-description"
-          rows={10}
-          placeholder='Description'
-          value={product.description}
-          name='description'
-          required
-          onChange={handleChange}
-        />
-        <input
-          className="input-rating"
-          placeholder='Rated _/5'
-          value={product.rating}
-          name='rating'
-          required
-          onChange={handleChange}
-          type='number'
-          max="5"
-          min="0"
-        />
-        <button type='submit' className="update-button">Update</button>
-        <button type='cancel' className="cancel-button" onClick={changeVisibility}>Cancel</button>
+        <div>Primary Photo:
+         <br />
+          <input
+            className="input-image-link"
+            placeholder="Primary Preview Link"
+            value={product.imgURL}
+            name='imgURL'
+            required
+            onChange={handleChange}
+            type='text'
+          />
+        </div>
+
+        <div>Second Angle:
+        <br />
+          <input
+            className="input-image-link"
+            placeholder='Image Link'
+            value={product.imgURL2}
+            name='imgURL2'
+            required
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>Third Angle:
+        <br />
+          <input
+            className="input-image-link"
+            placeholder='Image Link'
+            value={product.imgURL3}
+            name='imgURL3'
+            required
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>Name:
+        <br />
+          <input
+            className="input-name"
+            placeholder='Product Name'
+            value={product.name}
+            name='name'
+            required
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>Price:
+        <br />
+          <input
+            className="input-price"
+            placeholder='Price'
+            value={product.price}
+            name='price'
+            required
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>Description:
+        <br />
+          <textarea
+            className="textarea-description"
+            rows={10}
+            placeholder='Description'
+            value={product.description}
+            name='description'
+            required
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>Rating:
+        <br />
+          <input
+            className="input-rating"
+            placeholder='Rated _/5'
+            value={product.rating}
+            name='rating'
+            required
+            onChange={handleChange}
+            type='number'
+            max="5"
+            min="0"
+          />
+        </div>
+
+        <div className='edit-button-container'>
+          <button type='submit' className="edit-update-button" onClick={(e) => handleSubmit(e)}>Update</button>
+          <button type='cancel' className="edit-cancel-button" onClick={changeVisibility}>Cancel</button>
+        </div>
       </form>
     </div>
 

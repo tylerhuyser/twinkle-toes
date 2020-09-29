@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ProductDetail.css';
 import Layout from '../../components/shared/Layout/Layout';
 import { getProduct, deleteProduct } from '../../services/products';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Redirect } from 'react-router-dom';
 import ProductEdit from '../../components/Edit/ProductEdit.jsx';
 
 const ProductDetail = (props) => {
@@ -12,6 +12,7 @@ const ProductDetail = (props) => {
   const [isLoaded, setLoaded] = useState(false)
   const { id } = useParams()
   const [editVisibility, setEditVisibility] = useState(false);
+  const [isUpdated, setUpdated] = useState(false)
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -25,6 +26,14 @@ const ProductDetail = (props) => {
   const changeVisibility = (e) => {
     e.preventDefault()
     setEditVisibility(!editVisibility)
+  }
+
+  const loadUpdate = () => {
+    setUpdated(!isUpdated)
+  }
+
+  if (isUpdated) {
+    return <Redirect to={`/products/${id}`} />
   }
 
   if (!isLoaded) {
@@ -76,6 +85,7 @@ const ProductDetail = (props) => {
           description={product.description}
           id={id}
           changeVisibility={changeVisibility}
+          loadUpdate={loadUpdate}
         />
       </div>
       <div className="product-detail">
