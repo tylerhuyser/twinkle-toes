@@ -1,4 +1,5 @@
 import React from 'react';
+import './Product.css'
 import { Link } from 'react-router-dom'
 
 const Product = (props) => {
@@ -8,7 +9,7 @@ const Product = (props) => {
         <img className="product-image" src={props.imgURL} alt={props.name} />
         <div className="product-rating">{props.rating}</div>
         <div className="product-name">{props.name}</div>
-        <div className="price">{`$${props.price}`}</div>
+        <div className="product-price">{`${props.price}`}</div>
       </Link>
     </>
   );
