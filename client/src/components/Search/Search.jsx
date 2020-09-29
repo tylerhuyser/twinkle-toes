@@ -47,6 +47,16 @@ const Search = (props) => {
         type="text"
         autoFocus
       />
+      <button className="search-button" style={{
+        
+        backgroundColor: "transparent",
+        color: "#E67CDA",
+        border: "none",
+
+      }}>
+        <i class="fas fa-search"></i>
+      </button>
+
     </form>
   )
 }
