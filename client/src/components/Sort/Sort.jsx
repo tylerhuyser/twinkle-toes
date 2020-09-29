@@ -1,6 +1,7 @@
 //Sort component for SearchResults.jsx and Products.jsx
 
 import React from 'react';
+import './Sort.css'
 
 const Sort = (props) => {
 
