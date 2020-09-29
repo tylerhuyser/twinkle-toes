@@ -1,5 +1,6 @@
 .product-detail {
-    display: flex;
+    display: inline-block;
+    
     padding: 100px;
     padding-top: 80px;
 }
@@ -60,7 +61,7 @@
         font-size: 32px;
     }
     .product-detail-image {
-        width: 500px;
+        max-width: 200px;
         margin-top: -100px;
         padding: 10px;
     }
