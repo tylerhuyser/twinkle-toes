@@ -18,12 +18,12 @@ const Nav = (props) => {
         // Position Properties
         zIndex: "5",
         top: "0",
-      
+
         // Container Properties
         display: "flex",
         justifyContent: "space-around",
         alignItems: "center",
-        
+
       }}>
 
         <div className="logo-containers" style={{
@@ -32,16 +32,16 @@ const Nav = (props) => {
           flexDirection: "row",
           flexWrap: "nowrap",
           width: "30vw",
-          
+
         }}>
           <Link to="/">
             <img src="https://i.imgur.com/LUBayko.png" alt="Logo" style={{
-            
+
               maxWidth: "5vw",
               maxHeight: "50px",
               margin: "0px 30px"
-              
-              }} />
+
+            }} />
           </Link>
 
           <Link className="site-name" to="/" style={{
@@ -55,21 +55,21 @@ const Nav = (props) => {
             textDecoration: "none",
             textdecorationLine: "none",
             maxWidth: "25vw",
-            
+
           }}>
-            
+
             <p style={{
 
-            color: "#E67CDA",
-            fontSize: "18px",
-            letterSpacing: "-1px",
-            minWidth: "150px",
-      
+              color: "#E67CDA",
+              fontSize: "18px",
+              letterSpacing: "-1px",
+              minWidth: "150px",
+
             }}>TWINKLE TOES
             </p>
 
-            </Link>
-          </div>  
+          </Link>
+        </div>
 
 
         <Search classname="search"
@@ -95,9 +95,9 @@ const Nav = (props) => {
             fontSize: "14px",
             color: "#E67CDA",
             textAlign: "right",
-            
+
           }}>Products</Link>
-          <Link className="link" to="/add-product"  style={{
+          <Link className="link" to="/add-product" style={{
 
             textDecoration: "none",
             textdecorationLine: "none",
@@ -106,7 +106,7 @@ const Nav = (props) => {
             textAlign: "right",
             margin: "0px 30px",
 
-            }}>Add Product</Link>
+          }}>Add Product</Link>
         </div>
       </div>
     </nav>
