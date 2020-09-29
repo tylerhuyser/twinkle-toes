@@ -1,0 +1,23 @@
+.product-image {
+  border-radius: 20px;
+  width: 220px;
+  height: 188px;
+  padding-top: 2px;
+}
+
+.product {
+  background: #F7ECEC;
+  border: 3px solid #D091C9;
+  border-radius: 12px;
+  width: 260px;
+  height: 331px;
+  margin: 10px; 
+  padding: 10px;
+}
+
+/* this color is overwritten by the color property of the a tag from Nav.css */
+.product-name
+.product-rating
+.product-price {
+  color: rgb(88, 43, 86);
+}
