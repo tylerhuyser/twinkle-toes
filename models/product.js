@@ -10,6 +10,7 @@ const Product = new Schema(
     description: { type: String, required: true },
     price: { type: String, required: true },
     rating: { type: Number, required: true }, //using function
+    tag: { type: String, required: true },
     reviews: [{
         author: String,
         rating: Number,
