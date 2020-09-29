@@ -17,7 +17,7 @@ const Nav = (props) => {
         padding: "20px 50px",
 
         // Position Properties
-        zIndex: "1",
+        zIndex: "2",
         top: "0",
       
         // Container Properties
@@ -83,7 +83,7 @@ const Nav = (props) => {
         <div className="links" style={{
 
           display: "flex",
-          justifyContent: "right",
+          justifyContent: "flex-end",
           alignItems: "center",
           margin: "30px",
           width: "30vw",
@@ -105,6 +105,7 @@ const Nav = (props) => {
             fontSize: "14px",
             color: "#E67CDA",
             textAlign: "right",
+            margin: "0px 30px",
 
             }}>Add Product</Link>
         </div>

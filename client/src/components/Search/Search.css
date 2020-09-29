@@ -3,6 +3,7 @@
     border: 1px solid #E67CDA;
     border-radius: 90px;
     height: 26px;
+    background-color: white;
 
     display: flex;
     flex-direction: row;

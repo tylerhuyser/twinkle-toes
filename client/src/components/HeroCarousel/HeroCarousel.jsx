@@ -8,13 +8,13 @@ const HeroCarousel = (props) => {
   const [heroCarousel, setHeroCarousel] = useState([])
   const [heroButtons, setHeroButtons] = useState([])
 
-    // Below array contains the image sources for the Hero Carousel.
+  // Below array contains the image sources for the Hero Carousel.
   const heroImages = [
-      "https://i.imgur.com/DZm54TS.jpeg",
-      "https://i.imgur.com/RgAkNr1.jpg",
-      "https://i.imgur.com/V9x68t8.jpg",
-      "https://i.imgur.com/MlLrEWk.jpg",
-      "https://i.imgur.com/x8emXbx.jpg",
+    "https://i.imgur.com/DZm54TS.jpeg",
+    "https://i.imgur.com/RgAkNr1.jpg",
+    "https://i.imgur.com/V9x68t8.jpg",
+    "https://i.imgur.com/MlLrEWk.jpg",
+    "https://i.imgur.com/x8emXbx.jpg",
   ]
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const HeroCarousel = (props) => {
 
           width: "100%",
 
-      }} />
+        }} />
       </div>
     )
   })
@@ -112,7 +112,7 @@ const HeroCarousel = (props) => {
     setHeroButtons(heroCarouselButtons)
   }
 
-function currentSlide(n) {
+  function currentSlide(n) {
     showSlides(n);
   };
 
@@ -130,7 +130,7 @@ function currentSlide(n) {
     if (n === 1 && (currentIndex === (heroSlides.length - 1))) {
       tempIndex = 0;
     };
-    if (n === 1 && (currentIndex !== (heroSlides.length -1))) {
+    if (n === 1 && (currentIndex !== (heroSlides.length - 1))) {
       tempIndex += 1;
     };
 
@@ -138,7 +138,10 @@ function currentSlide(n) {
   };
 
   return (
-    <div className="hero-carousel-container">    
+    <div className="hero-carousel-container" style={{position: "relative",
+      bottom: "100px",
+      zIndex: "-1",
+    }} >    
       
       <div className="hero-carousel">
         {heroCarousel}

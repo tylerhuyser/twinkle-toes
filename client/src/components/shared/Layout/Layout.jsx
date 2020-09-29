@@ -8,7 +8,13 @@ const Layout = (props) => {
   const { allProducts, setAllProducts } = props;
 
   return (
-    <div className='layout'>
+    <div className='layout' style={{
+      
+      display: "flex",
+      flexDirection: "column",
+
+    }}>
+      
       <Nav
         allProducts={allProducts}
         setAllProducts={setAllProducts}
