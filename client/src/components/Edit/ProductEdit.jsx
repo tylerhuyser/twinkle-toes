@@ -14,7 +14,8 @@ export default function ProductEdit(props) {
     rating,
     price,
     description,
-    id
+    id,
+    changeVisibility
   } = props;
 
   const handleChange = (e) => {
@@ -113,6 +114,7 @@ export default function ProductEdit(props) {
           min="0"
         />
         <button type='submit' className="update-button">Update</button>
+        <button type='cancel' className="cancel-button" onClick={changeVisibility}>Cancel</button>
       </form>
     </div>
 

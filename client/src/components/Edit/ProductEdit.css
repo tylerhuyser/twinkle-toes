@@ -2,5 +2,6 @@
   margin:400px auto;
   display:flex;
   flex-direction:column;
-  
+  width: 80vw;
+  align-items:center;
 }

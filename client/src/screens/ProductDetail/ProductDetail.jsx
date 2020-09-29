@@ -11,6 +11,7 @@ const ProductDetail = (props) => {
   const [product, setProduct] = useState(null)
   const [isLoaded, setLoaded] = useState(false)
   const { id } = useParams()
+  const [editVisibility, setEditVisibility] = useState(false);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -20,6 +21,11 @@ const ProductDetail = (props) => {
     }
     fetchProduct()
   }, [id])
+
+  const changeVisibility = (e) => {
+    e.preventDefault()
+    setEditVisibility(!editVisibility)
+  }
 
   if (!isLoaded) {
     return <h1>Loading...</h1>
@@ -53,13 +59,13 @@ const ProductDetail = (props) => {
   // }
   // showSlides(slideIndex)
 
-  const [addEditVisibility, setAddEditVisibility] = useState(false);
+
 
   return (
     <Layout
       handleChange={props.handleChange}
       handleSubmit={props.handleSubmit}>
-      <div className="edit-visible">
+      <div id="edit-box" className={editVisibility ? "edit-visible" : "edit-hidden"}>
         <ProductEdit
           imgURL={product.imgURL}
           imgURL2={product.imgURL2}
@@ -69,6 +75,7 @@ const ProductDetail = (props) => {
           price={product.price}
           description={product.description}
           id={id}
+          changeVisibility={changeVisibility}
         />
       </div>
       <div className="product-detail">
@@ -86,7 +93,7 @@ const ProductDetail = (props) => {
           <div className="price">{`${product.price}`}</div>
           <div className="description">{product.description}</div>
           <div className="button-container">
-            <button className="edit-button"></button>
+            <button className="edit-button" onClick={(e) => changeVisibility(e)}>Edit</button>
             <button className="delete-button" onClick={() => deleteProduct(product._id)}>Delete</button>
           </div>
         </div>
