@@ -143,7 +143,8 @@ const HeroCarousel = (props) => {
       zIndex: "-1",
     }} >    
       
-      <div className="hero-carousel">
+      <div className="hero-carousel" style={{
+      }}>
         {heroCarousel}
       </div>
     
@@ -154,7 +155,7 @@ const HeroCarousel = (props) => {
   
       <div className="hero-carousel-buttons" style={{
           textAlign: "center",
-          
+          zIndex: "1",
 
         }}>
         {heroButtons}
