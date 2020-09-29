@@ -14,7 +14,7 @@ const ProductCreate = (props) => {
     description: "",
     price: "",
     rating: "",
-    tag: "",
+    tag: "street",
     reviews: [{
       author: String,
       rating: Number,
@@ -113,8 +113,11 @@ const ProductCreate = (props) => {
           max="5"
           min="0"
         />
-        Type: (for similar products)
-        <select name="select-tag" id="input-tag">
+        Tag/Type: (for similar products)
+        <select name="select-tag"
+          className="input-tag"
+          onChange={handleChange}
+          value={product.tag}>
           <option value="street">Street</option>
           <option value="formal">Formal</option>
         </select>
