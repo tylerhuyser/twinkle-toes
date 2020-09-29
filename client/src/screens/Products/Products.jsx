@@ -58,6 +58,7 @@ const Products = (props) => {
     <Product
       _id={product._id}
       name={product.name}
+      rating={product.rating}
       imgURL={product.imgURL}
       price={product.price}
       key={index}
