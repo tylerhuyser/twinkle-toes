@@ -31,6 +31,7 @@ const ProductDetail = (props) => {
   const loadUpdate = () => {
     setUpdated(!isUpdated)
   }
+
   //https://upmostly.com/tutorials/how-to-refresh-a-page-or-component-in-react#:~:text=If%20set%20to%20true%2C%20the,cached%20version%20of%20the%20page.&text=import%20React%20from%20'react'%3B,refreshPage%7D%3EClick%20to%20reload!
   if (isUpdated) {
     window.location.reload(false);
