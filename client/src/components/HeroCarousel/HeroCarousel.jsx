@@ -52,15 +52,11 @@ const HeroCarousel = (props) => {
   
   const heroCarouselButtons = createHeroCarouselButtons()
 
-  console.log(heroCarouselButtons)
-
   function showSlides(n) {
  
     if (n === undefined) {
       n = 0
     }
-
-    console.log(heroCarouselButtons)
 
     heroSlides.forEach((element, idx) => {
       if (idx === n) {
@@ -114,7 +110,6 @@ const HeroCarousel = (props) => {
     setCurrentIndex(n)
     setHeroCarousel(heroSlides)
     setHeroButtons(heroCarouselButtons)
-    console.log(heroCarouselButtons)
   }
 
 function currentSlide(n) {
@@ -125,9 +120,9 @@ function currentSlide(n) {
     let tempIndex = currentIndex
 
     if ((n === (-1)) && (currentIndex === 0)) {
-      console.log(currentIndex)
+
       tempIndex = (heroSlides.length -= 1);
-      console.log(currentIndex)
+
     };
     if (n === (-1) && (currentIndex !== 0)) {
       tempIndex -= 1;
