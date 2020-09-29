@@ -44,7 +44,7 @@ const ProductDetail = (props) => {
 
         <div className="detail">
           <div className="name">{product.name}</div>
-          <div classname="rating">{product.rating}</div>
+          <div className="rating">{product.rating}</div>
           <div className="price">{`${product.price}`}</div>
           <div className="description">{product.description}</div>
           <div className="button-container">
