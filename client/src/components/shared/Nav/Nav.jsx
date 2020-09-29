@@ -13,7 +13,7 @@ const Nav = (props) => {
 
         <img src="https://i.imgur.com/LUBayko.png" alt="Logo" to="/"></img>
 
-        <NavLink className="site-name" to="/">TWINKLE TOES</NavLink>
+        <NavLink className="website-name" to="/">TWINKLE TOES</NavLink>
         <Search classname="search"
           allProducts={allProducts}
           setAllProducts={setAllProducts}
@@ -21,8 +21,8 @@ const Nav = (props) => {
           handleSubmit={props.handleSubmit}
         />
         <div className="links">
-          <NavLink className="link" to="/products">Products</NavLink>
-          <NavLink className="link" to="/add-product">Add Product</NavLink>
+          <NavLink className="inner-link" to="/products">Products</NavLink>
+          <NavLink className="inner-link" to="/add-product">Add Product</NavLink>
         </div>
       </div>
     </nav>

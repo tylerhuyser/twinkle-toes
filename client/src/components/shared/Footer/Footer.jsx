@@ -15,7 +15,6 @@ export default function Footer() {
         </div>
         <img className="bottom-logo" src="https://i.imgur.com/i9W8vlB.png" alt="Logo" to="/"></img>
       </div>
-
     </footer>
   )
 }

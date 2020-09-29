@@ -104,6 +104,8 @@ const ProductCreate = (props) => {
           required
           onChange={handleChange}
           type='number'
+          max="5"
+          min="0"
         />
         <div className="review-container">Initial Review
         <input
@@ -121,6 +123,9 @@ const ProductCreate = (props) => {
             name='review-rating'
             required
             onChange={handleChange}
+            type="number"
+            max="5"
+            min="0"
           />
           <textarea
             className="review-description"

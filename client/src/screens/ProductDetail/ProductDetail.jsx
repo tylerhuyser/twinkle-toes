@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import './ProductDetail.css'
-import Layout from '../../components/shared/Layout/Layout'
-import { getProduct, deleteProduct } from '../../services/products'
-import { useParams, Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import './ProductDetail.css';
+import Layout from '../../components/shared/Layout/Layout';
+import { getProduct, deleteProduct } from '../../services/products';
+import { useParams, Link } from 'react-router-dom';
+import ProductEdit from '../../components/Edit/ProductEdit.jsx';
 
 const ProductDetail = (props) => {
 
@@ -52,10 +53,24 @@ const ProductDetail = (props) => {
   // }
   // showSlides(slideIndex)
 
+  const [addEditVisibility, setAddEditVisibility] = useState(false);
+
   return (
     <Layout
       handleChange={props.handleChange}
       handleSubmit={props.handleSubmit}>
+      <div className="edit-visible">
+        <ProductEdit
+          imgURL={product.imgURL}
+          imgURL2={product.imgURL2}
+          imgURL3={product.imgURL3}
+          name={product.name}
+          rating={product.rating}
+          price={product.price}
+          description={product.description}
+          id={id}
+        />
+      </div>
       <div className="product-detail">
         <div>
           <img className="product-detail-image" src={product.imgURL} alt={product.name} />
@@ -71,7 +86,7 @@ const ProductDetail = (props) => {
           <div className="price">{`${product.price}`}</div>
           <div className="description">{product.description}</div>
           <div className="button-container">
-            <button className="edit-button"><Link className="edit-link" to={`/products/${product._id}/edit`}>Edit</Link></button>
+            <button className="edit-button"></button>
             <button className="delete-button" onClick={() => deleteProduct(product._id)}>Delete</button>
           </div>
         </div>
@@ -86,6 +101,7 @@ const ProductDetail = (props) => {
           <div className="review">{product.reviews.description}</div>
         </div>
       </div>
+
     </Layout>
   )
 }
