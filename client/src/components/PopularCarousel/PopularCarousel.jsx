@@ -5,7 +5,7 @@ const PopularCarousel = (props) => {
 
   const { popularUpperIndex, setPopularUpperIndex } = props;
   const { popularLowerIndex, setPopularLowerIndex } = props;
-  const [popularCarousel, setPopularCarousel] = useState([])
+  const [popularCarousel, setPopularCarousel] = useState(props.allProducts)
 
   console.log(props)
 
@@ -32,10 +32,12 @@ const PopularCarousel = (props) => {
   }, [popularLowerIndex || popularLowerIndex ])
 
 
-  let popularItemCards = popularProducts.map((element, idx) => {
+  let popularItemCards = props.allProducts.map((element, idx) => {
     return (
-      <div className="popular-item-container" key={idx} style={{
-       maxWidth: "15vw",
+      <div className="popular-item-container" key={idx} 
+      style={{
+
+        maxWidth: "15vw",
         height: "auto",
         display: "flex",
         alignItems: "center",
@@ -45,6 +47,7 @@ const PopularCarousel = (props) => {
         background: "#F7ECEC",
         borderRadius: "8px",
         border: "3px solid #D091C9"
+        
       }}>
         <img src={element.imgURL} alt={idx} key={idx} style={{
 
@@ -68,9 +71,10 @@ const PopularCarousel = (props) => {
     } 
     console.log(a)
     console.log(b)
+    console.log(popularItemCards)
     setPopularUpperIndex(a)
     setPopularLowerIndex(b)
-    setPopularCarousel(popularItemCards.splice(a, b))
+    setPopularCarousel(popularItemCards)
   }
 
   function plusSlides(n) {

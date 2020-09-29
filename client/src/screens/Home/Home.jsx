@@ -3,6 +3,8 @@ import Layout from '../../components/shared/Layout/Layout'
 import HeroCarousel from "../../components/HeroCarousel/HeroCarousel.jsx";
 import PopularCarousel from "../../components/PopularCarousel/PopularCarousel.jsx";
 
+import { Link } from 'react-router-dom';
+
 const Home = (props) => {
 
   const { allProducts, setAllProducts } = props;
@@ -29,33 +31,42 @@ const Home = (props) => {
         <div className="hero-copy">
           <div className="tagline" style={{
 
+            fontSize: "36px",
+            fontFamily: 'Roboto',
             letterSpacing: "1.25px",
             color: "#B752AC",
             textTransform: "uppercase",
-            fontSize: "58px",
-            fontFamily: "Roboto",
+
+            textAlign: "center",
+            margin: "20px 0px",
 
           }}>We Sparkle. You Shine.</div>
           <div className="store-description" style={{
 
-            textAlign: "center",
             fontFamily: "Source Sans Pro",
+            fontSize: "18px",
             letterSpacing: "0px",
             color: "#BF84B9",
 
+            textAlign: "center",
+            margin: "25px",
+            
+            
           }}>Welcome to Twinkle Toes, your source for the best glittery shoes in the world. As a pioneer in the sparkle-only online shoe industry, Twinkle Toes has been bedazzling the feet of our customers since 2012. Today we are an online shopping destination for everyone seeking a little flare; a shining beacon amongst the Internet’s selection of conventional shoe retailers.</div>
         </div>
 
         <div className="popular-items-carousel-container">
 
           <div className="popular-items-title" style={{
-
-            textAlign: "left",
+            
             fontFamily: "Roboto",
+            fontSize: "24px",
             letterSpacing: "0.93px",
-            color: "#9A7395",
             textTransform: "uppercase",
-            margin: "80px 25px",
+            textAlign: "left",
+            color: "#9A7395",
+            
+            margin: "50px 25px",
 
           }}>Popular Items</div>
 
@@ -70,20 +81,22 @@ const Home = (props) => {
 
         </div>
 
-        <button style={{
-
-          width: "260px",
-          height: "45px",
-          textAlign: "center",
-          fontFamily: "Sans Pro",
-          letterSpacing: "0.75px",
-          color: "#FFFFFF",
-          opacity: "1",
+        <Link to="/products"><button style={{
+          
           background: "#DB93D3",
+          width: "150px",
+          height: "35px",
           borderRadius: "12px",
-          margin: "150px auto"
+          margin: "50px auto",
 
-        }}>Products</button>
+          color: "#FFFFFF",
+          fontFamily: "Source Sans Pro",
+          fontSize: "18px",
+          textAlign: "center",
+          letterSpacing: "0.75px",
+          border: "none",
+
+        }}>Products</button></Link>
 
       </div>
     </Layout>
