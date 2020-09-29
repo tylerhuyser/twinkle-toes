@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import './HeroCarousel.css';
-import Sort from '../../utils/sort.js'
 
 const HeroCarousel = (props) => {
 
   // Below sets state for the "current" carousel image displayed (using integers to refer to the index)
   const { currentIndex, setCurrentIndex } = props;
   const [heroCarousel, setHeroCarousel] = useState([])
+  const [heroButtons, setHeroButtons] = useState([])
 
     // Below array contains the image sources for the Hero Carousel.
   const heroImages = [
@@ -21,7 +21,6 @@ const HeroCarousel = (props) => {
     showSlides(currentIndex);
   }, [currentIndex])
   
-
   // Below creates a set of divs containing each hero slide
   let heroSlides = heroImages.map((element, idx) => {
     return (
@@ -46,12 +45,14 @@ const HeroCarousel = (props) => {
     let buttons = [];
     for (let i = 0; i < heroImages.length; i++) {
       buttons[i] =
-        <span className="dot" onClick={() => currentSlide(i)} key={i}></span>
+        <span className="hero-dot" key={i} onClick={() => currentSlide(i)} ></span>
     }
     return buttons
   }
   
   const heroCarouselButtons = createHeroCarouselButtons()
+
+  console.log(heroCarouselButtons)
 
   function showSlides(n) {
  
@@ -59,6 +60,7 @@ const HeroCarousel = (props) => {
       n = 0
     }
 
+    console.log(heroCarouselButtons)
 
     heroSlides.forEach((element, idx) => {
       if (idx === n) {
@@ -83,8 +85,36 @@ const HeroCarousel = (props) => {
       }
     }
     )
+
+    heroCarouselButtons.forEach((element, idx) => {
+      if (idx === n) {
+        const buttonFunction = heroCarouselButtons[idx].props.onClick
+
+        heroCarouselButtons[idx] = {
+          ...heroCarouselButtons[idx], props: {
+            className: "hero-dot hero-active", onClick:
+              buttonFunction
+          }
+        }
+      }
+      if (idx !== n) {
+
+        const buttonFunction = heroCarouselButtons[idx].props.onClick
+
+        heroCarouselButtons[idx] = {
+          ...heroCarouselButtons[idx], props: {
+            className: "hero-dot", onClick:
+              buttonFunction
+          }
+        }
+
+      }
+    }
+    )
     setCurrentIndex(n)
     setHeroCarousel(heroSlides)
+    setHeroButtons(heroCarouselButtons)
+    console.log(heroCarouselButtons)
   }
 
 function currentSlide(n) {
@@ -129,7 +159,7 @@ function currentSlide(n) {
           
 
         }}>
-        {heroCarouselButtons}
+        {heroButtons}
       </div>
 
   </div>
