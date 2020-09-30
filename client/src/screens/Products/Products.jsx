@@ -45,12 +45,12 @@ const Products = (props) => {
     }
   };
 
-  const handleSearch = (event) => {
-    const newQueriedProducts = allProducts.filter((product) =>
-      product.name.toLowerCase().includes(event.target.value.toLowerCase())
-    );
-    setQueriedProducts(newQueriedProducts, () => handleSort(sortType));
-  };
+  // const handleSearch = (event) => {
+  //   const newQueriedProducts = allProducts.filter((product) =>
+  //     product.name.toLowerCase().includes(event.target.value.toLowerCase())
+  //   );
+  //   setQueriedProducts(newQueriedProducts, () => handleSort(sortType));
+  // };
 
   const handleSubmit = (event) => event.preventDefault();
 

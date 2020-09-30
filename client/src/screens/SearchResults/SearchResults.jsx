@@ -43,7 +43,15 @@ const SearchResults = (props) => {
 
       {searchResultCards && searchResultCards.length !== 0 ?
 
-        <div className="search-results-container">
+        <div className="search-results-container" style={{
+
+          margin: "0 auto",
+          width: "80%",
+          display: "flex",
+          flexWrap: "wrap",
+          justifycontent: "space-between",
+
+        }}>
           <Sort onSubmit={handleSubmit} onChange={handleSort} />
           {searchResultCards}
         </div>
