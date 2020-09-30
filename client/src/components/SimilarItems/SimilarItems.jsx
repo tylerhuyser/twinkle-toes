@@ -36,21 +36,21 @@ export default function SimilarItems(props) {
 
   return (
     <div className="similar-items-flex-box">
-      <div>
-        <Link to={`/products/${display[0][0]._id}`}>
+      <Link to={`/products/${display[0][0]._id}`}>
+        <div className="similar-indiv">
           <img className="similar-items-pic" src={display[0][0].imgURL} alt="similar product one" />
-        </Link>
-      </div>
-      <div>
-        <Link to={`/products/${display[1][0]._id}`} >
+        </div>
+      </Link>
+      <Link to={`/products/${display[1][0]._id}`} >
+        <div className="similar-indiv">
           <img className="similar-items-pic" src={display[1][0].imgURL} alt="similar product two" />
-        </Link>
-      </div>
-      <div>
-        <Link to={`/products/${display[2][0]._id}`} >
+        </div>
+      </Link>
+      <Link to={`/products/${display[2][0]._id}`} >
+        <div className="similar-indiv">
           <img className="similar-items-pic" src={display[2][0].imgURL} alt="similar product three" />
-        </Link>
-      </div>
+        </div>
+      </Link>
     </div>
   );
 };

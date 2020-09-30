@@ -6,6 +6,13 @@
   justify-content: space-around;
 }
 .similar-items-pic{
-  width:20vw;
-  height:auto;
+  width:300px;
+  height:300px;
+  border-radius: 15px;
+}
+.similar-indiv{
+  background: #F7ECEC;
+  border: 2px solid #D091C9;
+  border-radius: 12px;
+  padding: 20px;
 }
