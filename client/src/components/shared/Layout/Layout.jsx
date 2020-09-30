@@ -1,5 +1,5 @@
 import React from 'react'
-import './Layout.css'
+
 import Nav from '../Nav/Nav'
 import Footer from '../Footer/Footer'
 
@@ -12,6 +12,8 @@ const Layout = (props) => {
       
       display: "flex",
       flexDirection: "column",
+      alignItems: "center",
+      minHeight: "100vh",
 
     }}>
       
@@ -21,7 +23,15 @@ const Layout = (props) => {
         handleChange={props.handleChange}
         handleSubmit={props.handleSubmit}
       />
-      <div className="layout-children">
+      <div className="layout-children" style={{
+        
+        flexGrow: "1",
+
+        // display: "flex",
+        // alignItems: "center",
+        // justifyContent: "center",
+
+      }}>
         {props.children}
       </div>
       <Footer />
