@@ -1,0 +1,6 @@
+.sort-container {
+  margin: 0 auto;
+  width: 85%;
+  display: flex;
+  justify-content: flex-end;
+}

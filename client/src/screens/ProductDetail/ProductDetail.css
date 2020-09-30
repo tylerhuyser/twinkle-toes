@@ -1,5 +1,6 @@
 .product-detail {
-    display: flex;
+    display: inline-block;
+    
     padding: 100px;
     padding-top: 80px;
 }
@@ -60,7 +61,7 @@
         font-size: 32px;
     }
     .product-detail-image {
-        width: 500px;
+        max-width: 200px;
         margin-top: -100px;
         padding: 10px;
     }
@@ -97,4 +98,18 @@
     .edit-button, .delete-button {
         width: 40%;
     }
+}
+
+.edit-hidden {
+  transform: translate3d(-100vw, 0, 0);
+  display: none;
+  transition: .3s ease;
+  position: absolute;
+}
+ 
+.edit-visible {
+  transform: translate3d(0, 0, 1);
+  overflow: hidden;
+  transition: .3s ease;
+  position:absolute;
 }

@@ -4,6 +4,7 @@ import StarRating from '../StarRating/StarRating'
 import { Link } from 'react-router-dom'
 
 const Product = (props) => {
+  console.log(props.rating);
   return (
     <>
       <Link className="product" to={`/products/${props._id}`}>

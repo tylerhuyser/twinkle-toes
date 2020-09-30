@@ -14,6 +14,7 @@ const ProductCreate = (props) => {
     description: "",
     price: "",
     rating: "",
+    tag: "street",
     reviews: [{
       author: String,
       rating: Number,
@@ -45,6 +46,7 @@ const ProductCreate = (props) => {
       handleChange={props.handleChange}
       handleSubmit={props.handleSubmit}>
       <form className="create-form" onSubmit={handleSubmit}>
+        Photos:
         <input
           className="input-image-link"
           placeholder="Primary Preview Link"
@@ -70,6 +72,7 @@ const ProductCreate = (props) => {
           required
           onChange={handleChange}
         />
+        Shoe Name:
         <input
           className="input-name"
           placeholder='Product Name'
@@ -79,6 +82,7 @@ const ProductCreate = (props) => {
           autoFocus
           onChange={handleChange}
         />
+        Price:
         <input
           className="input-price"
           placeholder='Price'
@@ -87,6 +91,7 @@ const ProductCreate = (props) => {
           required
           onChange={handleChange}
         />
+        Description:
         <textarea
           className="textarea-description"
           rows={10}
@@ -96,6 +101,7 @@ const ProductCreate = (props) => {
           required
           onChange={handleChange}
         />
+        Rating:
         <input
           className="input-rating"
           placeholder='Rated _/5'
@@ -104,7 +110,17 @@ const ProductCreate = (props) => {
           required
           onChange={handleChange}
           type='number'
+          max="5"
+          min="0"
         />
+        Tag/Type: (for similar products)
+        <select name="select-tag"
+          className="input-tag"
+          onChange={handleChange}
+          value={product.tag}>
+          <option value="street">Street</option>
+          <option value="formal">Formal</option>
+        </select>
         <div className="review-container">Initial Review
         <input
             className="review-author"
@@ -121,6 +137,9 @@ const ProductCreate = (props) => {
             name='review-rating'
             required
             onChange={handleChange}
+            type="number"
+            max="5"
+            min="0"
           />
           <textarea
             className="review-description"
