@@ -36,16 +36,38 @@ const SearchResults = (props) => {
 
   const handleSubmit = (event) => event.preventDefault();
 
-
-
   return (
     <Layout
       handleChange={props.handleChange}
       handleSubmit={props.handleSubmit}>
-      <Sort onSubmit={handleSubmit} onChange={handleSort} />
-      <div className="search-results-container">
-        {searchResultCards}
-      </div>
+
+      {searchResultCards && searchResultCards.length !== 0 ?
+
+        <div className="search-results-container">
+          <Sort onSubmit={handleSubmit} onChange={handleSort} />
+          {searchResultCards}
+        </div>
+        
+        :
+
+        <div className="search-results-container" style={{
+
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexGrow: "1",
+
+        }}>
+          <p className="search-error-message" style={{
+
+            color: "#B752AC",
+            fontWeight: "bold",
+            flexGrow: "1",
+            
+          }}>Whoopsies! No Results!</p>
+        </div>
+      }
+      
     </Layout>
   )
 }
