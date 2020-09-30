@@ -1,48 +1,53 @@
-import React, { useState, useEffect } from 'react';
-import Reviews from '../../components/Reviews/Reviews'
-import './ProductDetail.css';
-import Layout from '../../components/shared/Layout/Layout';
-import { getProduct, deleteProduct } from '../../services/products';
-import { useParams, Redirect } from 'react-router-dom';
-import ProductEdit from '../../components/Edit/ProductEdit.jsx';
+import React, { useState, useEffect } from "react";
+import Reviews from "../../components/Reviews/Reviews";
+import "./ProductDetail.css";
+import Layout from "../../components/shared/Layout/Layout";
+import { getProduct, deleteProduct } from "../../services/products";
+import { useParams, Redirect } from "react-router-dom";
+import ProductEdit from "../../components/Edit/ProductEdit.jsx";
 
 const ProductDetail = (props) => {
+    const { allProducts, setAllProducts } = props;
+    const [product, setProduct] = useState(null);
+    const [isLoaded, setLoaded] = useState(false);
+    const { id } = useParams();
+    const [editVisibility, setEditVisibility] = useState(false);
+    const [isUpdated, setUpdated] = useState(false);
+    const [review, setReview] = useState({
+        author: '',
+        rating: '',
+        description: ''
+    })
+    
+    const [primaryImage, setPrimaryImage] = useState(props.imgURL) 
+    
+    useEffect(() => {
+        const fetchProduct = async () => {
+            const product = await getProduct(id);
+            setProduct(product);
+            setLoaded(true);
+        };
+        fetchProduct();
+    }, [id]);
 
-  const { allProducts, setAllProducts } = props;
-  const [product, setProduct] = useState(null)
-  const [isLoaded, setLoaded] = useState(false)
-  const { id } = useParams()
-  const [editVisibility, setEditVisibility] = useState(false);
-  const [isUpdated, setUpdated] = useState(false)
+    const changeVisibility = (e) => {
+        e.preventDefault();
+        setEditVisibility(!editVisibility);
+    };
 
-  const [primaryImage, setPrimaryImage] = useState(props.imgURL)
+    const loadUpdate = () => {
+        setUpdated(!isUpdated);
+    };
 
-  useEffect(() => {
-    const fetchProduct = async () => {
-      const product = await getProduct(id)
-      setProduct(product)
-      setLoaded(true)
+    //Documentation for code below ::: https://upmostly.com/tutorials/how-to-refresh-a-page-or-component-in-react#:~:text=If%20set%20to%20true%2C%20the,cached%20version%20of%20the%20page.&text=import%20React%20from%20'react'%3B,refreshPage%7D%3EClick%20to%20reload!\
+    if (isUpdated) {
+        window.location.reload(false);
     }
-    fetchProduct()
-  }, [id])
 
-  const changeVisibility = (e) => {
-    e.preventDefault()
-    setEditVisibility(!editVisibility)
-  }
+    if (!isLoaded) {
+        return <h1>Loading...</h1>;
+    }
 
-  const loadUpdate = () => {
-    setUpdated(!isUpdated)
-  }
-  //https://upmostly.com/tutorials/how-to-refresh-a-page-or-component-in-react#:~:text=If%20set%20to%20true%2C%20the,cached%20version%20of%20the%20page.&text=import%20React%20from%20'react'%3B,refreshPage%7D%3EClick%20to%20reload!
-  if (isUpdated) {
-    window.location.reload(false);
-  }
-
-  if (!isLoaded) {
-    return <h1>Loading...</h1>
-  }
- 
 
   return (
     
@@ -105,8 +110,14 @@ const ProductDetail = (props) => {
         </div>
       }
 
-    </Layout>
-  )
-}
 
-export default ProductDetail
+            </div>
+            <div className="similarItems">
+                <h5>SIMILAR ITEMS</h5>
+            </div>
+            <Reviews reviews={product.reviews} product={product} id={id}/>
+        </Layout>
+    );
+};
+
+export default ProductDetail;
