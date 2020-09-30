@@ -110,12 +110,6 @@ const ProductDetail = (props) => {
         </div>
       }
 
-
-            </div>
-            <div className="similarItems">
-                <h5>SIMILAR ITEMS</h5>
-            </div>
-            <Reviews reviews={product.reviews} product={product} id={id}/>
         </Layout>
     );
 };
