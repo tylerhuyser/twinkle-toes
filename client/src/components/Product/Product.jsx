@@ -13,13 +13,17 @@ const Product = (props) => {
         stars[i] =
           <i class="fas fa-star" style={{
             
-          color: "pink",
+          color: "#F4A2B6",
 
         }}></i>
       }
       if (i >= rating) {
         stars[i] =
-        <i class="fas fa-star"></i>
+          <i class="fas fa-star" style={{
+          
+            color: "#C7C7CC",
+
+        }}></i>
       }
     }
     return stars
