@@ -9,7 +9,7 @@
   flex-direction:column;
   margin: 25px;
   width: 45vw;
-  background-color: rgba(144, 101, 139, 0.627);
+  background-color: #F7ECEC;
   align-items:center;
   border-radius:50px;
   border: 7px solid #D091C9;
@@ -29,7 +29,7 @@
 .create-review-author,
 .create-review-rating,
 .create-review-description{
-  background-color: #F7ECEC;
+  background-color: white;
   padding: 5px;
   margin: 5px;
   border-radius: 7px;
