@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Layout from '../../components/shared/Layout/Layout'
 import HeroCarousel from "../../components/HeroCarousel/HeroCarousel.jsx";
 import PopularCarousel from "../../components/PopularCarousel/PopularCarousel.jsx";
-import { highestRatingFirst } from "../../utils/sort"
 
 import { Link } from 'react-router-dom';
 
@@ -11,27 +10,9 @@ const Home = (props) => {
   const { allProducts, setAllProducts } = props;
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
   const [popularIndex, setPopularIndex] = useState(0);
-  // const [popularUpperIndex, setPopularUpperIndex] = useState(4);
-  // const [popularLowerIndex, setPopularLowerIndex] = useState(0);
 
-  // setPopularUpperIndex={setPopularUpperIndex} popularUpperIndex={popularUpperIndex} setPopularLowerIndex={setPopularLowerIndex} popularLowerIndex={popularLowerIndex}
-
-  // const [popularProducts, setPopularProducts] = useState([])
-
-  // const productList = allProducts
-
-  // useEffect(() => {
-  //   setPopularProducts(highestRatingFirst(productList))
-  // }, [allProducts])
-
-  // console.log({ allProducts })
-  // console.log(productList)
-  // console.log(highestRatingFirst(productList))
-  // console.log(popularProducts)
-
-  // const popularProductsz = highestRatingFirst(allProducts)
-
-  // console.log(popularProductsz)
+  const [popularUpperIndex, setPopularUpperIndex] = useState(4);
+  const [popularLowerIndex, setPopularLowerIndex] = useState(0);
 
   return (
     <Layout
@@ -91,9 +72,16 @@ const Home = (props) => {
 
           }}>Popular Items</div>
 
-          
+          {allProducts.length === 0 ? <div>"Loading..."</div>
 
-            <PopularCarousel allProducts={allProducts} popularIndex={popularIndex} setPopularIndex={setPopularIndex} style={{
+            :
+
+            <PopularCarousel
+              allProducts={allProducts}
+              popularIndex={popularIndex}
+              setPopularIndex={setPopularIndex} setPopularUpperIndex={setPopularUpperIndex} popularUpperIndex={popularUpperIndex} setPopularLowerIndex={setPopularLowerIndex} popularLowerIndex={popularLowerIndex}
+
+              style={{
 
               display: "flex",
               flexWrap: "none",
@@ -101,6 +89,8 @@ const Home = (props) => {
               minWidth: "100vw",
 
             }} />
+          
+          }
 
         </div>
 
