@@ -44,6 +44,7 @@ const ProductCreate = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+    product.reviews.push(review)
     const created = await createProduct(product)
     setCreated({ created })
   }
