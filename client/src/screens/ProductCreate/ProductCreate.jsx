@@ -177,17 +177,18 @@ const ProductCreate = (props) => {
           Photos:
            <br />
           Main Photo
-          <img src={product.imgURL}></img>
+          <img className="create-img-preview" src={product.imgURL}></img>
           <br />
-          Second Angle
-          <img src={product.imgURL2}></img>
-          <br />
+          <div className="create-img-angles">
+            Second Angle
+             <br />
+            <img className="create-img-preview2" src={product.imgURL2}></img>
           Third Angle
-          <img src={product.imgURL3}></img>
+            <br />
+            <img className="create-img-preview2" src={product.imgURL3}></img>
+          </div>
           <br />
           <br />
-        Content:
-        <br />
           <br />
           Name-{product.name}
           <br />
