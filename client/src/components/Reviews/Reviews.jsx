@@ -19,7 +19,7 @@ const Reviews = (props) => {
         <div className="reviews">
             <h5 className="review-title">REVIEWS:</h5>
                 {REVIEW} 
-                <ReviewForm/> 
+                <ReviewForm product={props.product} id={props.id}/> 
         </div>
     );
 };

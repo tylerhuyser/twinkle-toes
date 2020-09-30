@@ -1,36 +1,64 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ReviewForm.css'
+import {updateProduct} from "../../services/products.js"
 
-const ReviewForm = ({ author, rating, description, onChange, onSubmit }) => {
+const ReviewForm = (props) => {
+    const {product, id } = props
+
+    const [product1, setProduct] = useState({
+        name: '',
+        description: '',
+        imgURL: '',
+        price: '',
+        reviews: []
+    })
+    const handleChange = (event) => {
+        const { name, value } = event.target
+        setReview({
+            ...review,
+            [name]: value
+        })
+    }
+    const [review, setReview] = useState({
+        author: '',
+        rating: '',
+        description: ''
+    })
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+        product.reviews.push(review)
+        setProduct(product)
+        await updateProduct(id, product)
+    }
     return (
-        <form className="review-create-form" onSubmit={(e) => onSubmit(e)}>
+        <form className="review-create-form" onSubmit={(e) => handleSubmit(e)}>
             <input
                 className="review-input-author"
                 placeholder="Name"
-                value={author}
+                value={review.author}
                 name='author'
                 required
                 autoFocus
-                onChange={(e) => onChange(e)}
+                onChange={(e) =>  handleChange(e)}
             />
             <input
                 className="review-input-rating"
                 placeholder="Rating (1-5)"
-                value={rating}
+                value={review.rating}
                 name="rating"
                 required
-                onChange={(e) => onChange(e)}
+                onChange={(e) =>  handleChange(e)}
             />
             <textarea
                 className="review-textarea-description"
                 rows={10}
                 placeholder="Write your review..."
-                value={description}
+                value={review.description}
                 name="description"
                 required
-                onChange={(e) => onChange(e)}
+                onChange={(e) => handleChange(e)}
             />
-            <button type='submit' className="review-submit-button">Submit</button>
+            <button type='submit' className="review-submit-button" onSubmit={handleSubmit}>Submit</button>
         </form>
     )
 }

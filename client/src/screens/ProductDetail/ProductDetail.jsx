@@ -13,7 +13,11 @@ const ProductDetail = (props) => {
     const { id } = useParams();
     const [editVisibility, setEditVisibility] = useState(false);
     const [isUpdated, setUpdated] = useState(false);
-
+    const [review, setReview] = useState({
+        author: '',
+        rating: '',
+        description: ''
+    })
     useEffect(() => {
         const fetchProduct = async () => {
             const product = await getProduct(id);
@@ -31,7 +35,10 @@ const ProductDetail = (props) => {
     const loadUpdate = () => {
         setUpdated(!isUpdated);
     };
-    //https://upmostly.com/tutorials/how-to-refresh-a-page-or-component-in-react#:~:text=If%20set%20to%20true%2C%20the,cached%20version%20of%20the%20page.&text=import%20React%20from%20'react'%3B,refreshPage%7D%3EClick%20to%20reload!
+
+    //https://upmostly.com/tutorials/how-to-refresh-a-page-or-component-in-react#:~:text=If%20set%20to%20true%2C%20the,cached%20version%20of%20the%20page.&text=import%20React%20from%20'react'%3B,refreshPage%7D%3EClick%20to%20reload!\
+   
+
     if (isUpdated) {
         window.location.reload(false);
     }
@@ -113,7 +120,7 @@ const ProductDetail = (props) => {
             <div className="similarItems">
                 <h5>SIMILAR ITEMS</h5>
             </div>
-            <Reviews reviews={product.reviews} />
+            <Reviews reviews={product.reviews} product={product} id={id}/>
         </Layout>
     );
 };
