@@ -56,3 +56,8 @@
   border: 1px solid #D091C9;
   border-radius: 15px;
 }
+
+.edit-not-a-page{
+  height:fit-content;
+  width: fit-content;
+}

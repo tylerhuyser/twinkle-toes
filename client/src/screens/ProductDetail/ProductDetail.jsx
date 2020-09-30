@@ -125,11 +125,6 @@ const ProductDetail = (props) => {
               </button>
             </div>
           </div>
-          <div className="similarItems">
-            <h5>SIMILAR ITEMS</h5>
-
-          </div>
-          <Reviews reviews={product.reviews} />
         </div>
       </div>
 
