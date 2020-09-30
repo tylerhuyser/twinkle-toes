@@ -1,9 +1,62 @@
 
-.create-form,.review-container{
+.whole-page-container{
+  display: flex;
+}
+.create-form,
+.create-review-container,
+.create-preview{
   display:flex;
   flex-direction:column;
   margin: 25px;
+  width: 45vw;
+  background-color: rgba(144, 101, 139, 0.627);
+  align-items:center;
+  border-radius:50px;
+  border: 7px solid #D091C9;
 }
-input,textarea{
-  margin:5px;
+.create-review-container{
+  background-color: rgba(144, 101, 139, 0.0);
+  border: none;
+}
+
+
+.create-image-link,
+.create-name,
+.create-price,
+.create-textarea-description,
+.create-rating,
+.create-tag,
+.create-review-author,
+.create-review-rating,
+.create-review-description{
+  background-color: #F7ECEC;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 7px;
+  border: 1px solid #D091C9;
+  width:35vw;
+  box-shadow: 2px 2px 10px 2px pink;
+}
+.create-rating,
+.create-price,
+.create-review-rating{
+  width:75px;
+}
+
+.create-submit-button{
+  
+    margin:10px 0 50px 0;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    height: 40px;
+    width: 100px;
+    border-radius: 50px;
+    align-self: center;
+    background-color: pink;
+    color: white;
+    border: 1px solid #D091C9;
+    box-shadow: 2px 2px 10px 2px #CECECE;
+    cursor: pointer;
+
 }
