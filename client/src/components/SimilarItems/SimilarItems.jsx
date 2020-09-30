@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import './Similar.css';
+import { Link } from 'react-router-dom';
 
 export default function SimilarItems(props) {
 
@@ -6,7 +8,6 @@ export default function SimilarItems(props) {
   let similar = [];
   let display = [];
   let rndm = 0;
-  const [isLoaded, setLoaded] = useState(false);
 
   allProducts.forEach((shoe) => {
     if (shoe.tag.includes(tag)) {
@@ -15,53 +16,41 @@ export default function SimilarItems(props) {
 
   })
 
-  useEffect(() => {
-    const genSim = () => {
-      if (similar.length > 3) {
+  const genSim = () => {
+    if (similar.length > 3) {
 
-        while (display.length < 3) {
-          rndm = Math.floor((Math.random() * similar.length));
-          display.push(similar.splice(rndm, 1))
-          console.log(display)
-          console.log(similar)
-        };
-      } else (
-        similar.forEach((shoe) => {
-          display.push(shoe)
-        })
-      )
-      setLoaded(true)
-    };
-    genSim();
-  }, [similar]);
+      while (display.length < 3) {
+        rndm = Math.floor((Math.random() * similar.length));
+        display.push(similar.splice(rndm, 1))
+      }
 
+    } else (
+      similar.forEach((shoe) => {
+        display.push(shoe)
+      })
+    )
 
-
-
-
-  if (!isLoaded) {
-    return <h1>Loading...</h1>;
   }
 
+  genSim()
+
   return (
-    // <div>
-    //   Will do some math do display three random shoes.
-    //   <br />
-    //   shoe1={display[0][0].name}
-    //   <br />
-    //   shoe2={display[1][0].name}
-    //   <br />
-    //   shoe3={display[2][0].name}
-
-    // </div>
-
-    <div className="common-items-flex-box">
-      {display.map((shoe, idx) => (
-        <div className="common-items-link" key={idx}>
-          <img src={shoe[idx][0].imgURL} alt={shoe[idx][0].name}></img>
-        </div>
-      ))}
-
+    <div className="similar-items-flex-box">
+      <div>
+        <Link to={`/products/${display[0][0]._id}`}>
+          <img className="similar-items-pic" src={display[0][0].imgURL} alt="similar product one" />
+        </Link>
+      </div>
+      <div>
+        <Link to={`/products/${display[1][0]._id}`} >
+          <img className="similar-items-pic" src={display[1][0].imgURL} alt="similar product two" />
+        </Link>
+      </div>
+      <div>
+        <Link to={`/products/${display[2][0]._id}`} >
+          <img className="similar-items-pic" src={display[2][0].imgURL} alt="similar product three" />
+        </Link>
+      </div>
     </div>
   );
 };

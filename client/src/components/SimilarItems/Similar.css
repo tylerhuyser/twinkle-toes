@@ -1,0 +1,11 @@
+.similar-items-flex-box{
+  align-items:center;
+  display:flex;
+  flex-direction: row;
+  width: 75vw;
+  justify-content: space-around;
+}
+.similar-items-pic{
+  width:20vw;
+  height:auto;
+}
