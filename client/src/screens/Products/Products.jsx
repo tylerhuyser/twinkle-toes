@@ -61,6 +61,7 @@ const Products = (props) => {
       rating={product.rating}
       imgURL={product.imgURL}
       price={product.price}
+      rating={product.rating}
       key={index}
     />
   ));
