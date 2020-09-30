@@ -13,7 +13,7 @@ const ProductCreate = (props) => {
     imgURL3: "",
     description: "",
     price: "",
-    rating: "",
+    admin_rating: "",
     tag: "street",
     reviews: []
   });
@@ -120,8 +120,8 @@ const ProductCreate = (props) => {
         <input
             className="create-rating"
             placeholder='Rated _/5'
-            value={product.rating}
-            name='rating'
+            value={product.admin_rating}
+            name='admin_rating'
             required
             onChange={handleChange}
             type='number'
