@@ -135,7 +135,7 @@ const ProductDetail = (props) => {
 
       <div className="similarItems">
         <h5>SIMILAR ITEMS</h5>
-        <SimilarItems allProducts={allProducts} tag={product.tag} />
+        <SimilarItems allProducts={allProducts} tag={product.tag} id={id} />
       </div>
       <Reviews reviews={product.reviews} product={product} id={id} />
     </Layout>

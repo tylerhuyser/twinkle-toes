@@ -116,9 +116,9 @@ const main = async () => {
       },
       {
         "name": "D & G Shiny Slip On",
-        "imgURL": "https://i.imgur.com/0xHpJg3.jpg",
-        "imgURL2": "https://i.imgur.com/u4CFDX7.jpg",
-        "imgURL3": "https://i.imgur.com/4SHohE6.jpg",
+        "imgURL": "https://i.imgur.com/e715hfs.jpg",
+        "imgURL2": "https://i.imgur.com/VHiHMWg.jpg",
+        "imgURL3": "https://i.imgur.com/CG8lMBC.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Duis molestie aliquet justo eu volutpat.Sed lobortis turpis vel ex pharetra aliquet.Sed hendrerit, tellus id mollis scelerisque, sapien magna auctor velit.",
         "price": "$300.00",
         "admin_rating": 3,
