@@ -15,6 +15,8 @@ const ProductDetail = (props) => {
   const [editVisibility, setEditVisibility] = useState(false);
   const [isUpdated, setUpdated] = useState(false)
 
+  const [primaryImage, setPrimaryImage] = useState(props.imgURL)
+
   useEffect(() => {
     const fetchProduct = async () => {
       const product = await getProduct(id)
@@ -43,9 +45,11 @@ const ProductDetail = (props) => {
  
 
   return (
+    
     <Layout
       handleChange={props.handleChange}
       handleSubmit={props.handleSubmit}>
+
       <div id="edit-box" className={editVisibility ? "edit-visible" : "edit-hidden"}>
         <ProductEdit
           imgURL={product.imgURL}
@@ -60,29 +64,46 @@ const ProductDetail = (props) => {
           loadUpdate={loadUpdate}
         />
       </div>
-      <div className="product-detail">
-        <div>
-          <img className="product-detail-image" src={product.imgURL} alt={product.name} />
-          <img className="product-detail-image" src={product.imgURL2} alt={product.name} />
-          <img className="product-detail-image" src={product.imgURL3} alt={product.name} />
-        </div>
 
-        <div className="detail">
-          <div className="name">{product.name}</div>
-          <div className="rating">{product.rating}</div>
-          <div className="price">{`${product.price}`}</div>
-          <div className="description">{product.description}</div>
-          <div className="button-container">
-            <button className="edit-button" onClick={(e) => changeVisibility(e)}>Edit</button>
-            <button className="delete-button" onClick={() => deleteProduct(product._id)}>Delete</button>
+      {primaryImage ?
+
+        <div className="product-detail">
+
+          <div className="product-detail-images">
+
+            <img className="primary-product-detail-image" src={primaryImage} alt="primary-image" />
+
+            <div className="alternate-product-detail-images">
+              <img className="product-detail-image" src={product.imgURL} alt="image-1" onClick={() => setPrimaryImage(product.imgURL)} />
+              <img className="product-detail-image" src={product.imgURL2} alt="image-2" onClick={() => setPrimaryImage(product.imgURL2)} />
+              <img className="product-detail-image" src={product.imgURL3} alt="image-3" onClick={() => setPrimaryImage(product.imgURL3)} />
+            </div>
+
           </div>
-        </div>
-        <div className="similarItems">
-          <h5>SIMILAR ITEMS</h5>
 
+          <div className="detail">
+            <div className="name">{product.name}</div>
+            <div className="rating">{product.rating}</div>
+            <div className="price">{`${product.price}`}</div>
+            <div className="description">{product.description}</div>
+            <div className="button-container">
+              <button className="edit-button" onClick={(e) => changeVisibility(e)}>Edit</button>
+              <button className="delete-button" onClick={() => deleteProduct(product._id)}>Delete</button>
+            </div>
+          </div>
+          <div className="similarItems">
+            <h5>SIMILAR ITEMS</h5>
+
+          </div>
+          <Reviews reviews={product.reviews} />
         </div>
-        <Reviews reviews={product.reviews}/>
-      </div>
+      
+        :
+        
+        <div className="product-details-loading">
+          <p className="product-details-loading-message">Loading!</p>
+        </div>
+      }
 
     </Layout>
   )
