@@ -1,165 +1,109 @@
-import React, { useState, useEffect, useLayoutEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import PopularProduct from '../../components/PopularProduct/PopularProduct.jsx'
 import './PopularCarousel.css';
 import { highestRatingFirst } from "../../utils/sort"
-import { getProducts } from "../../services/products";
 
 const PopularCarousel = (props) => {
 
+  const [popularCarousel, setPopularCarousel] = useState([]);
+  
+  const { popularLowerIndex, setPopularLowerIndex } = props;
+  const { popularUpperIndex, setPopularUpperIndex } = props;
 
-  const { popularIndex, setPopularIndex } = props;
-  // const { popularUpperIndex, setPopularUpperIndex } = props;
-  // const { popularLowerIndex, setPopularLowerIndex } = props;
-  const [popularProducts, setPopularProducts] = useState(props.allProducts);
-  const [popularCarousel, setPopularCarousel] = useState([])
-
-  // console.log(props)
-
-  // useEffect(() => {
-  //   const fetchProducts = async () => {
-  //     const products = await getProducts()
-  //     const sortedProducts = highestRatingFirst(products)
-  //     console.log(sortedProducts)
-  //     setPopularProducts(sortedProducts.splice(0, 7))
-  //     setPopularCarousel(popularItemCards.splice(0,4))
-  //   }
-  //   fetchProducts()
-  // }, [])
-
-  // useLayoutEffect(() => {
-  //   const setPopularProducts = () => {
-  //       console.log('begin layout effect')
-  //       console.log(props.allProducts)
-  //       console.log(popularProducts)
-  //     setPopularProducts(highestRatingFirst(props.allProducts.splice(0, 7)))
-  //       console.log('end LayoutEffect')
-  //       console.log(popularProducts)
-  //   }
-  //   setPopularProducts();
-  // }, [])
 
   useEffect(() => {
     const getPopularCarousel = () => {
-      console.log('begin use effect')
-      console.log(highestRatingFirst(props.allProducts.splice(0, 7)))
-      setPopularCarousel(popularItemCards.splice(0, 5))
-        console.log('end use effect')
+      setPopularCarousel(popularItemCards.slice(0, 5))
     }
     getPopularCarousel();
   }, [])
 
+  
+  const popularItemCards = highestRatingFirst(props.allProducts).slice(0, 7).map((product, idx) => (
 
-
-  // const popularProducts = props.allProducts
-  // console.log(popularProducts)
-
-  // useEffect(() => {
-  //   // showSlides(popularUpperIndex, popularLowerIndex)
-  //   // console.log(popularProducts)
-  //   showSlides(popularIndex)
-  //   setPopularProducts(highestRatingFirst(props.allProducts.splice(0, 7)))
-
-
-  //   console.log(popularProducts)
-  // }, [popularIndex])
-
-
-  // const popularItemCards = popularProducts.map((element, idx) => {
-  //   if (idx < 7) {
-  //     return (
-  //       <div className="popular-item-container" key={idx}
-  //         style={{
-
-  //           maxWidth: "15vw",
-  //           height: "auto",
-  //           display: "flex",
-  //           alignItems: "center",
-  //           alignContent: "center",
-  //           justifyContent: "center",
-  //           padding: "5px",
-  //           background: "#F7ECEC",
-  //           borderRadius: "8px",
-  //           border: "3px solid #D091C9"
-        
-  //         }}>
-  //         <img src={element.imgURL} alt={idx} key={idx} style={{
-
-  //           // flexGrow: "1",
-  //           objectFit: "scale-down",
-  //           maxWidth: "15vw",
-  //           maxHeight: "15vh",
-  //           borderRadius: "8px",
-          
-  //         }} />
-  //       </div>
-  //     )
-  //   }
-  // })
-
-  const popularItemCards = highestRatingFirst(props.allProducts.splice(0, 7)).map((product, idx) => (
     <PopularProduct
     _id={product._id}
     name={product.name}
     imgURL={product.imgURL}
     price={product.price}
+    rating={product.rating}
     key={idx}
-  />))
+    />
 
-  function showSlides(a) {
-    if (a === undefined) {
-      a = 0
-      // b = 0
-    } 
-    console.log(a)
-    // console.log(b)
-    console.log(popularItemCards)
-    // setPopularUpperIndex(a)
-    // setPopularLowerIndex(b)
-    setPopularCarousel(popularItemCards.splice(a, a+5))
-  }
+    ))
 
+  
   function plusSlides(n) {
 
-    // let tempUpperIndex = popularUpperIndex
-    // let tempLowerIndex = popularLowerIndex
-
-    let tempIndex = popularIndex
-
-    if ((n === (-1)) && (popularIndex === 0)) {
-     
-      // tempUpperIndex -= 1;
-      // tempLowerIndex = (popularItemCards.length - 1);
-      console.log(popularItemCards.length)
-      tempIndex = (popularItemCards.length - 1)
-      
-    };
+    let tempLowerIndex = popularLowerIndex
+    let tempUpperIndex = popularUpperIndex
     
-    if ((n === (-1)) && (popularIndex !== 0)) {
+    console.log(popularItemCards)
+    console.log(popularCarousel)
+
+    if ((n === (-1)) && (tempLowerIndex === 0)) {
+     
+      popularCarousel.pop()
+      setPopularCarousel(popularCarousel)
       
-      // tempUpperIndex -= 1;
-      // tempLowerIndex -= 1;
+      tempLowerIndex = (popularItemCards.length - 1)
+      tempUpperIndex -= 1;
 
-      tempIndex -= 1;
+      setPopularLowerIndex(tempLowerIndex)
+      setPopularUpperIndex(tempUpperIndex)
 
-    };
-    if (n === 1 && (popularIndex === (popularItemCards.length - 1))) {
+      setPopularCarousel(prevPopularCarousel => {
+        return [popularItemCards[tempLowerIndex], ...prevPopularCarousel]
+      });
+
+    } else if ((n === (-1)) && (tempLowerIndex !== 0)) {
       
-      // tempUpperIndex = 0;
-      // tempLowerIndex += 1
+      popularCarousel.pop()
+      setPopularCarousel(popularCarousel)
 
-      tempIndex = 0;
+      tempUpperIndex -= 1;
+      tempLowerIndex -= 1;
 
+      setPopularLowerIndex(tempLowerIndex)
+      setPopularUpperIndex(tempUpperIndex)
+
+      setPopularCarousel(prevPopularCarousel => {
+        return [popularItemCards[tempLowerIndex], ...prevPopularCarousel]
+      });
+
+    } else if (n === 1 && (tempUpperIndex === (popularItemCards.length - 1))) {
+
+      popularCarousel.shift()
+      setPopularCarousel(popularCarousel)
+      console.log(popularCarousel)
+      
+      tempUpperIndex = 0;
+      tempLowerIndex += 1
+
+      setPopularLowerIndex(tempLowerIndex)
+      setPopularUpperIndex(tempUpperIndex)
+
+      setPopularCarousel(prevPopularCarousel => {
+        return [...prevPopularCarousel, popularItemCards[tempUpperIndex]]
+      });
+
+    } else if (n === 1 && (tempUpperIndex !== (popularItemCards.length - 1))) {
+
+      popularCarousel.shift()
+      setPopularCarousel(popularCarousel)
+      console.log(popularCarousel)
+      
+      tempUpperIndex += 1
+      tempLowerIndex += 1
+
+      setPopularLowerIndex(tempLowerIndex)
+      setPopularUpperIndex(tempUpperIndex)
+
+      setPopularCarousel(prevPopularCarousel => {
+        return [...prevPopularCarousel, popularItemCards[tempUpperIndex]]
+      });
     };
-    if (n === 1 && (popularIndex !== (popularItemCards.length - 1))) {
-
-      // tempUpperIndex += 1
-      // tempLowerIndex += 1
-
-      tempIndex += 1;
-
-    };
-    showSlides(tempIndex)
   };
 
   
@@ -179,10 +123,15 @@ const PopularCarousel = (props) => {
       <a className="prevPopular" onClick={() => plusSlides(-1)} > &#10094;</a>
 
       <div className="popularItemsCards" style={{
-        minWidth: "80vw",
+        
         flexGrow: "1",
+        
+        minWidth: "80vw",
+
         display: "flex",
         flexDirection: "row",
+        justifyContent: 'space-between',
+
 
       }}>
         {popularCarousel}
