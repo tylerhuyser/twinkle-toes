@@ -60,6 +60,7 @@ const Products = (props) => {
       name={product.name}
       imgURL={product.imgURL}
       price={product.price}
+      rating={product.rating}
       key={index}
     />
   ));
