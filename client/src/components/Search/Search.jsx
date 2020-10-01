@@ -5,8 +5,8 @@ import { Redirect } from 'react-router-dom';
 const Search = (props) => {
 
   let search = props.search;
-  const { allProducts, setAllProducts } = props;
-  const [queriedProducts, setQueriedProducts] = useState([])
+  // const { allProducts, setAllProducts } = props;
+  // const [queriedProducts, setQueriedProducts] = useState([])
 
   const [isSearched, setSearched] = useState(false)
 
@@ -17,7 +17,7 @@ const Search = (props) => {
   }
 
   return (
-    <form className="search-form" onSubmit={(e) => props.handleSubmit(e)} >
+    <form className="search-form" tabindex="-1" onSubmit={(e) => props.handleSubmit(e)} >
       <input
         className="search-input"
         value={search}
