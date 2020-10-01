@@ -1,24 +1,23 @@
 import React, { useState, useEffect } from "react";
-import Reviews from "../../components/Reviews/Reviews";
-
-import Layout from "../../components/shared/Layout/Layout";
 import { getProduct, deleteProduct } from "../../services/products";
 import { useParams, Redirect } from "react-router-dom";
+
+import Layout from "../../components/shared/Layout/Layout";
 import ProductEdit from "../../components/Edit/ProductEdit.jsx";
+import Reviews from "../../components/Reviews/Reviews";
 import StarRating from '../../components/StarRating/StarRating';
 
+import './ProductDetail.css';
+
 const ProductDetail = (props) => {
-    // const { allProducts, setAllProducts } = props;
+
+
     const [product, setProduct] = useState(null);
     const [isLoaded, setLoaded] = useState(false);
     const { id } = useParams();
     const [editVisibility, setEditVisibility] = useState(false);
     const [isUpdated, setUpdated] = useState(false);
-    // const [review, setReview] = useState({
-    //     author: '',
-    //     rating: '',
-    //     description: ''
-    // })
+
     
     const [primaryImage, setPrimaryImage] = useState("") 
     

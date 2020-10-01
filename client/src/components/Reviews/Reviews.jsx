@@ -1,4 +1,5 @@
 import React from 'react';
+import './Reviews.css';
 
 import ReviewForm from "../ReviewForm/ReviewForm";
 import StarRating from '../StarRating/StarRating';
@@ -40,19 +41,23 @@ const Reviews = (props) => {
                 
               margin: "5px",
               width: "100%",
+
               display: "flex",
-              alignContent: "left",
+              alignContent: "flex-start",
               
               }} />
             
               <h6 className="review-copy" key={idx} style={{
                 
                 fontFamily: "Source Sans Pro",
+                fontSize: "12px",
                 color: "#5F2758",
                 fontWeight: "500",
                 textAlign: "left",
                 
                 marginBottom: "5px",
+                paddingRight: "10px",
+              
               
               }} >{review.description}</h6> 
           </div>
