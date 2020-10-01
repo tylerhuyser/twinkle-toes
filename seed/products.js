@@ -147,7 +147,7 @@ const main = async () => {
         "imgURL2": "https://i.imgur.com/waLhutY.png",
         "imgURL3": "https://i.imgur.com/kZPFifk.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Duis molestie aliquet justo eu volutpat.Sed lobortis turpis vel ex pharetra aliquet.Sed hendrerit, tellus id mollis scelerisque, sapien magna auctor velit.",
-        "price": " 300.00",
+        "price": "300.00",
         "admin_rating": 4,
         "tag": "street",
         "reviews": [
