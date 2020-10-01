@@ -1,15 +1,17 @@
 
-.whole-page-container{
+.whole-page-container,.create-row{
   display: flex;
 }
 .create-form,
 .create-review-container,
-.create-preview{
+.create-preview,
+.create-photos-column,
+.create-content-preview{
   display:flex;
   flex-direction:column;
-  margin: 25px;
+  margin: 15px;
   width: 45vw;
-  background-color: rgba(144, 101, 139, 0.627);
+  background-color: #F7ECEC;
   align-items:center;
   border-radius:50px;
   border: 7px solid #D091C9;
@@ -18,7 +20,19 @@
   background-color: rgba(144, 101, 139, 0.0);
   border: none;
 }
-
+.create-photos-column,
+.create-content-preview{
+  width:20vw;
+  padding: 10px 0;
+  height: 500px;
+  justify-content:space-evenly;
+}
+.create-preview{
+  flex-direction:column;
+}
+.create-row{
+  flex-direction:row;
+}
 
 .create-image-link,
 .create-name,
@@ -63,14 +77,21 @@
 
 .create-img-preview{
   width: 20vw; 
-  height: auto
+  height: auto;
+  border: 1px solid #D091C9;
+  border-radius: 7px;
 }
 .create-img-preview2{
-  width: 10vw; 
-  height: auto
+  width: 5vw; 
+  height: auto;
 }
 
 .create-img-angles{
+  border: 1px solid #D091C9;
+  border-radius: 7px;
+  width:20vw;
   display:flex;
   align-items: center;
+  flex-direction:row;
+  justify-content:space-between;
 }
