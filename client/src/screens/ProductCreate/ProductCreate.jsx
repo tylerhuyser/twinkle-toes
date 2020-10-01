@@ -181,14 +181,8 @@ export default function ProductCreate(props) {
           <img className="create-img-preview" src={product.imgURL}></img>
               <br />
               <div className="create-img-angles">
-                Main Photo Mini
-            <br />
-                <img className="create-img-preview2" src={product.imgURL1}></img>
-            Second Angle
-             <br />
+                <img className="create-img-preview2" src={product.imgURL}></img>
                 <img className="create-img-preview2" src={product.imgURL2}></img>
-          Third Angle
-            <br />
                 <img className="create-img-preview2" src={product.imgURL3}></img>
               </div>
             </div>
@@ -197,14 +191,16 @@ export default function ProductCreate(props) {
               <div>Name-{product.name}</div>
               <div>Price-{product.price}</div>
               <div>Description-{product.description}</div>
-              <div>Admin's Rating-{product.admin_rating}</div>
-              <div>Tag-{product.tag}</div>
+              <div>Admin's Rating-{product.admin_rating}</div><br />
+              <div>Tag-{product.tag}<br />(The tag show up on the page; it's here for your confirmation during product creation.</div>
             </aside>
           </main>
           <div className="create-review-preview">
-            Review:
-        <br />
             <br />
+            ]SIMILAR ITEMS WILL GO HERE[
+            <br /><br />
+            Review:
+            <br /><br />
           Review Author-{review.author}
             <br />
           Review Rating-{review.rating}
