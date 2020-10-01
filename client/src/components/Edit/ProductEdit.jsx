@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ProductEdit.css';
 import { updateProduct } from '../../services/products.js';
 
 export default function ProductEdit(props) {
@@ -35,6 +36,8 @@ export default function ProductEdit(props) {
   })
 
 
+
+
   const handleSubmit = async (event) => {
     event.preventDefault()
     await updateProduct(id, product)
@@ -43,272 +46,143 @@ export default function ProductEdit(props) {
 
 
   return (
-    <div className="edit-container" style={{
+    <div className="edit-not-a-page">
+      <div className="edit-component">
 
-      // Visual Properties:
-      backgroundColor: "rgba(255,255,255,.8)",
-      width: "100vw",
-      minHeight: "100vh",
-      // padding: "10px 10px",
-                            
-      // Container Properties:
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      padding: "0px 10px",
-      
-       }}>
+        <form className="edit-container" onSubmit={handleSubmit}>
+          <div id="edit-photos-column">
+            <div className="edit-input">Display Photo:
+              <br />
+              <img
+                className="edit-photo-main"
+                alt='This is the display photo.'
+                src={product.imgURL}
+                name='imgURL'
+              />
+              <br />
+              <input
+                className="edit-image-link"
+                placeholder="Primary Preview Link"
+                value={product.imgURL}
+                name='imgURL'
+                required
+                onChange={handleChange}
+                type='text'
+              />
+            </div>
+            <div className="edit-photos-row">
+              <div className="edit-input">Products Page Sees:
+                <br />
+                <img
+                  className="edit-photo-mini"
+                  alt='This is the display photo.'
+                  src={product.imgURL}
+                  name='imgURL'
+                />
+              </div>
 
-      <form className="edit-form" onSubmit={handleSubmit} style={{
+              <div className="edit-input">Second Angle:
+                <br />
+                <img
+                  className="edit-photo-mini"
+                  alt='Angle Two.'
+                  src={product.imgURL2}
+                  name='imgURL2'
+                />
+                <br />
+                <input
+                  className="edit-image-link"
+                  placeholder='Angle Two'
+                  value={product.imgURL2}
+                  name='imgURL2'
+                  required
+                  onChange={handleChange}
+                />
+              </div>
 
-          backgroundColor: "white",
-          width: "100vw",
-          // padding: "10px 10px",
-                                
-          // Container Properties:
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          alignItems: "center",
-          padding: "0px 10px",
+              <div className="edit-input">Third Angle:
+                <br />
+                <img
+                  className="edit-photo-mini"
+                  alt='Angle Three.'
+                  src={product.imgURL3}
+                  name='imgURL3'
+                />
+                <br />
+                <input
+                  className="edit-image-link"
+                  placeholder='Image Link'
+                  value={product.imgURL3}
+                  name='imgURL3'
+                  required
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+          </div>
 
-        
-      }}>
+          <article id="edit-right-column">
+            <div className="edit-input">Shoe Name:
+            <br />
+              <input
+                className="edit-name"
+                placeholder='Product Name'
+                value={product.name}
+                name='name'
+                required
+                autoFocus
+                onChange={handleChange}
+              />
+            </div>
 
-      <h5 className="edit-product-form-title" style={{
-                
-          fontFamily: "Roboto",
-          fontSize: "18px", 
-          color: "#5F2758",
-          letterSpacing: "0.9px",
-          textAlign: "center",
-          fontWeight: "500",
-                
-          width: "60%",
-          margin: "0px 0px 25px 0px",
-          padding: "25px",
-              
-            }} >
-          EDIT PRODUCT
-        </h5>
-        
-        
-          <input
-          
-            className="edit-name"
-            placeholder='Product Name'
-            value={product.name}
-            name='name'
-            required
-            onChange={handleChange}
-            
-            style={{
-                  
-              fontFamily: "Roboto",
-              fontSize: "18px", 
-              color: "#5F2758",
-              fontWeight: "300",
-              textAlign: "left",
+            <div className="edit-input">Rating:
+            <br />
+              <input
+                className="edit-rating"
+                placeholder='Rated _/5'
+                value={product.admin_rating}
+                name='admin_rating'
+                required
+                onChange={handleChange}
+                type='number'
+                max="5"
+                min="0"
+              />
+            </div>
 
-              width: "60%",
-              border: "none",
-              
-              margin: "5px",
-            
-            }}
-          />
- 
-          <input
-            className="edit-price"
-            placeholder='Price'
-            value={product.price}
-            name='price'
-            required
-            onChange={handleChange}
-          
-            style={{
-                  
-              fontFamily: "Roboto",
-              fontSize: "18px", 
-              color: "#5F2758",
-              fontWeight: "300",
-              textAlign: "left",
+            <div className="edit-input">Price:
+            <br />
+              $<input
+                className="edit-price"
+                placeholder='Price'
+                value={product.price}
+                name='price'
+                required
+                onChange={handleChange}
+              />
+            </div>
 
-              width: "60%",
-              border: "none",
-              
-              margin: "5px",
-            
-            }}
-          />
+            <div className="edit-input">Description:
+            <br />
+              <textarea
+                className="edit-description"
+                rows={10}
+                placeholder='Description'
+                value={product.description}
+                name='description'
+                required
+                onChange={handleChange}
+              />
+            </div>
+          </article>
+          <div className='edit-button-container'>
+            <button type='submit' className="edit-update-button" onClick={(e) => handleSubmit(e)}>Update</button>
+            <button type='cancel' className="edit-cancel-button" onClick={changeVisibility}>Cancel</button>
+          </div>
 
-          <textarea
-            className="edit-description"
-            rows={10}
-            placeholder='Description'
-            value={product.description}
-            name='description'
-            required
-            onChange={handleChange}
-            
-            style={{
-                  
-              fontFamily: "Roboto",
-              fontSize: "18px", 
-              color: "#5F2758",
-              fontWeight: "300",
-              textAlign: "left",
-
-              width: "60%",
-              border: "none",
-              
-              margin: "5px",
-            
-            }}/>
-
-          <input
-            className="edit-rating"
-            placeholder='Rated _/5'
-            value={product.rating}
-            name='rating'
-            required
-            onChange={handleChange}
-            type='number'
-            max="5"
-            min="0"
-            
-            style={{
-                  
-              fontFamily: "Roboto",
-              fontSize: "18px", 
-              color: "#5F2758",
-              fontWeight: "300",
-              textAlign: "left",
-
-              width: "60%",
-              border: "none",
-              
-              margin: "5px",
-            
-          }} />
-        
-        <input
-            className="edit-image-link"
-            placeholder="Primary Preview Link"
-            value={product.imgURL}
-            name='imgURL'
-            required
-            onChange={handleChange}
-            type='text'
-          
-            style={{
-                 
-              fontFamily: "Roboto",
-              fontSize: "18px", 
-              color: "#5F2758",
-              fontWeight: "300",
-              textAlign: "left",
-
-              width: "60%",
-              border: "none",
-              
-              margin: "5px",
-            
-            }}/>
-
-          <input
-            className="edit-image-link"
-            placeholder='Image Link'
-            value={product.imgURL2}
-            name='imgURL2'
-            required
-            onChange={handleChange}
-          
-            style={{
-                  
-              fontFamily: "Roboto",
-              fontSize: "18px", 
-              color: "#5F2758",
-              fontWeight: "300",
-              textAlign: "left",
-
-              width: "60%",
-              border: "none",
-              
-              margin: "5px",
-            
-            }}/>
- 
-          <input
-            className="edit-image-link"
-            placeholder='Image Link'
-            value={product.imgURL3}
-            name='imgURL3'
-            required
-            onChange={handleChange}
-            
-            style={{
-                  
-                    fontFamily: "Roboto",
-                    fontSize: "18px", 
-                    color: "#5F2758",
-                    fontWeight: "300",
-                    textAlign: "left",
-
-                    width: "60%",
-                    border: "none",
-                    
-                    margin: "5px",
-                  
-                  }}/>
- 
-
-        <div className='edit-buttons-container' style={{
-              
-              width: "45vw",
-
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-
-              }}>
-          <button type='submit' className="edit-update-button" onClick={(e) => handleSubmit(e)}  style={{
-                  
-                  background: "#DB93D3",
-                  width: "20vw",
-                  height: "35px",
-                  borderRadius: "15px",
-                  margin: "50px auto",
-
-                  color: "#FFFFFF",
-                  fontFamily: "Source Sans Pro",
-                  fontSize: "18px",
-                  textAlign: "center",
-                  letterSpacing: "0.75px",
-                  border: "none",
-
-                }}>Update</button>
-          <button type='cancel' className="edit-cancel-button" onClick={changeVisibility}  style={{
-                  
-                  background: "#DB93D3",
-                  width: "20vw",
-                  height: "35px",
-                  borderRadius: "15px",
-                  margin: "50px auto",
-
-                  color: "#FFFFFF",
-                  fontFamily: "Source Sans Pro",
-                  fontSize: "18px",
-                  textAlign: "center",
-                  letterSpacing: "0.75px",
-                  border: "none",
-
-                }}>Cancel</button>
-        </div>
-
-      </form>
-
-    </div>
+        </form>
+      </div>
+    </div >
   );
 };
+

@@ -3,19 +3,20 @@
     border: 1px solid #E67CDA;
     border-radius: 90px;
     height: 26px;
-    background-color: white;
-
+    max-width: 200px;
+    background-color: transparent;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
     margin: 0px 30px;
     width: 200px;
     flex-shrink: 1;
 }
+
  
 .search-input {
+    background-color: transparent;
     max-width: 30vw;
     height: 10px;
     max-height: 70px;
@@ -24,15 +25,19 @@
     margin: 0px;
     border-radius: 90px;
     border: none;
+    
 }
 
 .search-input::placeholder {
     letter-spacing: .3px;
     color: #E67CDA;
+    padding: 10px;
 }
 
 .fas {
+  background-color: transparent;
   padding-right: 5px;
+  color: #E67CDA;
 }
 
 .search-input:focus {

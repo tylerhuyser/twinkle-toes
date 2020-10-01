@@ -18,9 +18,9 @@ const Sort = (props) => {
       <select className="sort" onChange={handleChange}>
         <option defaultValue value="">Sort By</option>
         <option className="option" value="name-ascending">&nbsp; Alphabetically, A-Z &nbsp;</option>
-        <option value="name-descending">&nbsp; Alphabetically, Z-A &nbsp;</option>
-        <option value="price-ascending">&nbsp; Price, low to high &nbsp;</option>
-        <option value="price-descending">&nbsp; Price, high to low &nbsp;</option>
+        <option className="option" value="name-descending">&nbsp; Alphabetically, Z-A &nbsp;</option>
+        <option className="option" value="price-ascending">&nbsp; Price, low to high &nbsp;</option>
+        <option className="option" value="price-descending">&nbsp; Price, high to low &nbsp;</option>
         {/* Recommended option for line 22 Post-MVP*/}
         {/* <option value="recommended">&nbsp; Recommended &nbsp;</option> */}
         </select>
