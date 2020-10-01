@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
-import './ProductEdit.css';
 import { updateProduct } from '../../services/products.js';
-import { set } from 'mongoose';
+// import { set } from 'mongoose';
 
 export default function ProductEdit(props) {
 
@@ -38,8 +36,6 @@ export default function ProductEdit(props) {
   })
 
 
-
-
   const handleSubmit = async (event) => {
     event.preventDefault()
     await updateProduct(id, product)
@@ -49,60 +45,82 @@ export default function ProductEdit(props) {
 
   return (
 
-    <div className="edit-component">
-      <form className="edit-container" onSubmit={handleSubmit}>
+    <div className="edit-container" style={{
 
-        <div className="edit-input">Display Photo:
-         <br />
-          <input
-            className="edit-image-link"
-            placeholder="Primary Preview Link"
-            value={product.imgURL}
-            name='imgURL'
-            required
-            onChange={handleChange}
-            type='text'
-          />
-        </div>
+      // Visual Properties:
+      backgroundColor: "rgba(255,255,255,.8)",
+      width: "100vw",
+      minHeight: "100vh",
+      // padding: "10px 10px",
+                            
+      // Container Properties:
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: "0px 10px",
+      
+       }}>
 
-        <div className="edit-input">Second Angle:
-        <br />
-          <input
-            className="edit-image-link"
-            placeholder='Image Link'
-            value={product.imgURL2}
-            name='imgURL2'
-            required
-            onChange={handleChange}
-          />
-        </div>
+      <form className="edit-form" onSubmit={handleSubmit} style={{
 
-        <div className="edit-input">Third Angle:
-        <br />
-          <input
-            className="edit-image-link"
-            placeholder='Image Link'
-            value={product.imgURL3}
-            name='imgURL3'
-            required
-            onChange={handleChange}
-          />
-        </div>
+          backgroundColor: "white",
+          width: "100vw",
+          // padding: "10px 10px",
+                                
+          // Container Properties:
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "center",
+          padding: "0px 10px",
 
-        <div className="edit-input">Shoe Name:
-        <br />
+        
+      }}>
+
+      <h5 className="edit-product-form-title" style={{
+                
+          fontFamily: "Roboto",
+          fontSize: "18px", 
+          color: "#5F2758",
+          letterSpacing: "0.9px",
+          textAlign: "center",
+          fontWeight: "500",
+                
+          width: "60%",
+          margin: "0px 0px 25px 0px",
+          padding: "25px",
+              
+            }} >
+          EDIT PRODUCT
+        </h5>
+        
+        
           <input
+          
             className="edit-name"
             placeholder='Product Name'
             value={product.name}
             name='name'
             required
             onChange={handleChange}
-          />
-        </div>
+            
+            style={{
+                  
+              fontFamily: "Roboto",
+              fontSize: "18px", 
+              color: "#5F2758",
+              fontWeight: "300",
+              textAlign: "left",
 
-        <div className="edit-input">Price:
-        <br />
+              width: "60%",
+              border: "none",
+              
+              margin: "5px",
+            
+            }}
+          />
+ 
           <input
             className="edit-price"
             placeholder='Price'
@@ -110,11 +128,23 @@ export default function ProductEdit(props) {
             name='price'
             required
             onChange={handleChange}
-          />
-        </div>
+          
+            style={{
+                  
+              fontFamily: "Roboto",
+              fontSize: "18px", 
+              color: "#5F2758",
+              fontWeight: "300",
+              textAlign: "left",
 
-        <div className="edit-input">Description:
-        <br />
+              width: "60%",
+              border: "none",
+              
+              margin: "5px",
+            
+            }}
+          />
+
           <textarea
             className="edit-description"
             rows={10}
@@ -123,11 +153,22 @@ export default function ProductEdit(props) {
             name='description'
             required
             onChange={handleChange}
-          />
-        </div>
+            
+            style={{
+                  
+              fontFamily: "Roboto",
+              fontSize: "18px", 
+              color: "#5F2758",
+              fontWeight: "300",
+              textAlign: "left",
 
-        <div className="edit-input">Rating:
-        <br />
+              width: "60%",
+              border: "none",
+              
+              margin: "5px",
+            
+            }}/>
+
           <input
             className="edit-rating"
             placeholder='Rated _/5'
@@ -138,16 +179,138 @@ export default function ProductEdit(props) {
             type='number'
             max="5"
             min="0"
-          />
-        </div>
+            
+            style={{
+                  
+              fontFamily: "Roboto",
+              fontSize: "18px", 
+              color: "#5F2758",
+              fontWeight: "300",
+              textAlign: "left",
 
-        <div className='edit-button-container'>
-          <button type='submit' className="edit-update-button" onClick={(e) => handleSubmit(e)}>Update</button>
-          <button type='cancel' className="edit-cancel-button" onClick={changeVisibility}>Cancel</button>
+              width: "60%",
+              border: "none",
+              
+              margin: "5px",
+            
+          }} />
+        
+        <input
+            className="edit-image-link"
+            placeholder="Primary Preview Link"
+            value={product.imgURL}
+            name='imgURL'
+            required
+            onChange={handleChange}
+            type='text'
+          
+            style={{
+                 
+              fontFamily: "Roboto",
+              fontSize: "18px", 
+              color: "#5F2758",
+              fontWeight: "300",
+              textAlign: "left",
+
+              width: "60%",
+              border: "none",
+              
+              margin: "5px",
+            
+            }}/>
+
+          <input
+            className="edit-image-link"
+            placeholder='Image Link'
+            value={product.imgURL2}
+            name='imgURL2'
+            required
+            onChange={handleChange}
+          
+            style={{
+                  
+              fontFamily: "Roboto",
+              fontSize: "18px", 
+              color: "#5F2758",
+              fontWeight: "300",
+              textAlign: "left",
+
+              width: "60%",
+              border: "none",
+              
+              margin: "5px",
+            
+            }}/>
+ 
+          <input
+            className="edit-image-link"
+            placeholder='Image Link'
+            value={product.imgURL3}
+            name='imgURL3'
+            required
+            onChange={handleChange}
+            
+            style={{
+                  
+                    fontFamily: "Roboto",
+                    fontSize: "18px", 
+                    color: "#5F2758",
+                    fontWeight: "300",
+                    textAlign: "left",
+
+                    width: "60%",
+                    border: "none",
+                    
+                    margin: "5px",
+                  
+                  }}/>
+ 
+
+        <div className='edit-buttons-container' style={{
+              
+              width: "45vw",
+
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+
+              }}>
+          <button type='submit' className="edit-update-button" onClick={(e) => handleSubmit(e)}  style={{
+                  
+                  background: "#DB93D3",
+                  width: "20vw",
+                  height: "35px",
+                  borderRadius: "15px",
+                  margin: "50px auto",
+
+                  color: "#FFFFFF",
+                  fontFamily: "Source Sans Pro",
+                  fontSize: "18px",
+                  textAlign: "center",
+                  letterSpacing: "0.75px",
+                  border: "none",
+
+                }}>Update</button>
+          <button type='cancel' className="edit-cancel-button" onClick={changeVisibility}  style={{
+                  
+                  background: "#DB93D3",
+                  width: "20vw",
+                  height: "35px",
+                  borderRadius: "15px",
+                  margin: "50px auto",
+
+                  color: "#FFFFFF",
+                  fontFamily: "Source Sans Pro",
+                  fontSize: "18px",
+                  textAlign: "center",
+                  letterSpacing: "0.75px",
+                  border: "none",
+
+                }}>Cancel</button>
         </div>
 
       </form>
-    </div>
 
+    </div>
   );
 };

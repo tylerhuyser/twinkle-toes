@@ -31,7 +31,6 @@ const HeroCarousel = (props) => {
         display: "flex",
 
       }}>
-        <div className="number-text">{idx} / 5</div>
         <img src={element} alt={idx} key={idx} style={{
 
           width: "100%",
@@ -140,7 +139,7 @@ const HeroCarousel = (props) => {
   return (
     <div className="hero-carousel-container" style={{position: "relative",
       bottom: "100px",
-      zIndex: "-1",
+      zIndex: "0",
     }} >    
       
       <div className="hero-carousel" style={{
