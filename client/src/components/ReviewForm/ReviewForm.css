@@ -1,5 +1,6 @@
 .review-create-form {
-text-align: center;
+  align-items: center;
+  text-align: center;
   margin: 10px;
   display: flex;
   flex-direction: column;
@@ -9,13 +10,14 @@ text-align: center;
   border-radius: 12px;
 }
 .review-input-author {
-
+  max-width: 300px;
+  
 }
-.input-textarea-description {
-
-}
+/* .input-textarea-description {
+  
+} */
 .review-input-rating {
-
+  max-width: 300px;
 }
 .review-submit-button {
   margin: 10px;
@@ -33,7 +35,12 @@ text-align: center;
   cursor: pointer;
 }
 input {
-    background: #F7ECEC;
-    padding: 10px;
-    border-radius: 15px;
+  background: #f7ecec;
+  padding: 10px;
+  border-radius: 15px;
+}
+textarea {
+  background: #f7ecec;
+  padding: 10px 0px 10px 0px;
+  border-radius: 15px;
 }

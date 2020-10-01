@@ -30,6 +30,7 @@ const ReviewForm = (props) => {
         setProduct(product)
         await updateProduct(id, product)
     }
+    //ref star rating and create star rating.
     return (
         <form className="review-create-form" onSubmit={(e) => handleSubmit(e)}>
             <input
