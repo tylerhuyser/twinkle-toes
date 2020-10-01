@@ -57,7 +57,13 @@ const ProductDetail = (props) => {
       handleChange={props.handleChange}
       handleSubmit={props.handleSubmit}>
 
-      <div id="edit-box" className={editVisibility ? "edit-visible" : "edit-hidden"}>
+      <div id="edit-box" className={editVisibility ? "edit-visible" : "edit-hidden"} style={{
+
+        position: "fixed",
+        top: "50",
+        left: '50',
+
+      }}>
         <ProductEdit
           imgURL={product.imgURL}
           imgURL2={product.imgURL2}

@@ -26,7 +26,7 @@ const Reviews = (props) => {
     
             }}>
 
-              <h4 className="review-author-name" key={idx} style={{
+              <h4 className="review-author-name" style={{
 
                   fontSize: "18px",
                   letterSpacing: "0.9px",
@@ -34,6 +34,7 @@ const Reviews = (props) => {
                   fontWeight: "300",
 
                   width: "100%",
+                  marginTop: "0px",
                         
               }}>{review.author}</h4>
             
@@ -47,7 +48,7 @@ const Reviews = (props) => {
               
               }} />
             
-              <h6 className="review-copy" key={idx} style={{
+              <h6 className="review-copy" style={{
                 
                 fontFamily: "Source Sans Pro",
                 fontSize: "12px",
@@ -55,7 +56,7 @@ const Reviews = (props) => {
                 fontWeight: "500",
                 textAlign: "left",
                 
-                marginBottom: "5px",
+                marginBottom: "25px",
                 paddingRight: "10px",
               
               

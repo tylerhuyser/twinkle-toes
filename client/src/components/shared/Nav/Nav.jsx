@@ -7,7 +7,11 @@ const Nav = (props) => {
   const { allProducts, setAllProducts } = props;
 
   return (
-    <nav>
+    <nav style={{
+
+      zIndex: "5",
+
+    }}>
       <div className="nav" style={{
 
         // Physical Properties
