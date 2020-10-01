@@ -11,9 +11,9 @@ const Product = (props) => {
         <div className="product-image-container">
           <img className="product-image" src={props.imgURL} alt={props.name} />
         </div>
-        <StarRating rating={props.rating} />
+        <StarRating rating={props.admin_rating} />
         <div className="product-name">{props.name}</div>
-        <div className="product-price">{`${props.price}`}</div>
+        <div className="product-price">{`$${props.price}`}</div>
       </Link>
     </>
   );

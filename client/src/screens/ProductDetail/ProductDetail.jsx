@@ -10,7 +10,7 @@ import SimilarItems from "../../components/SimilarItems/SimilarItems.jsx";
 
 const ProductDetail = (props) => {
 
-  const { allProducts, setAllProducts } = props;
+  const { allProducts } = props;
   const [product, setProduct] = useState(null);
   const [isLoaded, setLoaded] = useState(false);
   const { id } = useParams();
@@ -65,7 +65,7 @@ const ProductDetail = (props) => {
           imgURL2={product.imgURL2}
           imgURL3={product.imgURL3}
           name={product.name}
-          rating={product.rating}
+          admin_rating={product.admin_rating}
           price={product.price}
           description={product.description}
           id={id}
@@ -127,7 +127,7 @@ const ProductDetail = (props) => {
 
             }}>
 
-              <img className="primary-product-detail-image" src={primaryImage} alt="primary-image" style={{
+              <img className="primary-product-detail-image" src={primaryImage} alt="primary" style={{
 
 
                 borderRadius: "12px",
@@ -151,7 +151,7 @@ const ProductDetail = (props) => {
               margin: "10px 0px"
             }}>
 
-              <img className="product-detail-image" src={product.imgURL} alt="image-1" onClick={() => setPrimaryImage(product.imgURL)} style={{
+              <img className="product-detail-image" src={product.imgURL} alt="1" onClick={() => setPrimaryImage(product.imgURL)} style={{
 
                 width: "9vw",
                 maxHeight: "6vw",
@@ -165,7 +165,7 @@ const ProductDetail = (props) => {
 
               }} />
 
-              <img className="product-detail-image" src={product.imgURL2} alt="image-2" onClick={() => setPrimaryImage(product.imgURL2)} style={{
+              <img className="product-detail-image" src={product.imgURL2} alt="2" onClick={() => setPrimaryImage(product.imgURL2)} style={{
 
                 width: "9vw",
                 maxHeight: "6vw",
@@ -179,7 +179,7 @@ const ProductDetail = (props) => {
 
               }} />
 
-              <img className="product-detail-image" src={product.imgURL3} alt="image-3" onClick={() => setPrimaryImage(product.imgURL3)} style={{
+              <img className="product-detail-image" src={product.imgURL3} alt="3" onClick={() => setPrimaryImage(product.imgURL3)} style={{
 
                 width: "10vw",
                 maxHeight: "6vw",
@@ -222,7 +222,7 @@ const ProductDetail = (props) => {
 
             }} > {product.name}</div>
 
-            <StarRating rating={product.rating} style={{
+            <StarRating rating={product.admin_rating} style={{
 
               margin: "5px",
 
@@ -237,7 +237,7 @@ const ProductDetail = (props) => {
 
               marginBottom: "5px",
 
-            }} >{`${product.price}`}</div>
+            }} >{`$${product.price}`}</div>
             <div className="description" style={{
 
               fontFamily: "Source Sans Pro",

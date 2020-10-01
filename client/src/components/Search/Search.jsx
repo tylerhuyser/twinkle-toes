@@ -1,20 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Search.css';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 
 const Search = (props) => {
 
   let search = props.search;
-  // const { allProducts, setAllProducts } = props;
-  // const [queriedProducts, setQueriedProducts] = useState([])
 
-  const [isSearched, setSearched] = useState(false)
+  // const [isSearched, setSearched] = useState(false)
 
-  if (isSearched) {
-    return (
-      <Redirect to={`/search-results`} />
-    )
-  }
+  // if (isSearched) {
+  //   return (
+  //     <Redirect to={`/search-results`} />
+  //   )
+  // }
 
   return (
     <form className="search-form" tabIndex="-1" onSubmit={(e) => props.handleSubmit(e)} >

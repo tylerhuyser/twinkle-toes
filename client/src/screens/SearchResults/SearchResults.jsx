@@ -16,7 +16,7 @@ const SearchResults = (props) => {
       name={product.name}
       imgURL={product.imgURL}
       price={product.price}
-      rating={product.rating}
+      admin_rating={product.admin_rating}
       key={index}
     />
   ));
@@ -46,7 +46,7 @@ const SearchResults = (props) => {
   return (
     <Layout handleChange={props.handleChange} handleSubmit={props.handleSubmit}>
       <div className="sort-container">
-            <Sort onSubmit={handleSubmit} onChange={handleSort} />
+        <Sort onSubmit={handleSubmit} onChange={handleSort} sortType={sortType} />
       </div>
       <div style={{
         color: "#9A7395",
@@ -54,41 +54,10 @@ const SearchResults = (props) => {
       }}>
         RESULTS FOUND: {queriedProducts.length}
       </div>
-      {/* {searchResultCards && searchResultCards.length !== 0 ? ( */}
-        <div className="search-results-container"
-          // style={{
-          //   margin: "0 auto",
-          //   width: "80%",
-          //   display: "flex",
-          //   flexWrap: "wrap",
-          //   justifyContent: "space-between",
-          // }}
-        >
+        <div className="search-results-container">
           
           {searchResultCards}
         </div>
-      {/* ) : (
-        <div
-          className="search-results-container"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexGrow: "1",
-          }}
-        >
-          <p
-            className="search-error-message"
-            style={{
-              color: "#B752AC",
-              fontWeight: "bold",
-              flexGrow: "1",
-            }}
-          >
-            Whoopsies! No Results!
-          </p>
-        </div>
-      )} */}
     </Layout>
   );
 };

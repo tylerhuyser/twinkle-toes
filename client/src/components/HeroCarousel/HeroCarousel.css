@@ -1,12 +1,5 @@
 * {box-sizing:border-box}
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
 .hero-carousel-buttons {
   position: relative;
   bottom: 75px;
@@ -28,16 +21,19 @@
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 25%;
   width: auto;
   margin-top: -22px;
   padding: 16px;
   color: white;
+  background: transparent;
+  outline: none;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  border: none;
 }
 
 /* Position the "next button" to the right */
