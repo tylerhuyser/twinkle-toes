@@ -1,26 +1,35 @@
 .sort {
   -webkit-appearance: none;
-	-moz-appearance: none;
-	-ms-appearance: none;
-	 -o-appearance: none;
-    appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
 }
 
+.select {
+  padding: 8px 12px;
+}
+.option {
+  background-color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+}
 .select-wrapper {
-	position: relative;	
+  position: relative;
+  background-color: aliceblue;
 }
 
 .select-wrapper:after {
-	font-family: FontAwesome;
-  	content: '\f107';
-    font-size: 24px;
-    size: 2x;
-  	position: absolute;
-  	top: 7px;
-  	right: 20px;
-  	color: black;
-    pointer-events: none;
-    -webkit-text-stroke: 1px white;
+  font-family: FontAwesome;
+  content: "\f107";
+  font-size: 24px;
+  size: 2x;
+  position: absolute;
+  top: 7px;
+  right: 20px;
+  color: black;
+  pointer-events: none;
 }
 
 select::-ms-expand {
@@ -36,9 +45,9 @@ select::-ms-expand {
   width: 170px;
   height: 40px;
   background-color: white;
+  height: 30px;
+  background: #ffffff;
 }
-
-
 
 .sort-container {
   margin: 0 auto;
