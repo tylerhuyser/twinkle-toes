@@ -111,7 +111,7 @@ const ProductDetail = (props) => {
       }
 
 
-            </div>
+            
             <div className="similarItems">
                 <h5>SIMILAR ITEMS</h5>
             </div>

@@ -1,0 +1,11 @@
+.search-results-container {
+  /* margin: 0 auto; */
+  /* width: 75%; */
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* justify-content: center; */
+}
+
+.sort-container {
+  
+}
