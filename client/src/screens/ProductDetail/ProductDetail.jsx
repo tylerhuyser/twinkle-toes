@@ -1,24 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { getProduct, deleteProduct } from "../../services/products";
 import { useParams, Redirect } from "react-router-dom";
-
 import Layout from "../../components/shared/Layout/Layout";
 import ProductEdit from "../../components/Edit/ProductEdit.jsx";
 import Reviews from "../../components/Reviews/Reviews";
 import StarRating from '../../components/StarRating/StarRating';
-
 import './ProductDetail.css';
+import SimilarItems from "../../components/SimilarItems/SimilarItems.jsx";
 
 const ProductDetail = (props) => {
-
-
+  
+    const { allProducts, setAllProducts } = props;
     const [product, setProduct] = useState(null);
     const [isLoaded, setLoaded] = useState(false);
     const { id } = useParams();
     const [editVisibility, setEditVisibility] = useState(false);
     const [isUpdated, setUpdated] = useState(false);
-
-    
     const [primaryImage, setPrimaryImage] = useState("") 
     
     useEffect(() => {
@@ -26,33 +23,32 @@ const ProductDetail = (props) => {
             const product = await getProduct(id);
             setProduct(product);
             setPrimaryImage(product.imgURL)
-            console.log(product)
             setLoaded(true);
         };
         fetchProduct();
     }, [id]);
 
-    const changeVisibility = (e) => {
-        e.preventDefault();
-        setEditVisibility(!editVisibility);
-    };
+  const changeVisibility = (e) => {
+    e.preventDefault();
+    setEditVisibility(!editVisibility);
+  };
 
-    const loadUpdate = () => {
-        setUpdated(!isUpdated);
-    };
+  const loadUpdate = () => {
+    setUpdated(!isUpdated);
+  };
 
-    //Documentation for code below ::: https://upmostly.com/tutorials/how-to-refresh-a-page-or-component-in-react#:~:text=If%20set%20to%20true%2C%20the,cached%20version%20of%20the%20page.&text=import%20React%20from%20'react'%3B,refreshPage%7D%3EClick%20to%20reload!\
-    if (isUpdated) {
-        window.location.reload(false);
-    }
+  //Documentation for code below ::: https://upmostly.com/tutorials/how-to-refresh-a-page-or-component-in-react#:~:text=If%20set%20to%20true%2C%20the,cached%20version%20of%20the%20page.&text=import%20React%20from%20'react'%3B,refreshPage%7D%3EClick%20to%20reload!\
+  if (isUpdated) {
+    window.location.reload(false);
+  }
 
-    if (!isLoaded) {
-        return <h1>Loading...</h1>;
-    }
+  if (!isLoaded) {
+    return <h1>Loading...</h1>;
+  }
 
 
   return (
-    
+
     <Layout
       handleChange={props.handleChange}
       handleSubmit={props.handleSubmit}>
@@ -100,6 +96,7 @@ const ProductDetail = (props) => {
           flexGrow: '1',
           
           }}>
+
 
           <div className="product-detail-images-container" style={{
               

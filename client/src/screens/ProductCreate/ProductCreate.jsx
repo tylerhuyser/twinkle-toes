@@ -4,7 +4,7 @@ import Layout from '../../components/shared/Layout/Layout';
 import { Redirect } from 'react-router-dom';
 import { createProduct } from '../../services/products';
 
-const ProductCreate = (props) => {
+export default function ProductCreate(props) {
 
   const [product, setProduct] = useState({
     name: "",
@@ -13,7 +13,7 @@ const ProductCreate = (props) => {
     imgURL3: "",
     description: "",
     price: "",
-    rating: "",
+    admin_rating: "",
     tag: "street",
     reviews: []
   });
@@ -120,8 +120,8 @@ const ProductCreate = (props) => {
         <input
             className="create-rating"
             placeholder='Rated _/5'
-            value={product.rating}
-            name='rating'
+            value={product.admin_rating}
+            name='admin_rating'
             required
             onChange={handleChange}
             type='number'
@@ -175,45 +175,45 @@ const ProductCreate = (props) => {
         </form>
 
         <div className="create-preview">
-          Photos:
-           <br />
-          Main Photo
+          <main className="create-row">
+            <div className="create-photos-column">
+              Main Photo(displays on products page)
           <img className="create-img-preview" src={product.imgURL}></img>
-          <br />
-          <div className="create-img-angles">
+              <br />
+              <div className="create-img-angles">
+                Main Photo Mini
+            <br />
+                <img className="create-img-preview2" src={product.imgURL1}></img>
             Second Angle
              <br />
-            <img className="create-img-preview2" src={product.imgURL2}></img>
+                <img className="create-img-preview2" src={product.imgURL2}></img>
           Third Angle
             <br />
-            <img className="create-img-preview2" src={product.imgURL3}></img>
-          </div>
-          <br />
-          <br />
-          <br />
-          Name-{product.name}
-          <br />
-          Price-{product.price}
-          <br />
-          Description-{product.description}
-          <br />
-          Rating-{product.rating}
-          <br />
-          Tag-{product.tag}
-          <br />
-          <br />
-        Review:
+                <img className="create-img-preview2" src={product.imgURL3}></img>
+              </div>
+            </div>
+
+            <aside className="create-content-preview">
+              <div>Name-{product.name}</div>
+              <div>Price-{product.price}</div>
+              <div>Description-{product.description}</div>
+              <div>Admin's Rating-{product.admin_rating}</div>
+              <div>Tag-{product.tag}</div>
+            </aside>
+          </main>
+          <div className="create-review-preview">
+            Review:
         <br />
-          <br />
+            <br />
           Review Author-{review.author}
-          <br />
+            <br />
           Review Rating-{review.rating}
-          <br />
+            <br />
           Review Description-{review.description}
+          </div>
         </div>
+
       </div>
     </Layout>
   )
 }
-
-export default ProductCreate

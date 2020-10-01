@@ -1,0 +1,18 @@
+.similar-items-flex-box{
+  align-items:center;
+  display:flex;
+  flex-direction: row;
+  width: 75vw;
+  justify-content: space-around;
+}
+.similar-items-pic{
+  width:300px;
+  height:300px;
+  border-radius: 15px;
+}
+.similar-indiv{
+  background: #F7ECEC;
+  border: 2px solid #D091C9;
+  border-radius: 12px;
+  padding: 20px;
+}

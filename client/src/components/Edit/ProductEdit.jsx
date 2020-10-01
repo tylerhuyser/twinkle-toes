@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { updateProduct } from '../../services/products.js';
-// import { set } from 'mongoose';
 
 export default function ProductEdit(props) {
 
@@ -44,7 +43,6 @@ export default function ProductEdit(props) {
 
 
   return (
-
     <div className="edit-container" style={{
 
       // Visual Properties:
