@@ -50,6 +50,9 @@
   border: 1px solid #D091C9;
   width:35vw;
   box-shadow: 2px 2px 10px 2px pink;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #5F2758;
 }
 .create-rating,
 .create-price,
@@ -61,13 +64,14 @@
   
     margin:10px 0 50px 0;
     font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
     text-align: center;
     height: 40px;
     width: 100px;
     border-radius: 50px;
     align-self: center;
-    background-color: pink;
+    background-color: #DB93D3;
     color: white;
     border: 1px solid #D091C9;
     box-shadow: 2px 2px 10px 2px #CECECE;
