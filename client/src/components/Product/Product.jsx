@@ -4,7 +4,7 @@ import StarRating from '../StarRating/StarRating'
 import { Link } from 'react-router-dom'
 
 const Product = (props) => {
-  
+
   const rating = props.rating
 
   function createReviewStars() {
@@ -13,24 +13,24 @@ const Product = (props) => {
       if (i < rating) {
         stars[i] =
           <i class="fas fa-star" style={{
-            
-          color: "#F4A2B6",
 
-        }}></i>
+            color: "#F4A2B6",
+
+          }}></i>
       }
       if (i >= rating) {
         stars[i] =
           <i class="fas fa-star" style={{
-          
+
             color: "#C7C7CC",
 
-        }}></i>
+          }}></i>
       }
     }
     return stars
   }
-  
-const reviewStars = createReviewStars()
+
+  const reviewStars = createReviewStars()
 
   return (
     <>

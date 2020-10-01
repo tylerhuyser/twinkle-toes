@@ -108,6 +108,7 @@ const ProductDetail = (props) => {
           <div className="detail">
             <div className="name">{product.name}</div>
             <div className="rating">{product.admin_rating}</div>
+            <div className="user-rating">{product.admin_rating}</div>
             <div className="price">{`${product.price}`}</div>
             <div className="description">{product.description}</div>
             <div className="button-container">

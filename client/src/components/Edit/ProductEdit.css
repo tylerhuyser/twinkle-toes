@@ -2,7 +2,7 @@
   margin:0 auto;
   display:flex;
   flex-direction:column;
-  width: 65vw;
+  width: 85vw;
   height: 100vh;
   justify-content:center;
   border: 3px solid #D091C9;
@@ -12,6 +12,8 @@
 .edit-component{
   background-color:rgba(255,255,255,.8);
   width:100vw;
+  display:flex;
+  flex-direction:column;
 }
 .edit-button-container{
   margin: 10px;
@@ -58,6 +60,30 @@
 }
 
 .edit-not-a-page{
-  height:fit-content;
-  width: fit-content;
+  height:100vh;
+  width: 100vw;
+}
+
+.edit-photo-mini{
+  width:100px;
+  height:100px;
+}
+.edit-photo-main{
+  width:20vw;
+  height:auto;
+}
+
+.edit-photos-row{
+  display:flex;
+  flex-direction:row;
+  width: 50vw;
+}
+
+#edit-photos-column{
+  display:flex;
+  flex-direction:column;
+}
+
+.edit-image-link{
+  width:300px;
 }
