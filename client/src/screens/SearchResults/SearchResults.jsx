@@ -47,8 +47,14 @@ const SearchResults = (props) => {
     <Layout handleChange={props.handleChange} handleSubmit={props.handleSubmit}>
       <div className="sort-container">
             <Sort onSubmit={handleSubmit} onChange={handleSort} />
-          </div>
-      {searchResultCards && searchResultCards.length !== 0 ? (
+      </div>
+      <div style={{
+        color: "#9A7395",
+        fontSize: "37px"
+      }}>
+        RESULTS FOUND: {queriedProducts.length}
+      </div>
+      {/* {searchResultCards && searchResultCards.length !== 0 ? ( */}
         <div className="search-results-container"
           // style={{
           //   margin: "0 auto",
@@ -61,7 +67,7 @@ const SearchResults = (props) => {
           
           {searchResultCards}
         </div>
-      ) : (
+      {/* ) : (
         <div
           className="search-results-container"
           style={{
@@ -82,7 +88,7 @@ const SearchResults = (props) => {
             Whoopsies! No Results!
           </p>
         </div>
-      )}
+      )} */}
     </Layout>
   );
 };
