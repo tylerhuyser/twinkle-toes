@@ -11,14 +11,13 @@ import { getProducts } from "../../services/products";
 
 const Products = (props) => {
 
-  const { allProducts, setAllProducts } = props;
+  const { setAllProducts } = props;
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getProducts();
-      console.log(products)
       setAllProducts(products);
       setQueriedProducts(products);
     };
@@ -73,6 +72,22 @@ const Products = (props) => {
         handleSubmit={props.handleSubmit}>
         <Sort onSubmit={handleSubmit} onChange={handleSort} />
         <div className="products-container">{productsJSX}</div>
+        <button style={{
+          
+          background: "#DB93D3",
+          width: "150px",
+          height: "35px",
+          borderRadius: "12px",
+          margin: "50px auto",
+
+          color: "#FFFFFF",
+          fontFamily: "Source Sans Pro",
+          fontSize: "18px",
+          textAlign: "center",
+          letterSpacing: "0.75px",
+          border: "none",
+
+        }}>Edit Products</button>
       </Layout>
     </>
   );

@@ -12,7 +12,7 @@ const main = async () => {
         "imgURL2": "https://i.imgur.com/N0XlqWl.jpg",
         "imgURL3": "https://i.imgur.com/Qd7i5PI.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "price": "$300.00",
+        "price": "300.00",
         "admin_rating": 3,
         "tag": "street"
       },
@@ -22,7 +22,7 @@ const main = async () => {
         "imgURL2": "https://i.imgur.com/asVaROp.jpg",
         "imgURL3": "https://i.imgur.com/Vw70Jqf.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "price": "$279.00",
+        "price": "279.00",
         "admin_rating": 2,
         "tag": "formal",
       },
@@ -32,7 +32,7 @@ const main = async () => {
         "imgURL2": "https://i.imgur.com/k8ds7zT.jpg",
         "imgURL3": "https://i.imgur.com/w16xmbn.jpg",
         "description": "Looks like something that would be worn by Sunny Shine on Sci-Fi's Happy! .",
-        "price": "$219.00",
+        "price": "219.00",
         "admin_rating": 3,
         "tag": "formal",
       },
@@ -42,7 +42,7 @@ const main = async () => {
         "imgURL2": "https://i.imgur.com/XWdR2wZ.jpg",
         "imgURL3": "https://i.imgur.com/fCsg1yS.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "price": "$320.00",
+        "price": "320.00",
         "admin_rating": 4,
         "tag": "formal",
       },
@@ -52,7 +52,7 @@ const main = async () => {
         "imgURL2": "https://i.imgur.com/XWdR2wZ.jpg",
         "imgURL3": "https://i.imgur.com/fCsg1yS.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "price": "$320.00",
+        "price": "320.00",
         "admin_rating": 4,
         "tag": "formal",
       },
@@ -62,7 +62,7 @@ const main = async () => {
         "imgURL2": "https://i.imgur.com/ax9v6pQ.jpg",
         "imgURL3": "https://i.imgur.com/0BJfWDM.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "price": "$300.00",
+        "price": "300.00",
         "admin_rating": 4,
         "tag": "street",
         "reviews": [
@@ -83,7 +83,7 @@ const main = async () => {
         "imgURL2": "https://i.imgur.com/FPG6Y6A.jpg",
         "imgURL3": "https://i.imgur.com/ipvxrPK.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie aliquet justo eu volutpat. Sed lobortis turpis vel ex pharetra aliquet. Sed hendrerit, tellus id mollis scelerisque, sapien magna auctor velit.",
-        "price": "$300.00",
+        "price": "300.00",
         "admin_rating": 3,
         "tag": "formal",
       },
@@ -93,7 +93,7 @@ const main = async () => {
         "imgURL2": "https://imgur.com/3lvljFZ.jpg",
         "imgURL3": "https://imgur.com/snEDGNL.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie aliquet justo eu volutpat. Sed lobortis turpis vel ex pharetra aliquet. Sed hendrerit, tellus id mollis scelerisque, sapien magna auctor velit.",
-        "price": "$300.00",
+        "price": "300.00",
         "admin_rating": 3,
         "tag": "formal",
         "reviews": [
@@ -120,7 +120,7 @@ const main = async () => {
         "imgURL2": "https://i.imgur.com/VHiHMWg.jpg",
         "imgURL3": "https://i.imgur.com/CG8lMBC.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Duis molestie aliquet justo eu volutpat.Sed lobortis turpis vel ex pharetra aliquet.Sed hendrerit, tellus id mollis scelerisque, sapien magna auctor velit.",
-        "price": "$300.00",
+        "price": "300.00",
         "admin_rating": 3,
         "tag": "street",
         "reviews": [
@@ -147,7 +147,7 @@ const main = async () => {
         "imgURL2": "https://i.imgur.com/waLhutY.png",
         "imgURL3": "https://i.imgur.com/kZPFifk.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Duis molestie aliquet justo eu volutpat.Sed lobortis turpis vel ex pharetra aliquet.Sed hendrerit, tellus id mollis scelerisque, sapien magna auctor velit.",
-        "price": " $300.00",
+        "price": " 300.00",
         "admin_rating": 4,
         "tag": "street",
         "reviews": [
@@ -174,7 +174,7 @@ const main = async () => {
         "imgURL2": "https://i.imgur.com/IlMhpiD.jpg",
         "imgURL3": "https://i.imgur.com/nQtcNMv.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Duis molestie aliquet justo eu volutpat.Sed lobortis turpis vel ex pharetra aliquet.Sed hendrerit, tellus id mollis scelerisque, sapien magna auctor velit.",
-        "price": "$165.00",
+        "price": "165.00",
         "admin_rating": 3,
         "tag": "street",
         "reviews": [
@@ -196,6 +196,7 @@ const main = async () => {
 
 
     ]
+  await Product.deleteMany()
   await Product.insertMany(products)
   console.log("Created products!")
 }

@@ -30,6 +30,8 @@ const Home = (props) => {
 
         display: "flex",
         flexDirection: "column",
+        position: "relative",
+        bottom: "100px",
 
       }}>
 

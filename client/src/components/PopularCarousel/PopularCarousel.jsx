@@ -151,7 +151,7 @@ const PopularCarousel = (props) => {
 
     }}>
 
-      <a className="prevPopular" onClick={() => plusSlides(-1)} > &#10094;</a>
+      <a className="prevPopular" onClick={() => plusSlides(-1)} href="prevPopular" > &#10094;</a>
 
       <div className="popularItemsCards" style={{
 
@@ -168,7 +168,7 @@ const PopularCarousel = (props) => {
         {popularCarousel}
       </div>
 
-      <a className="nextPopular" onClick={() => plusSlides(1)} > &#10095;</a>
+      <a className="nextPopular" onClick={() => plusSlides(1)} href="nextPopular" > &#10095;</a>
 
     </div>
 

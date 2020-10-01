@@ -17,7 +17,18 @@ const Product = new Schema(
       description: String
     }] // this will contain an object, within it is the username of the reviewer, star rating etc. 
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: { virtuals: true } 
+  }
 )
+
+Product.virtual('rating').get(function () {
+  let totalRating = 0
+  this.reviews.forEach(review => {
+    totalRating = totalRating + review.rating
+  })
+  return totalRating / this.reviews.length
+})
 
 module.exports = mongoose.model('products', Product)               

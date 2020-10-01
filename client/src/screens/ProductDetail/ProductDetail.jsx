@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getProduct, deleteProduct } from "../../services/products";
-import { useParams, Redirect } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Layout from "../../components/shared/Layout/Layout";
 import ProductEdit from "../../components/Edit/ProductEdit.jsx";
 import Reviews from "../../components/Reviews/Reviews";
@@ -312,20 +312,27 @@ const ProductDetail = (props) => {
             fontWeight: "300",
             margin: "0px",
 
-          }}>SIMILAR ITEMS</h5>
-
-          <div>
-            <SimilarItems allProducts={allProducts} tag={product.tag} id={id} />
-          </div>
+            }}>SIMILAR ITEMS</h5>
+          
+            <div className="similar-items-carousel" style={{
+             
+              display: "flex",
+              justifyContent: "space-between",
+              
+            }}>
+            
+              <SimilarItems allProducts={allProducts} tag={product.tag} id={id} />
+            
+            </div>
 
         </div>
-
-        <Reviews reviews={product.reviews} product={product} id={id} />
-
-      </div>
-
-    </Layout>
-  );
+        
+          <Reviews reviews={product.reviews} product={product} id={id} loadUpdate={loadUpdate} />
+        
+        </div>
+      
+        </Layout>
+    );
 };
 
 export default ProductDetail;

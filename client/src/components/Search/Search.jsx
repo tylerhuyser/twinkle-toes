@@ -17,7 +17,7 @@ const Search = (props) => {
   }
 
   return (
-    <form className="search-form" tabindex="-1" onSubmit={(e) => props.handleSubmit(e)} >
+    <form className="search-form" tabIndex="-1" onSubmit={(e) => props.handleSubmit(e)} >
       <input
         className="search-input"
         value={search}

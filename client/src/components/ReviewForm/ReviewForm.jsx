@@ -1,16 +1,9 @@
 import React, { useState } from 'react'
-import {updateProduct} from "../../services/products.js"
+import { updateProduct } from "../../services/products.js"
 
 const ReviewForm = (props) => {
     const {product, id } = props
-
-    const [product1, setProduct] = useState({
-        name: '',
-        description: '',
-        imgURL: '',
-        price: '',
-        reviews: []
-    })
+  
     const handleChange = (event) => {
         const { name, value } = event.target
         setReview({
@@ -18,17 +11,20 @@ const ReviewForm = (props) => {
             [name]: value
         })
     }
+  
     const [review, setReview] = useState({
         author: '',
         rating: '',
         description: ''
     })
+  
     const handleSubmit = async (event) => {
         event.preventDefault()
         product.reviews.push(review)
-        setProduct(product)
         await updateProduct(id, product)
+        props.loadUpdate();
     }
+  
     return (
       <form className="review-create-form" onSubmit={(e) => handleSubmit(e)} style={{
           

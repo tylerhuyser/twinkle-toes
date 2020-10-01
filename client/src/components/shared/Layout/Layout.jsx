@@ -26,7 +26,7 @@ const Layout = (props) => {
       <div className="layout-children" style={{
         
         flexGrow: "1",
-        width: "90%"
+        // width: "90%"
 
         // display: "flex",
         // alignItems: "center",
