@@ -9,15 +9,26 @@ const Product = new Schema(
     imgURL3: { type: String, required: true },
     description: { type: String, required: true },
     price: { type: String, required: true },
-    rating: { type: Number, required: true }, //using function
+    admin_rating: { type: Number, required: true }, //using function
     tag: { type: String, required: true },
     reviews: [{
-        author: String,
-        rating: Number,
-        description: String
-      }] // this will contain an object, within it is the username of the reviewer, star rating etc. 
+      author: String,
+      rating: Number,
+      description: String
+    }] // this will contain an object, within it is the username of the reviewer, star rating etc. 
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: { virtuals: true } 
+  }
 )
+
+Product.virtual('rating').get(function () {
+  let totalRating = 0
+  this.reviews.forEach(review => {
+    totalRating = totalRating + review.rating
+  })
+  return totalRating / this.reviews.length
+})
 
 module.exports = mongoose.model('products', Product)               

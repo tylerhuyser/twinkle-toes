@@ -1,12 +1,5 @@
 * {box-sizing:border-box}
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
 .hero-carousel-buttons {
   position: relative;
   bottom: 75px;
@@ -19,22 +12,28 @@
 
 .visible {
   display: block;
+  /* height: 80vh;
+  width: 100vw;
+  object-fit: cover; */
 }
 
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 25%;
   width: auto;
   margin-top: -22px;
   padding: 16px;
   color: white;
+  background: transparent;
+  outline: none;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  border: none;
 }
 
 /* Position the "next button" to the right */
@@ -51,26 +50,6 @@
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.number-text {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
 }
 
 /* The dots/bullets/indicators */

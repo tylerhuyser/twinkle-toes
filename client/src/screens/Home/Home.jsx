@@ -20,11 +20,18 @@ const Home = (props) => {
       setAllProducts={setAllProducts}
       handleChange={props.handleChange}
       handleSubmit={props.handleSubmit}
+      style={{
+        
+        zIndex: "2",
+
+      }}
     >
       <div className="home-container" style={{
 
         display: "flex",
         flexDirection: "column",
+        position: "relative",
+        bottom: "100px",
 
       }}>
 

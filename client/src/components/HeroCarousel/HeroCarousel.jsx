@@ -27,14 +27,16 @@ const HeroCarousel = (props) => {
       <div className="invisible fade" key={idx} style={{
 
         width: "100vw",
-        height: "auto",
+        // height: "70vw",
+
         display: "flex",
 
       }}>
-        <div className="number-text">{idx} / 5</div>
         <img src={element} alt={idx} key={idx} style={{
 
           width: "100%",
+          height: "60vw",
+          objectFit: "cover",
 
         }} />
       </div>
@@ -138,9 +140,12 @@ const HeroCarousel = (props) => {
   };
 
   return (
-    <div className="hero-carousel-container" style={{position: "relative",
-      bottom: "100px",
-      zIndex: "-1",
+    <div className="hero-carousel-container" style={{
+      
+      // position: "relative",
+      // bottom: "100px",
+      zIndex: "0",
+
     }} >    
       
       <div className="hero-carousel" style={{
@@ -148,8 +153,8 @@ const HeroCarousel = (props) => {
         {heroCarousel}
       </div>
     
-      <a className="prev" onClick={() => plusSlides(-1)} > &#10094;</a>
-      <a className="next" onClick={() => plusSlides(1)} > &#10095;</a>
+      <button className="prev" onClick={() => plusSlides(-1)} > &#10094;</button>
+      <button className="next" onClick={() => plusSlides(1)} > &#10095;</button>
       
       <br></br>
   
