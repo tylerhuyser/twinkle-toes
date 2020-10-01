@@ -7,7 +7,7 @@ import { highestRatingFirst } from "../../utils/sort"
 const PopularCarousel = (props) => {
 
   const [popularCarousel, setPopularCarousel] = useState([]);
-  
+
   const { popularLowerIndex, setPopularLowerIndex } = props;
   const { popularUpperIndex, setPopularUpperIndex } = props;
 
@@ -19,34 +19,34 @@ const PopularCarousel = (props) => {
     getPopularCarousel();
   }, [])
 
-  
+
   const popularItemCards = highestRatingFirst(props.allProducts).slice(0, 7).map((product, idx) => (
 
     <PopularProduct
-    _id={product._id}
-    name={product.name}
-    imgURL={product.imgURL}
-    price={product.price}
-    rating={product.rating}
-    key={idx}
+      _id={product._id}
+      name={product.name}
+      imgURL={product.imgURL}
+      price={product.price}
+      rating={product.admin_rating}
+      key={idx}
     />
 
-    ))
+  ))
 
-  
+
   function plusSlides(n) {
 
     let tempLowerIndex = popularLowerIndex
     let tempUpperIndex = popularUpperIndex
-    
+
     console.log(popularItemCards)
     console.log(popularCarousel)
 
     if ((n === (-1)) && (tempLowerIndex === 0)) {
-     
+
       popularCarousel.pop()
       setPopularCarousel(popularCarousel)
-      
+
       tempLowerIndex = (popularItemCards.length - 1)
       tempUpperIndex -= 1;
 
@@ -57,8 +57,23 @@ const PopularCarousel = (props) => {
         return [popularItemCards[tempLowerIndex], ...prevPopularCarousel]
       });
 
-    } else if ((n === (-1)) && (tempLowerIndex !== 0)) {
+    } else if ((n === (-1)) && (tempUpperIndex === 0)) {
+     
+      popularCarousel.pop()
+      setPopularCarousel(popularCarousel)
       
+      tempLowerIndex -= 1
+      tempUpperIndex = (popularItemCards.length - 1);
+
+      setPopularLowerIndex(tempLowerIndex)
+      setPopularUpperIndex(tempUpperIndex)
+
+      setPopularCarousel(prevPopularCarousel => {
+        return [popularItemCards[tempLowerIndex], ...prevPopularCarousel]
+      })
+    
+    } else if ((n === (-1)) && (tempLowerIndex !== 0)) {
+
       popularCarousel.pop()
       setPopularCarousel(popularCarousel)
 
@@ -77,9 +92,25 @@ const PopularCarousel = (props) => {
       popularCarousel.shift()
       setPopularCarousel(popularCarousel)
       console.log(popularCarousel)
-      
+
       tempUpperIndex = 0;
       tempLowerIndex += 1
+
+      setPopularLowerIndex(tempLowerIndex)
+      setPopularUpperIndex(tempUpperIndex)
+
+      setPopularCarousel(prevPopularCarousel => {
+        return [...prevPopularCarousel, popularItemCards[tempUpperIndex]]
+      });
+
+    }  else if (n === 1 && (tempLowerIndex === (popularItemCards.length - 1))) {
+
+      popularCarousel.shift()
+      setPopularCarousel(popularCarousel)
+      console.log(popularCarousel)
+      
+      tempUpperIndex += 1;
+      tempLowerIndex = 0;
 
       setPopularLowerIndex(tempLowerIndex)
       setPopularUpperIndex(tempUpperIndex)
@@ -93,7 +124,7 @@ const PopularCarousel = (props) => {
       popularCarousel.shift()
       setPopularCarousel(popularCarousel)
       console.log(popularCarousel)
-      
+
       tempUpperIndex += 1
       tempLowerIndex += 1
 
@@ -106,7 +137,7 @@ const PopularCarousel = (props) => {
     };
   };
 
-  
+
   return (
 
 
@@ -123,9 +154,9 @@ const PopularCarousel = (props) => {
       <a className="prevPopular" onClick={() => plusSlides(-1)} > &#10094;</a>
 
       <div className="popularItemsCards" style={{
-        
+
         flexGrow: "1",
-        
+
         minWidth: "80vw",
 
         display: "flex",
@@ -138,7 +169,7 @@ const PopularCarousel = (props) => {
       </div>
 
       <a className="nextPopular" onClick={() => plusSlides(1)} > &#10095;</a>
-      
+
     </div>
 
   )

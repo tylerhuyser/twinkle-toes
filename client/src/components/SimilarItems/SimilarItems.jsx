@@ -32,6 +32,7 @@ export default function SimilarItems(props) {
       rndm = Math.floor((Math.random() * similar.length));
       display.push(similar.splice(rndm, 1));
     }
+    console.log(display)
   }
 
   genSim();
