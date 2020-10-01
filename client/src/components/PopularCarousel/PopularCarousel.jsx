@@ -11,15 +11,6 @@ const PopularCarousel = (props) => {
   const { popularLowerIndex, setPopularLowerIndex } = props;
   const { popularUpperIndex, setPopularUpperIndex } = props;
 
-
-  useEffect(() => {
-    const getPopularCarousel = () => {
-      setPopularCarousel(popularItemCards.slice(0, 5))
-    }
-    getPopularCarousel();
-  }, [])
-
-
   const popularItemCards = highestRatingFirst(props.allProducts).slice(0, 7).map((product, idx) => (
 
     <PopularProduct
@@ -32,6 +23,14 @@ const PopularCarousel = (props) => {
     />
 
   ))
+
+
+  useEffect(() => {
+    const getPopularCarousel = () => {
+      setPopularCarousel(popularItemCards.slice(0, 5))
+    }
+    getPopularCarousel();
+  }, [])
 
 
   function plusSlides(n) {

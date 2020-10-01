@@ -18,7 +18,10 @@ const HeroCarousel = (props) => {
   ]
 
   useEffect(() => {
-    showSlides(currentIndex);
+    function currentSlide(n) {
+      showSlides(n);
+    };
+    currentSlide(currentIndex);
   }, [currentIndex])
   
   // Below creates a set of divs containing each hero slide
@@ -47,7 +50,7 @@ const HeroCarousel = (props) => {
     let buttons = [];
     for (let i = 0; i < heroImages.length; i++) {
       buttons[i] =
-        <span className="hero-dot" key={i} onClick={() => currentSlide(i)} ></span>
+        <span className="hero-dot" key={i} onClick={() => showSlides(i)} ></span>
     }
     return buttons
   }
@@ -114,9 +117,9 @@ const HeroCarousel = (props) => {
     setHeroButtons(heroCarouselButtons)
   }
 
-  function currentSlide(n) {
-    showSlides(n);
-  };
+  // function currentSlide(n) {
+  //   showSlides(n);
+  // };
 
   function plusSlides(n) {
     let tempIndex = currentIndex

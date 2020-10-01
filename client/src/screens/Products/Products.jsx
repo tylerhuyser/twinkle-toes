@@ -10,14 +10,12 @@ import { getProducts } from "../../services/products";
 
 const Products = (props) => {
 
-  const { setAllProducts } = props;
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getProducts();
-      setAllProducts(products);
       setQueriedProducts(products);
     };
     fetchProducts();
