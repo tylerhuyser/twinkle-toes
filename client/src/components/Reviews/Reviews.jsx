@@ -1,6 +1,9 @@
 import React from 'react';
-import "./Reviews.css"
-import ReviewForm from "../ReviewForm/ReviewForm"
+
+import ReviewForm from "../ReviewForm/ReviewForm";
+import StarRating from '../StarRating/StarRating';
+
+
 const Reviews = (props) => {
     
     const { reviews } = props
@@ -8,19 +11,104 @@ const Reviews = (props) => {
     const REVIEW = reviews.map((review, idx) => {
     
         return (
-                <div className="review-container" key={idx}>
-                    <h4 className="review-name" >{review.author}</h4>
-                    <h6 className="review-rating">{review.rating}</h6>
-                    <h6 className="review-descr">{review.description}</h6> 
-                </div>
+          <div className="review-container" key={idx}  style={{
+          
+            // Visual Properties:
+            width: "45vw",
+            // padding: "10px 10px",
+                          
+            // Container Properties:
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "center",
+    
+            }}>
+
+              <h4 className="review-author-name" key={idx} style={{
+
+                  fontSize: "18px",
+                  letterSpacing: "0.9px",
+                  textAlign: "left",
+                  fontWeight: "300",
+
+                  width: "100%",
+                        
+              }}>{review.author}</h4>
+            
+            <StarRating rating={review.rating} style={{
+                
+              margin: "5px",
+              width: "100%",
+              display: "flex",
+              alignContent: "left",
+              
+              }} />
+            
+              <h6 className="review-copy" key={idx} style={{
+                
+                fontFamily: "Source Sans Pro",
+                color: "#5F2758",
+                fontWeight: "500",
+                textAlign: "left",
+                
+                marginBottom: "5px",
+              
+              }} >{review.description}</h6> 
+          </div>
         )
     })
     return (
-        <div className="reviews">
-            <h5 className="review-title">REVIEWS:</h5>
-                {REVIEW} 
-                <ReviewForm product={props.product} id={props.id}/> 
-        </div>
+      <div className="reviews-container" style={{
+       
+        width: "90vw",
+
+        display: "flex",
+        flexDirection: "column",
+        margin: "25px",
+        
+      }}>
+
+        <h5 className="review-title" style={{
+        
+        fontFamily: "Roboto", 
+        fontSize: "32px",  
+        color: "#9A7395",
+        letterSpacing: "0.9px",
+        textAlign: "left",
+        fontWeight: "300",
+              
+        margin: "20px 0px",
+        
+        }}>REVIEWS</h5>
+
+        <div className="reviews-content" style={{
+
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          
+        }}>
+          <div className="reviews-list" style={{
+          
+          // Visual Properties:
+          width: "45vw",
+          padding: "0px 10px",
+          // padding: "10px 10px",
+                        
+          // Container Properties:
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "center",
+  
+          }} >
+              {REVIEW} 
+            </div>
+          
+            <ReviewForm product={props.product} id={props.id} /> 
+          </div>
+      </div>
     );
 };
 
