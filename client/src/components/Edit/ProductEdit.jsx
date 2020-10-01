@@ -152,7 +152,7 @@ export default function ProductEdit(props) {
 
             <div className="edit-input">Price:
             <br />
-              <input
+              $<input
                 className="edit-price"
                 placeholder='Price'
                 value={product.price}
@@ -185,3 +185,4 @@ export default function ProductEdit(props) {
     </div >
   );
 };
+
