@@ -97,7 +97,7 @@ export default function ProductCreate(props) {
             required
             onChange={handleChange}
           />
-        Price:
+        Price:$
         <input
             className="create-price"
             placeholder='Price'
@@ -188,8 +188,8 @@ export default function ProductCreate(props) {
             </div>
 
             <aside className="create-content-preview">
-              <div>Name-{product.name}</div>
-              <div>Price-{product.price}</div>
+              <div className="create-bold">Name-{product.name}</div>
+              <div className="create-bold">Price-${product.price}</div>
               <div>Description-{product.description}</div>
               <div>Admin's Rating-{product.admin_rating}</div><br />
               <div>Tag-{product.tag}<br />(The tag show up on the page; it's here for your confirmation during product creation.</div>
