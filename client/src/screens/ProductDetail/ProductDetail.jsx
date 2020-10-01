@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getProduct, deleteProduct } from "../../services/products";
-import { useParams, Redirect } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Layout from "../../components/shared/Layout/Layout";
 import ProductEdit from "../../components/Edit/ProductEdit.jsx";
 import Reviews from "../../components/Reviews/Reviews";
@@ -9,7 +9,7 @@ import './ProductDetail.css';
 import SimilarItems from "../../components/SimilarItems/SimilarItems.jsx";
 
 const ProductDetail = (props) => {
-  
+
     const { allProducts, setAllProducts } = props;
     const [product, setProduct] = useState(null);
     const [isLoaded, setLoaded] = useState(false);
@@ -24,6 +24,7 @@ const ProductDetail = (props) => {
             setProduct(product);
             setPrimaryImage(product.imgURL)
             setLoaded(true);
+            console.log(product)
         };
         fetchProduct();
     }, [id]);
@@ -327,7 +328,7 @@ const ProductDetail = (props) => {
 
         </div>
         
-          <Reviews reviews={product.reviews} product={product} id={id} />
+          <Reviews reviews={product.reviews} product={product} id={id} loadUpdate={loadUpdate} />
         
         </div>
       

@@ -112,7 +112,7 @@ const Reviews = (props) => {
               {REVIEW} 
             </div>
           
-            <ReviewForm product={props.product} id={props.id} /> 
+            <ReviewForm product={props.product} id={props.id} loadUpdate={props.loadUpdate} /> 
           </div>
       </div>
     );
