@@ -328,10 +328,10 @@ const ProductDetail = (props) => {
 
         </div>
         
-          <Reviews reviews={product.reviews} />
+          <Reviews reviews={product.reviews} product={product} id={id} />
         
         </div>
-
+      
         </Layout>
     );
 };
