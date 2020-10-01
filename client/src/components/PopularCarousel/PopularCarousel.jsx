@@ -57,6 +57,21 @@ const PopularCarousel = (props) => {
         return [popularItemCards[tempLowerIndex], ...prevPopularCarousel]
       });
 
+    } else if ((n === (-1)) && (tempUpperIndex === 0)) {
+     
+      popularCarousel.pop()
+      setPopularCarousel(popularCarousel)
+      
+      tempLowerIndex -= 1
+      tempUpperIndex = (popularItemCards.length - 1);
+
+      setPopularLowerIndex(tempLowerIndex)
+      setPopularUpperIndex(tempUpperIndex)
+
+      setPopularCarousel(prevPopularCarousel => {
+        return [popularItemCards[tempLowerIndex], ...prevPopularCarousel]
+      })
+    
     } else if ((n === (-1)) && (tempLowerIndex !== 0)) {
 
       popularCarousel.pop()
@@ -80,6 +95,22 @@ const PopularCarousel = (props) => {
 
       tempUpperIndex = 0;
       tempLowerIndex += 1
+
+      setPopularLowerIndex(tempLowerIndex)
+      setPopularUpperIndex(tempUpperIndex)
+
+      setPopularCarousel(prevPopularCarousel => {
+        return [...prevPopularCarousel, popularItemCards[tempUpperIndex]]
+      });
+
+    }  else if (n === 1 && (tempLowerIndex === (popularItemCards.length - 1))) {
+
+      popularCarousel.shift()
+      setPopularCarousel(popularCarousel)
+      console.log(popularCarousel)
+      
+      tempUpperIndex += 1;
+      tempLowerIndex = 0;
 
       setPopularLowerIndex(tempLowerIndex)
       setPopularUpperIndex(tempUpperIndex)

@@ -7,7 +7,11 @@ const Nav = (props) => {
   const { allProducts, setAllProducts } = props;
 
   return (
-    <nav>
+    <nav style={{
+
+      zIndex: "5",
+
+    }}>
       <div className="nav" style={{
 
         // Physical Properties
@@ -21,7 +25,7 @@ const Nav = (props) => {
 
         // Container Properties
         display: "flex",
-        justifyContent: "space-around",
+        justifyContent: "space-between",
         alignItems: "center",
 
       }}>
@@ -84,7 +88,6 @@ const Nav = (props) => {
           display: "flex",
           justifyContent: "flex-end",
           alignItems: "center",
-          margin: "30px",
           width: "30vw",
 
         }}>
