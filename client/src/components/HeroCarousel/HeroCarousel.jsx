@@ -27,13 +27,16 @@ const HeroCarousel = (props) => {
       <div className="invisible fade" key={idx} style={{
 
         width: "100vw",
-        height: "auto",
+        // height: "70vw",
+
         display: "flex",
 
       }}>
         <img src={element} alt={idx} key={idx} style={{
 
           width: "100%",
+          height: "60vw",
+          objectFit: "cover",
 
         }} />
       </div>
@@ -137,9 +140,12 @@ const HeroCarousel = (props) => {
   };
 
   return (
-    <div className="hero-carousel-container" style={{position: "relative",
-      bottom: "100px",
+    <div className="hero-carousel-container" style={{
+      
+      // position: "relative",
+      // bottom: "100px",
       zIndex: "0",
+
     }} >    
       
       <div className="hero-carousel" style={{

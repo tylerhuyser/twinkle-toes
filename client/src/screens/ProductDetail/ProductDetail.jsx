@@ -321,6 +321,8 @@ const ProductDetail = (props) => {
               
             }}>
             
+              <SimilarItems allProducts={allProducts} tag={product.tag} id={id} />
+            
             </div>
 
         </div>

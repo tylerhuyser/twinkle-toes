@@ -73,6 +73,22 @@ const Products = (props) => {
         handleSubmit={props.handleSubmit}>
         <Sort onSubmit={handleSubmit} onChange={handleSort} />
         <div className="products-container">{productsJSX}</div>
+        <button style={{
+          
+          background: "#DB93D3",
+          width: "150px",
+          height: "35px",
+          borderRadius: "12px",
+          margin: "50px auto",
+
+          color: "#FFFFFF",
+          fontFamily: "Source Sans Pro",
+          fontSize: "18px",
+          textAlign: "center",
+          letterSpacing: "0.75px",
+          border: "none",
+
+        }}>Edit Products</button>
       </Layout>
     </>
   );
