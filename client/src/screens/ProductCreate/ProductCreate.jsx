@@ -178,12 +178,12 @@ export default function ProductCreate(props) {
           <main className="create-row">
             <div className="create-photos-column">
               Main Photo(displays on products page)
-          <img className="create-img-preview" src={product.imgURL}></img>
+          <img className="create-img-preview" src={product.imgURL} alt="primary"></img>
               <br />
               <div className="create-img-angles">
-                <img className="create-img-preview2" src={product.imgURL}></img>
-                <img className="create-img-preview2" src={product.imgURL2}></img>
-                <img className="create-img-preview2" src={product.imgURL3}></img>
+                <img className="create-img-preview2" src={product.imgURL} alt="primary-mini"></img>
+                <img className="create-img-preview2" src={product.imgURL2} alt="2-mini"></img>
+                <img className="create-img-preview2" src={product.imgURL3} alt="3-min"></img>
               </div>
             </div>
 

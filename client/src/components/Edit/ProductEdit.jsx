@@ -55,7 +55,7 @@ export default function ProductEdit(props) {
               <br />
               <img
                 className="edit-photo-main"
-                alt='This is the display photo.'
+                alt='primary-display'
                 src={product.imgURL}
                 name='imgURL'
               />
@@ -75,7 +75,7 @@ export default function ProductEdit(props) {
                 <br />
                 <img
                   className="edit-photo-mini"
-                  alt='This is the display photo.'
+                  alt='mini-primary-display'
                   src={product.imgURL}
                   name='imgURL'
                 />
@@ -85,7 +85,7 @@ export default function ProductEdit(props) {
                 <br />
                 <img
                   className="edit-photo-mini"
-                  alt='Angle Two.'
+                  alt='mini-2-display'
                   src={product.imgURL2}
                   name='imgURL2'
                 />
@@ -104,7 +104,7 @@ export default function ProductEdit(props) {
                 <br />
                 <img
                   className="edit-photo-mini"
-                  alt='Angle Three.'
+                  alt='mini-3-display'
                   src={product.imgURL3}
                   name='imgURL3'
                 />

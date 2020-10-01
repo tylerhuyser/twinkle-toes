@@ -11,15 +11,6 @@ const PopularCarousel = (props) => {
   const { popularLowerIndex, setPopularLowerIndex } = props;
   const { popularUpperIndex, setPopularUpperIndex } = props;
 
-
-  useEffect(() => {
-    const getPopularCarousel = () => {
-      setPopularCarousel(popularItemCards.slice(0, 5))
-    }
-    getPopularCarousel();
-  }, [])
-
-
   const popularItemCards = highestRatingFirst(props.allProducts).slice(0, 7).map((product, idx) => (
 
     <PopularProduct
@@ -34,13 +25,18 @@ const PopularCarousel = (props) => {
   ))
 
 
+  useEffect(() => {
+    const getPopularCarousel = () => {
+      setPopularCarousel(popularItemCards.slice(0, 5))
+    }
+    getPopularCarousel();
+  }, [])
+
+
   function plusSlides(n) {
 
     let tempLowerIndex = popularLowerIndex
     let tempUpperIndex = popularUpperIndex
-
-    console.log(popularItemCards)
-    console.log(popularCarousel)
 
     if ((n === (-1)) && (tempLowerIndex === 0)) {
 
@@ -91,7 +87,6 @@ const PopularCarousel = (props) => {
 
       popularCarousel.shift()
       setPopularCarousel(popularCarousel)
-      console.log(popularCarousel)
 
       tempUpperIndex = 0;
       tempLowerIndex += 1
@@ -107,7 +102,6 @@ const PopularCarousel = (props) => {
 
       popularCarousel.shift()
       setPopularCarousel(popularCarousel)
-      console.log(popularCarousel)
       
       tempUpperIndex += 1;
       tempLowerIndex = 0;
@@ -123,7 +117,6 @@ const PopularCarousel = (props) => {
 
       popularCarousel.shift()
       setPopularCarousel(popularCarousel)
-      console.log(popularCarousel)
 
       tempUpperIndex += 1
       tempLowerIndex += 1
@@ -151,7 +144,7 @@ const PopularCarousel = (props) => {
 
     }}>
 
-      <a className="prevPopular" onClick={() => plusSlides(-1)} href="prevPopular" > &#10094;</a>
+      <button className="prevPopular" onClick={() => plusSlides(-1)} > &#10094;</button>
 
       <div className="popularItemsCards" style={{
 
@@ -168,7 +161,7 @@ const PopularCarousel = (props) => {
         {popularCarousel}
       </div>
 
-      <a className="nextPopular" onClick={() => plusSlides(1)} href="nextPopular" > &#10095;</a>
+      <button className="nextPopular" onClick={() => plusSlides(1)} > &#10095;</button>
 
     </div>
 

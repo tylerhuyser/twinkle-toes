@@ -1,24 +1,21 @@
 import React, { useState, useEffect } from "react";
 import './Products.css'
-// Did not import search component since it's part of the layout component
+
 import Product from "../../components/Product/Product";
 import Layout from '../../components/shared/Layout/Layout'
-// Where will Sort component be if it will be passed down to Products and
-// SearchResult component?
+
 import Sort from "../../components/Sort/Sort";
 import { AZ, ZA, lowestFirst, highestFirst } from "../../utils/sort";
 import { getProducts } from "../../services/products";
 
 const Products = (props) => {
 
-  const { setAllProducts } = props;
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getProducts();
-      setAllProducts(products);
       setQueriedProducts(products);
     };
     fetchProducts();
@@ -44,13 +41,6 @@ const Products = (props) => {
     }
   };
 
-  // const handleSearch = (event) => {
-  //   const newQueriedProducts = allProducts.filter((product) =>
-  //     product.name.toLowerCase().includes(event.target.value.toLowerCase())
-  //   );
-  //   setQueriedProducts(newQueriedProducts, () => handleSort(sortType));
-  // };
-
   const handleSubmit = (event) => event.preventDefault();
 
   const productsJSX = queriedProducts.map((product, index) => (
@@ -70,7 +60,7 @@ const Products = (props) => {
       <Layout
         handleChange={props.handleChange}
         handleSubmit={props.handleSubmit}>
-        <Sort onSubmit={handleSubmit} onChange={handleSort} />
+        <Sort onSubmit={handleSubmit} onChange={handleSort} sortType={sortType} />
         <div className="products-container">{productsJSX}</div>
         <button style={{
           
