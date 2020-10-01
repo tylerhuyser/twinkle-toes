@@ -1,6 +1,48 @@
+select {
+  -webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	 -o-appearance: none;
+    appearance: none;
+}
+
+.select-wrapper {
+	position: relative;	
+}
+
+.select-wrapper:after {
+	font-family: FontAwesome;
+  	content: '\f107';
+    font-size: 24px;
+    size: 2x;
+  	position: absolute;
+  	top: 7px;
+  	right: 20px;
+  	color: black;
+    pointer-events: none;
+    -webkit-text-stroke: 1px white;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.sort {
+  text-indent: 10px;
+  color: black;
+  border: thin solid rgba(2, 2, 2, 0.25);
+  border-width: thin;
+  border-radius: 90px;
+  width: 170px;
+  height: 40px;
+  background-color: white;
+}
+
+
+
 .sort-container {
   margin: 0 auto;
-  width: 85%;
+  width: 86vw;
   display: flex;
   justify-content: flex-end;
 }
