@@ -7,6 +7,8 @@ import StarRating from '../StarRating/StarRating';
 
 const Reviews = (props) => {
     
+  const averageRating = props.product.rating;
+
   const { reviews } = props
     
   const REVIEW = reviews.map((review, idx) => {
@@ -48,7 +50,7 @@ const Reviews = (props) => {
 
         }}>
             
-        <StarRating rating={review.rating} />
+          <StarRating rating={review.rating} />
 
         </div>
             
@@ -120,7 +122,7 @@ const Reviews = (props) => {
                
           </div>
           
-          <ReviewForm product={props.product} id={props.id} />
+            <ReviewForm product={props.product} id={props.id} />
           </div>
         </div>
       </>
@@ -157,11 +159,12 @@ const Reviews = (props) => {
           justifyContent: "space-between",
           
         }}>
+
           <div className="reviews-list" style={{
           
             // Visual Properties:
             width: "45vw",
-            padding: "0px 25px",
+            // padding: "0px 25px",
             // padding: "10px 10px",
                         
             // Container Properties:
@@ -171,6 +174,31 @@ const Reviews = (props) => {
             alignItems: "center",
   
           }} >
+
+            <div className="average-reviews-star-rating-container-virtual" style={{
+
+            width: "100%",
+
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+
+            }}>
+
+              <p className="average-reviews-title" style={{
+
+                fontFamily: "Roboto",
+                fontSize: "18px",
+                color: "#5F2758",
+                fontWeight: "300",
+                
+              }}>Average User Rating:</p>
+              
+              <StarRating rating={averageRating} />
+
+            </div>
+
+
               {REVIEW} 
             </div>
           

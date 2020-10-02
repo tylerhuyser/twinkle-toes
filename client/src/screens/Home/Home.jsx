@@ -116,6 +116,8 @@ const Home = (props) => {
           letterSpacing: "0.75px",
           border: "none",
 
+          cursor: "pointer",
+
         }}>Products</button></Link>
 
       </div>

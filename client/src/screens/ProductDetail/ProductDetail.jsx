@@ -51,13 +51,15 @@ const ProductDetail = (props) => {
 
     <Layout
       handleChange={props.handleChange}
-      handleSubmit={props.handleSubmit}>
+      handleSubmit={props.handleSubmit}
+      // className={editVisibility ? "product-details-page-hidden" : "product-details-page-visible"}
+    >
 
       <div id="edit-box" className={editVisibility ? "edit-visible" : "edit-hidden"} style={{
 
         position: "fixed",
-        top: "50",
-        left: '50',
+        top: "0",
+        left: '0',
 
       }}>
         <ProductEdit
@@ -74,7 +76,7 @@ const ProductDetail = (props) => {
         />
       </div>
 
-      <div className="product-details-page-container" style={{
+      <div id="product-details-page-container" className={editVisibility ? "product-details-page-container-nonscroll" : "product-details-page-scrollable"} style={{
 
         display: "flex",
         flexDirection: "column",
@@ -163,6 +165,8 @@ const ProductDetail = (props) => {
                 borderRadius: "12px",
                 padding: "0px 0px 5px 0px",
 
+                cursor: "pointer",
+
               }} />
 
               <img className="product-detail-image" src={product.imgURL2} alt="2" onClick={() => setPrimaryImage(product.imgURL2)} style={{
@@ -177,6 +181,8 @@ const ProductDetail = (props) => {
                 borderRadius: "12px",
                 padding: "0px 0px 5px 0px",
 
+                cursor: "pointer",
+
               }} />
 
               <img className="product-detail-image" src={product.imgURL3} alt="3" onClick={() => setPrimaryImage(product.imgURL3)} style={{
@@ -190,6 +196,8 @@ const ProductDetail = (props) => {
                 border: "2px solid #D091C9",
                 borderRadius: "12px",
                 padding: "0px 0px 5px 0px",
+
+                cursor: "pointer",
 
               }} />
 
@@ -283,6 +291,8 @@ const ProductDetail = (props) => {
                 letterSpacing: "0.75px",
                 border: "none",
 
+                cursor: "pointer",
+
               }}>Edit</button>
               <button className="delete-button" onClick={() => deleteProduct(product._id)} style={{
 
@@ -298,6 +308,8 @@ const ProductDetail = (props) => {
                 textAlign: "center",
                 letterSpacing: "0.75px",
                 border: "none",
+
+                cursor: "pointer",
 
               }}>Delete</button>
             </div>

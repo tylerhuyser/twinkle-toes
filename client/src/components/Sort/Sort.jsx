@@ -12,7 +12,7 @@ const Sort = (props) => {
       
       <div className="select-wrapper">
 
-        <select className="sort" onChange={handleChange}>
+        <select placeholder="Sort By" name="Sort By" className="sort" onChange={handleChange}>
           <option defaultValue value="">Sort By</option>
           <option className="option" value="name-ascending">&nbsp; Alphabetically, A-Z &nbsp;</option>
           <option className="option" value="name-descending">&nbsp; Alphabetically, Z-A &nbsp;</option>

@@ -1,3 +1,7 @@
+.product-details-page-container-nonscroll {
+  overflow: hidden;
+}
+
 .edit-hidden {
   display: none;
   position: absolute;
@@ -7,7 +11,8 @@
   overflow: hidden;
  -webkit-animation: fade-in 1s ease-in both;
 	animation: fade-in 1s ease-in both;
-  position:absolute;
+  position: fixed;
+  z-Index: 10;
 }
 
 /* ----------------------------------------------

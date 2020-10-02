@@ -13,7 +13,7 @@ export default function ProductCreate(props) {
     description: "",
     price: "",
     admin_rating: "",
-    tag: "street",
+    tag: "",
     reviews: [],
   });
 
@@ -68,7 +68,7 @@ export default function ProductCreate(props) {
         }}
       >
         <h5
-          className="review-title"
+          className="create-product-title"
           style={{
             fontFamily: "Roboto",
             fontSize: "32px",
@@ -503,6 +503,9 @@ export default function ProductCreate(props) {
                   textAlign: "center",
                   letterSpacing: "0.75px",
                   border: "none",
+
+                  cursor: "pointer",
+
                 }}
               >
                 Submit

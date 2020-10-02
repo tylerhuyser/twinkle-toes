@@ -153,6 +153,9 @@ const ReviewForm = (props) => {
           textAlign: "center",
           letterSpacing: "0.75px",
           border: "none",
+
+          cursor: "pointer",
+          
         }}
       >
         Submit
