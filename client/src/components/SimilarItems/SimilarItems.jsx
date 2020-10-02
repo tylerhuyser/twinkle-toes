@@ -38,21 +38,21 @@ export default function SimilarItems(props) {
   genSim();
 
   return (
-    <div className="similar-items-flex-box">
-      <Link to={`/products/${display[0][0]._id}`}>
-        <div className="similar-indiv">
-          <img className="similar-items-pic" src={display[0][0].imgURL} alt="similar product one" />
-        </div>
+    <div className="similar-items-container">
+      <Link to={`/products/${display[0][0]._id}`} className="similar-item-container">
+ 
+          <img className="similar-item-image" src={display[0][0].imgURL} alt="similar product one" />
+
       </Link>
-      <Link to={`/products/${display[1][0]._id}`} >
-        <div className="similar-indiv">
-          <img className="similar-items-pic" src={display[1][0].imgURL} alt="similar product two" />
-        </div>
+      <Link to={`/products/${display[1][0]._id}`} className="similar-item-container" >
+  
+          <img className="similar-item-image" src={display[1][0].imgURL} alt="similar product two" />
+
       </Link>
-      <Link to={`/products/${display[2][0]._id}`} >
-        <div className="similar-indiv">
-          <img className="similar-items-pic" src={display[2][0].imgURL} alt="similar product three" />
-        </div>
+      <Link to={`/products/${display[2][0]._id}`}className="similar-item-container" >
+
+          <img className="similar-item-image" src={display[2][0].imgURL} alt="similar product three" />
+
       </Link>
     </div>
   );

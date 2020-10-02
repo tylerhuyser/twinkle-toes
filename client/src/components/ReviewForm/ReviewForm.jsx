@@ -30,6 +30,7 @@ const ReviewForm = (props) => {
           
         // Visual Properties:
         width: "45vw",
+        minHeight: "100%",
         // padding: "10px 10px",
                       
         // Container Properties:
@@ -37,7 +38,10 @@ const ReviewForm = (props) => {
         flexDirection: "column",
         justifyContent: "flex-start",
         alignItems: "center",
-        padding: "0px 10px",
+        padding: "0px 25px",
+
+        border: "3px solid #D091C9",
+        borderRadius: "15px",
 
         }}>
         
@@ -51,7 +55,7 @@ const ReviewForm = (props) => {
                 fontWeight: "300",
                 
                 width: "100%",
-                margin: "0px 0px 25px 0px",
+                margin: "25px 0px 25px 0px",
               
               }} >
           THOUGHTS?
@@ -59,7 +63,7 @@ const ReviewForm = (props) => {
 
             <input
                 className="review-input-author"
-                placeholder="Name"
+                placeholder="Name..."
                 value={review.author}
                 name='author'
                 required
@@ -77,12 +81,15 @@ const ReviewForm = (props) => {
                   border: "none",
                   
                   margin: "5px",
+                  webkitBoxShadow: "0 5px 5px -6px lightgray",
+                  mozBoxShadow: "0 5px 5px -6px lightgray",
+                       boxShadow: "0 5px 5px -6px lightgray",
                 
                 }}
             />
             <input
                 className="review-input-rating"
-                placeholder="Rating (1-5)"
+                placeholder="Rating (1-5)..."
                 value={review.rating}
                 name="rating"
                 required
@@ -99,13 +106,16 @@ const ReviewForm = (props) => {
                   border: "none",
                   
                   margin: "5px",
+                  webkitBoxShadow: "0 5px 5px -6px lightgray",
+                  mozBoxShadow: "0 5px 5px -6px lightgray",
+                       boxShadow: "0 5px 5px -6px lightgray",
                 
                 }}
             />
             <textarea
                 className="review-textarea-description"
                 rows={10}
-                placeholder="Write your review..."
+                placeholder="Leave a review..."
                 value={review.description}
                 name="description"
                 required
@@ -120,8 +130,13 @@ const ReviewForm = (props) => {
 
                   width: "100%",
                   border: "none",
+                  flexGrow: "1",
                   
                   margin: "5px",
+
+                  webkitBoxShadow: "0 5px 5px -6px lightgray",
+                  mozBoxShadow: "0 5px 5px -6px lightgray",
+                       boxShadow: "0 5px 5px -6px lightgray",
                 
                 }}
             />

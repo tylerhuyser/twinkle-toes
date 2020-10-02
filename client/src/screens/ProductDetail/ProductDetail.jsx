@@ -131,10 +131,10 @@ const ProductDetail = (props) => {
 
 
                 borderRadius: "12px",
-                maxWidth: "30vw",
+                width: "30vw",
                 height: "30vw",
                 objectFit: "cover",
-                // objectPosition: "50% 95%",
+                objectPosition: "50% 55%",
                 margin: "20px 10px",
 
               }} />
@@ -156,8 +156,8 @@ const ProductDetail = (props) => {
                 width: "9vw",
                 maxHeight: "6vw",
 
-                objectFit: "cover",
-                objectPosition: "50% 95%",
+                objectFit: "contain",
+                // objectPosition: "50% 50%",
 
                 border: "2px solid #D091C9",
                 borderRadius: "12px",
@@ -170,8 +170,8 @@ const ProductDetail = (props) => {
                 width: "9vw",
                 maxHeight: "6vw",
 
-                objectFit: "cover",
-                objectPosition: "50% 95%",
+                objectFit: "contain",
+                // objectPosition: "50% 95%",
 
                 border: "2px solid #D091C9",
                 borderRadius: "12px",
@@ -184,8 +184,8 @@ const ProductDetail = (props) => {
                 width: "10vw",
                 maxHeight: "6vw",
 
-                objectFit: "cover",
-                objectPosition: "50% 95%",
+                objectFit: "contain",
+                // objectPosition: "50% 95%",
 
                 border: "2px solid #D091C9",
                 borderRadius: "12px",
@@ -218,15 +218,25 @@ const ProductDetail = (props) => {
               fontWeight: "500",
               textAlign: "left",
 
-              marginBottom: "5px",
+              marginBottom: "10px",
 
             }} > {product.name}</div>
 
-            <StarRating rating={product.admin_rating} style={{
+              <div className="star-rating-container" style={{
 
-              margin: "5px",
+              width: "100%",
+              display: "flex",
+              justifyContent: "flex-start",
 
-            }} />
+              }}>
+
+                <StarRating rating={product.admin_rating} style={{
+
+                  margin: "10px 0px 20px 0px",
+
+                  }} />
+              
+            </div>
 
             <div className="price" style={{
 
@@ -235,7 +245,7 @@ const ProductDetail = (props) => {
               fontWeight: "500",
               textAlign: "left",
 
-              marginBottom: "5px",
+              margin: "10px 0px"
 
             }} >{`$${product.price}`}</div>
             <div className="description" style={{
@@ -310,7 +320,7 @@ const ProductDetail = (props) => {
             letterSpacing: "0.9px",
             textAlign: "left",
             fontWeight: "300",
-            margin: "0px",
+            margin: "20px 0px",
 
             }}>SIMILAR ITEMS</h5>
           

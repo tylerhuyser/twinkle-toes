@@ -35,19 +35,22 @@ const Reviews = (props) => {
           fontWeight: "300",
 
           width: "100%",
-          marginTop: "0px",
+          margin: "25px",
                         
         }}>{review.author}</h4>
-            
-        <StarRating rating={review.rating} style={{
-                
-          margin: "5px",
+
+        <div className="star-rating-container" style={{
+
           width: "100%",
 
           display: "flex",
           alignContent: "flex-start",
-              
-        }} />
+
+        }}>
+            
+        <StarRating rating={review.rating} />
+
+        </div>
             
         <h6 className="review-copy" style={{
                 
@@ -57,7 +60,7 @@ const Reviews = (props) => {
           fontWeight: "500",
           textAlign: "left",
                 
-          marginBottom: "25px",
+          margin: "5px 0px 25px 0px",
           paddingRight: "10px",
               
               
@@ -98,9 +101,24 @@ const Reviews = (props) => {
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
+            // padding: "0px 25px",
 
-}}>
-          <div>No Reviews for this Product</div>
+          }}>
+            <div className="no-reviews-message" style={{
+
+              fontSize: "18px",
+              letterSpacing: "0.9px",
+              textAlign: "left",
+              fontWeight: "300",
+    
+              width: "100%",
+              margin: "25px 0px",
+                            
+            }}>
+              
+              No Reviews for this Product.
+               
+          </div>
           
           <ReviewForm product={props.product} id={props.id} />
           </div>
@@ -143,7 +161,7 @@ const Reviews = (props) => {
           
             // Visual Properties:
             width: "45vw",
-            padding: "0px 10px",
+            padding: "0px 25px",
             // padding: "10px 10px",
                         
             // Container Properties:
