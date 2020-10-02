@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getProduct, deleteProduct } from "../../services/products";
-import { useParams } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import Layout from "../../components/shared/Layout/Layout";
 import ProductEdit from "../../components/Edit/ProductEdit.jsx";
 import Reviews from "../../components/Reviews/Reviews";
@@ -16,6 +16,7 @@ const ProductDetail = (props) => {
   const { id } = useParams();
   const [editVisibility, setEditVisibility] = useState(false);
   const [isUpdated, setUpdated] = useState(false);
+  const [isDeleted, setIsDeleted] = useState(false);
   const [primaryImage, setPrimaryImage] = useState("")
 
   useEffect(() => {
@@ -36,6 +37,16 @@ const ProductDetail = (props) => {
   const loadUpdate = () => {
     setUpdated(!isUpdated);
   };
+
+  const loadDelete = () => {
+    deleteProduct(product._id)
+    setIsDeleted(!isDeleted);
+  }
+
+  if (isDeleted) {
+    return <Redirect to={`/products`} />;
+  }
+
 
   //Documentation for code below ::: https://upmostly.com/tutorials/how-to-refresh-a-page-or-component-in-react#:~:text=If%20set%20to%20true%2C%20the,cached%20version%20of%20the%20page.&text=import%20React%20from%20'react'%3B,refreshPage%7D%3EClick%20to%20reload!\
   if (isUpdated) {
@@ -294,7 +305,7 @@ const ProductDetail = (props) => {
                 cursor: "pointer",
 
               }}>Edit</button>
-              <button className="delete-button" onClick={() => deleteProduct(product._id)} style={{
+              <button className="delete-button" onClick={() => loadDelete(product.id)} style={{
 
                 background: "#DB93D3",
                 width: "20vw",

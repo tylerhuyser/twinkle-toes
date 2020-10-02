@@ -35,9 +35,6 @@ export default function ProductEdit(props) {
     rating: rating
   })
 
-
-
-
   const handleSubmit = async (event) => {
     event.preventDefault()
     await updateProduct(id, product)

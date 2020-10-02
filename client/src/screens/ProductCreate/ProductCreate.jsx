@@ -13,8 +13,7 @@ export default function ProductCreate(props) {
     description: "",
     price: "",
     admin_rating: "",
-    tag: "",
-    reviews: [],
+    tag: ""
   });
 
   const [review, setReview] = useState({
@@ -43,7 +42,7 @@ export default function ProductCreate(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    product.reviews.push(review);
+    // product.reviews.push(review);
     const created = await createProduct(product);
     setCreated({ created });
   };
