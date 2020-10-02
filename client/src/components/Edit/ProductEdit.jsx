@@ -48,7 +48,7 @@ export default function ProductEdit(props) {
   return (
 
     <div
-    className="edit-products-module-container"
+    className="edit-products-modual-container"
     style={{
       display: "flex",
       flexDirection: "column",
