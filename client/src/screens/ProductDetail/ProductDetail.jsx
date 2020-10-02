@@ -16,7 +16,7 @@ const ProductDetail = (props) => {
   const { id } = useParams();
   const [editVisibility, setEditVisibility] = useState(false);
   const [isUpdated, setUpdated] = useState(false);
-  const [isDeleted, setIsDeleted] = useState(false);
+  const { isDeleted, setIsDeleted } = props;
   const [primaryImage, setPrimaryImage] = useState("")
 
   useEffect(() => {
@@ -38,8 +38,8 @@ const ProductDetail = (props) => {
     setUpdated(!isUpdated);
   };
 
-  const loadDelete = () => {
-    deleteProduct(product._id)
+  const loadDelete = async () => {
+    await deleteProduct(product._id)
     setIsDeleted(!isDeleted);
   }
 

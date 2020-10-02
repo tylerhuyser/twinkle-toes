@@ -14,6 +14,7 @@ function App() {
   const [allProducts, setAllProducts] = useState([]);
   const history = useHistory();
   const [queriedProducts, setQueriedProducts] = useState([]);
+  const [isDeleted, setIsDeleted] = useState(false);
 
   useEffect(() => {
 
@@ -22,7 +23,7 @@ function App() {
       setAllProducts(products)
     }
     fetchProducts()
-  }, [])
+  }, [isDeleted])
 
   const handleChange = (e) => {
 
@@ -68,6 +69,8 @@ function App() {
                 setAllProducts={setAllProducts}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
+                isDeleted={isDeleted}
+                setIsDeleted={setIsDeleted}
               />
             </Route>
 
@@ -84,6 +87,8 @@ function App() {
                 setAllProducts={setAllProducts}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
+                isDeleted={isDeleted}
+                setIsDeleted={setIsDeleted}
               />
             </Route>
 
