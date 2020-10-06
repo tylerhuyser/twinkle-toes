@@ -119,24 +119,33 @@ export default function ProductCreate(props) {
                 alignItems: "center",
               }}
             >
-              <img
-                className="primary-product-detail-image-preview"
-                src={product.imgURL}
-                alt="primary"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src =
-                    "https://www.flaticon.com/svg/static/icons/svg/1103/1103496.svg";
-                }}
-                style={{
-                  borderRadius: "12px",
-                  width: "30vw",
-                  height: "30vw",
-                  objectFit: "cover",
-                  objectPosition: "50% 55%",
-                  margin: "20px 10px",
-                }}
-              />
+              {product.imgURL === "" ? <i class="fas fa-upload primaryUploadIcon" style={{
+
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+
+              }}></i> :
+
+                <img
+                  className="primary-product-detail-image-preview"
+                  src={product.imgURL}
+                  alt="primary"
+                  // onError={(e) => {
+                  //   e.target.onerror = null;
+                  //   e.target.src =
+                  //     "https://www.flaticon.com/svg/static/icons/svg/1103/1103496.svg";
+                  // }}
+                  style={{
+                    borderRadius: "12px",
+                    width: "30vw",
+                    height: "30vw",
+                    objectFit: "cover",
+                    objectPosition: "50% 55%",
+                    margin: "20px 10px",
+                  }}
+                />
+              }
             </div>
 
             <div
@@ -150,70 +159,111 @@ export default function ProductCreate(props) {
                 margin: "10px 0px",
               }}
             >
-              <img
-                className="product-detail-image-preview"
-                src={product.imgURL}
-                alt="1"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src =
-                    "https://www.flaticon.com/svg/static/icons/svg/1837/1837526.svg";
-                }}
-                style={{
-                  width: "9vw",
-                  maxHeight: "6vw",
 
-                  objectFit: "contain",
-                  // objectPosition: "50% 50%",
+              {product.imgURL === "" ? <i class="fas fa-upload miniUploadIcon" style={{
 
-                  border: "2px solid #D091C9",
-                  borderRadius: "12px",
-                }}
-              />
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
 
-              <img
-                className="product-detail-image-preview"
-                src={product.imgURL2}
-                alt="2"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src =
-                    "https://www.flaticon.com/svg/static/icons/svg/1837/1837526.svg";
-                }}
-                style={{
-                  width: "9vw",
-                  maxHeight: "6vw",
+              }}></i> :
 
-                  objectFit: "contain",
-                  // objectPosition: "50% 95%",
+                <img
+                  className="product-detail-image-preview"
+                  src={product.imgURL}
+                  alt="1"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src =
+                      "https://www.flaticon.com/svg/static/icons/svg/1837/1837526.svg";
+                  }}
+                  style={{
+                    minWidth: "10vw",
+                    minHeight: "6vw",
 
-                  border: "2px solid #D091C9",
-                  borderRadius: "12px",
-                  padding: "0px 0px 5px 0px",
-                }}
-              />
+                    maxWidth: "10vw",
+                    maxHeight: "6vw",
 
-              <img
-                className="product-detail-image"
-                src={product.imgURL3}
-                alt="3"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src =
-                    "https://www.flaticon.com/svg/static/icons/svg/1837/1837526.svg";
-                }}
-                style={{
-                  width: "10vw",
-                  maxHeight: "6vw",
+                    objectFit: "contain",
+                    // objectPosition: "50% 95%",
 
-                  objectFit: "contain",
-                  // objectPosition: "50% 95%",
+                    border: "2px solid #D091C9",
+                    borderRadius: "12px",
+                    margin: "20px 10px",
+                    padding: "0px 0px 5px 0px",
+                  }}
+                />
+              }
 
-                  border: "2px solid #D091C9",
-                  borderRadius: "12px",
-                  padding: "0px 0px 5px 0px",
-                }}
-              />
+              {product.imgURL2 === "" ? <i class="fas fa-upload miniUploadIcon" style={{
+
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+
+              }}></i> :
+        
+                <img
+                  className="product-detail-image-preview"
+                  src={product.imgURL2}
+                  alt="2"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src =
+                      "https://www.flaticon.com/svg/static/icons/svg/1837/1837526.svg";
+                  }}
+                  style={{
+                    minWidth: "10vw",
+                    minHeight: "6vw",
+
+                    maxWidth: "10vw",
+                    maxHeight: "6vw",
+
+                    objectFit: "contain",
+                    // objectPosition: "50% 95%",
+
+                    border: "2px solid #D091C9",
+                    borderRadius: "12px",
+                    margin: "20px 10px",
+                    padding: "0px 0px 5px 0px",
+                  }}
+                />
+              }
+
+              {product.imgURL3 === "" ? <i class="fas fa-upload miniUploadIcon" style={{
+
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+
+              }}></i> :
+
+                <img
+                  className="product-detail-image"
+                  src={product.imgURL3}
+                  alt="3"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src =
+                      "https://www.flaticon.com/svg/static/icons/svg/1837/1837526.svg";
+                  }}
+                  style={{
+                    minWidth: "10vw",
+                    minHeight: "6vw",
+
+                    maxWidth: "10vw",
+                    maxHeight: "6vw",
+
+                    objectFit: "contain",
+                    // objectPosition: "50% 95%",
+
+                    border: "2px solid #D091C9",
+                    borderRadius: "12px",
+                    margin: "20px 10px",
+                    padding: "0px 0px 5px 0px",
+                  }}
+                />
+              }
             </div>
           </div>
 
