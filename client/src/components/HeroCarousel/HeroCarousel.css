@@ -5,6 +5,14 @@
   bottom: 75px;
 }
 
+/* @media only screen and (max-width: 750px) {
+  .hero-carousel-buttons {
+
+    bottom: 50px;
+
+  }
+} */
+
 /* Hide the images by default */
 .invisible {
   display: none;
@@ -52,6 +60,14 @@
   background-color: rgba(0,0,0,0.8);
 }
 
+/* @media only screen and (max-width: 750px) {
+  .prev .next {
+    position: absolute;
+    top: 12%;
+
+  }
+} */
+
 /* The dots/bullets/indicators */
 .hero-dot {
   cursor: pointer;
@@ -84,4 +100,32 @@
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+@media only screen and (max-width: 750px) {
+  
+  .hero-carousel {
+    min-width: 100vw;
+
+  }
+  
+  .hero-carousel-buttons {
+
+    bottom: 50px;
+
+  }
+
+  .prev {
+    position: absolute;
+    top: 15%;
+    left: 0%;
+
+  }
+
+  .next {
+    position: absolute;
+    top: 15%;
+    right: 0%;
+
+  }
 }

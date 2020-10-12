@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import './ProductEdit.css';
+import './ProductEdit.css';
 import { updateProduct } from '../../services/products.js';
 
 export default function ProductEdit(props) {
@@ -16,6 +16,15 @@ export default function ProductEdit(props) {
     changeVisibility,
     loadUpdate
   } = props;
+
+  const [nameError, setNameError] = useState(false)
+  const [descriptionError, setDescriptionError] = useState(false)
+  const [priceError, setPriceError] = useState(false)
+  const [admin_ratingError, setAdmin_RatingError] = useState(false)
+  const [tagError, setTagError] = useState(false)
+  const [imgURLError, setImgURLError] = useState(false)
+  const [imgURL2Error, setImgURL2Error] = useState(false)
+  const [imgURL3Error, setImgURL3Error] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -41,44 +50,113 @@ export default function ProductEdit(props) {
     loadUpdate()
   }
 
+  function validateForm(e) {
+    e.preventDefault();
+
+    if (product.name === "") {
+      setNameError(true)
+    }
+    if (product.description === "") {
+      setDescriptionError(true)
+    }
+    if (product.price === "") {
+      setPriceError(true)
+    }
+    if (product.admin_rating === "") {
+      setAdmin_RatingError(true)
+    }
+    if (product.tag === "") {
+      setTagError(true)
+    }
+    if (product.imgURL === "") {
+      setImgURLError(true)
+    }
+    if (product.imgURL2 === "") {
+      setImgURL2Error(true)
+    }
+    if (product.imgURL3 === "") {
+      setImgURL3Error(true)
+    }
+    if (nameError === false && descriptionError === false && priceError === false && admin_ratingError === false && tagError === false && imgURLError === false && imgURL2Error === false && imgURL3Error === false) {
+      handleSubmit(e);
+    }
+  };
 
   return (
 
     <div
     className="edit-products-modual-container"
-    style={{
+      style={{
+      
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
       backgroundColor: "white",
-      maxHeight: "100vh",
-      overflow: "scroll",
+      minHeight: "80vh",
+      minWidth: "100vw",
+      maxWidth: "100vw",
+      
     }}
-  >
-    <h5
-      className="edit-product-title"
-      style={{
-        fontFamily: "Roboto",
-        fontSize: "32px",
-        color: "#9A7395",
-        letterSpacing: "0.9px",
-        textAlign: "left",
-        fontWeight: "300",
-
-        margin: "20px 0px",
-        marginLeft: "10vw",
-        width: "90vw",
-      }}
     >
-      Edit Product
-    </h5>
+      
+      <div className="floater" style={{
+
+        minHeight: "100px",
+        padding: "20px, 0px",
+        width: "95vw",
+
+      }}></div>
+
+
+    <div className="edit-modual-header" style={{
+
+      width: "95vw",
+      height: "100px",
+      padding: "20px 0px",
+      backgroundColor: "white",
+      position: "fixed",
+      top: "0",
+      zIndex: "9",
+      
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between",
+
+    }}>
+      <h5
+        className="edit-product-title"
+          style={{
+          
+          fontFamily: "Roboto",
+          fontSize: "32px",
+          color: "#9A7395",
+          letterSpacing: "0.9px",
+          textAlign: "left",
+          fontWeight: "300",
+
+          margin: "20px 0px",
+          width: "80vw",
+          flexGrow: "1",
+        }}
+      >
+          Edit Product
+      </h5>
+        
+        <i className="fas fa-times" style={{
+        
+          fontSize: "48px",
+          margin: "20px 0px",
+
+      }} onClick={changeVisibility}></i>
+        
+    </div>
 
     <div
       className="edit-product-container"
       style={{
         // Visual Props:
-        // minHeight: "80vh",
+        // minHeight: "100vh",
         margin: "20px 0px",
 
         // Container Properties:
@@ -91,16 +169,17 @@ export default function ProductEdit(props) {
     >
       <div
         className="product-images-container-edit"
-        style={{
+          style={{
+          
           // Visual Properties:
           width: "45vw",
-          // padding: "10px 10px",
 
           // Container Properties:
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-start",
           alignItems: "center",
+
         }}
       >
         <div
@@ -145,7 +224,7 @@ export default function ProductEdit(props) {
 
             display: "flex",
             flexDirection: "row",
-            justifyContent: "space-between",
+            justifyContent: "space-around",
             margin: "10px 0px",
           }}
         >
@@ -159,14 +238,18 @@ export default function ProductEdit(props) {
                 "https://www.flaticon.com/svg/static/icons/svg/1837/1837526.svg";
             }}
             style={{
-              width: "9vw",
+              minWidth: "10vw",
+              minHeight: "6vw",
+
+              maxWidth: "10vw",
               maxHeight: "6vw",
 
               objectFit: "contain",
-              // objectPosition: "50% 50%",
 
               border: "2px solid #D091C9",
-              borderRadius: "12px",
+              borderRadius: "10px",
+              margin: "20px 10px",
+              padding: "5px 0px",
             }}
           />
 
@@ -180,15 +263,19 @@ export default function ProductEdit(props) {
                 "https://www.flaticon.com/svg/static/icons/svg/1837/1837526.svg";
             }}
             style={{
-              width: "9vw",
+              minWidth: "10vw",
+              minHeight: "6vw",
+
+              maxWidth: "10vw",
               maxHeight: "6vw",
 
               objectFit: "contain",
               // objectPosition: "50% 95%",
 
               border: "2px solid #D091C9",
-              borderRadius: "12px",
-              padding: "0px 0px 5px 0px",
+              borderRadius: "10px",
+              margin: "20px 10px",
+              padding: "5px 0px",
             }}
           />
 
@@ -202,15 +289,19 @@ export default function ProductEdit(props) {
                 "https://www.flaticon.com/svg/static/icons/svg/1837/1837526.svg";
             }}
             style={{
-              width: "10vw",
+              minWidth: "10vw",
+              minHeight: "6vw",
+
+              maxWidth: "10vw",
               maxHeight: "6vw",
 
               objectFit: "contain",
               // objectPosition: "50% 95%",
 
               border: "2px solid #D091C9",
-              borderRadius: "12px",
-              padding: "0px 0px 5px 0px",
+              borderRadius: "10px",
+              margin: "20px 10px",
+              padding: "5px 0px",
             }}
           />
         </div>
@@ -218,7 +309,7 @@ export default function ProductEdit(props) {
 
       <form
         className="edit-product-info-form"
-        onSubmit={handleSubmit}
+        onSubmit={validateForm}
         style={{
           // Visual Properties:
           width: "45vw",
@@ -247,7 +338,7 @@ export default function ProductEdit(props) {
         </h4>
 
         <input
-          className="edit-name"
+          className={nameError ? "edit-name invalid" : "edit-name valid"}
           placeholder="Product Name"
           value={product.name}
           name="name"
@@ -263,9 +354,7 @@ export default function ProductEdit(props) {
             textAlign: "left",
 
             width: "100%",
-            border: "none",
 
-            margin: "5px",
             WebkitBoxShadow: "0 5px 5px -6px lightgray",
             MozBoxShadow: "0 5px 5px -6px lightgray",
             boxShadow: "0 5px 5px -6px lightgray",
@@ -273,7 +362,7 @@ export default function ProductEdit(props) {
         />
 
         <input
-          className="edit-price"
+          className={priceError ? "edit-price invalid" : "edit-price valid"}
           placeholder="Product Price"
           value={product.price}
           name="price"
@@ -287,9 +376,7 @@ export default function ProductEdit(props) {
             textAlign: "left",
 
             width: "100%",
-            border: "none",
 
-            margin: "5px",
             WebkitBoxShadow: "0 5px 5px -6px lightgray",
             MozBoxShadow: "0 5px 5px -6px lightgray",
             boxShadow: "0 5px 5px -6px lightgray",
@@ -297,7 +384,7 @@ export default function ProductEdit(props) {
         />
 
         <textarea
-          className="edit-textarea-description"
+          className={descriptionError ? "edit-description invalid" : "edit-description valid"}
           rows={10}
           placeholder="Product Description..."
           value={product.description}
@@ -312,9 +399,7 @@ export default function ProductEdit(props) {
             textAlign: "left",
 
             width: "100%",
-            border: "none",
-
-            margin: "5px",
+ 
             WebkitBoxShadow: "0 5px 5px -6px lightgray",
             MozBoxShadow: "0 5px 5px -6px lightgray",
             boxShadow: "0 5px 5px -6px lightgray",
@@ -322,7 +407,7 @@ export default function ProductEdit(props) {
         />
 
         <input
-          className="edit-rating"
+          className={admin_ratingError ? "edit-rating invalid" : "edit-rating valid"}
           placeholder="Product Rating (1-5)..."
           value={product.admin_rating}
           name="admin_rating"
@@ -339,9 +424,7 @@ export default function ProductEdit(props) {
             textAlign: "left",
 
             width: "100%",
-            border: "none",
-
-            margin: "5px",
+ 
             WebkitBoxShadow: "0 5px 5px -6px lightgray",
             MozBoxShadow: "0 5px 5px -6px lightgray",
             boxShadow: "0 5px 5px -6px lightgray",
@@ -351,7 +434,7 @@ export default function ProductEdit(props) {
         <select
           name="edit-tag"
           placeholder="Product Tag"
-          className="create-tag"
+          className={tagError ? "edit-tag invalid" : "edit-tag valid"}
           onChange={handleChange}
           value={product.tag}
           style={{
@@ -362,9 +445,7 @@ export default function ProductEdit(props) {
             textAlign: "left",
 
             width: "100%",
-            border: "none",
-
-            margin: "5px",
+ 
             WebkitBoxShadow: "0 5px 5px -6px lightgray",
             MozBoxShadow: "0 5px 5px -6px lightgray",
             boxShadow: "0 5px 5px -6px lightgray",
@@ -393,7 +474,7 @@ export default function ProductEdit(props) {
         </h4>
 
         <input
-          className="edit-image-link"
+          className={imgURLError ? "edit-image-link invalid" : "edit-image-link valid"}
           placeholder="Primary Preview Link"
           value={product.imgURL}
           name="imgURL"
@@ -409,9 +490,7 @@ export default function ProductEdit(props) {
             textAlign: "left",
 
             width: "100%",
-            border: "none",
 
-            margin: "5px",
             WebkitBoxShadow: "0 5px 5px -6px lightgray",
             MozBoxShadow: "0 5px 5px -6px lightgray",
             boxShadow: "0 5px 5px -6px lightgray",
@@ -419,7 +498,7 @@ export default function ProductEdit(props) {
         />
 
         <input
-          className="edit-image-link-2"
+          className={imgURL2Error ? "edit-image-link invalid" : "edit-image-link valid"}
           placeholder="Image Link"
           value={product.imgURL2}
           name="imgURL2"
@@ -433,9 +512,7 @@ export default function ProductEdit(props) {
             textAlign: "left",
 
             width: "100%",
-            border: "none",
 
-            margin: "5px",
             WebkitBoxShadow: "0 5px 5px -6px lightgray",
             MozBoxShadow: "0 5px 5px -6px lightgray",
             boxShadow: "0 5px 5px -6px lightgray",
@@ -443,7 +520,7 @@ export default function ProductEdit(props) {
         />
 
         <input
-          className="edit-image-link-3"
+          className={imgURL3Error ? "edit-image-link invalid" : "edit-image-link valid"}
           placeholder="Image Link"
           value={product.imgURL3}
           name="imgURL3"
@@ -457,9 +534,7 @@ export default function ProductEdit(props) {
             textAlign: "left",
 
             width: "100%",
-            border: "none",
-
-            margin: "5px",
+ 
             WebkitBoxShadow: "0 5px 5px -6px lightgray",
             MozBoxShadow: "0 5px 5px -6px lightgray",
             boxShadow: "0 5px 5px -6px lightgray",
@@ -478,7 +553,7 @@ export default function ProductEdit(props) {
         >
           <button
             className="submit-button"
-            onClick={(e) => handleSubmit(e)}
+            onClick={validateForm}
             style={{
               background: "#DB93D3",
               width: "20vw",
@@ -508,7 +583,7 @@ export default function ProductEdit(props) {
               width: "20vw",
               height: "35px",
               borderRadius: "15px",
-              margin: "50px auto",
+              margin: "50px 0px",
 
               color: "#FFFFFF",
               fontFamily: "Source Sans Pro",

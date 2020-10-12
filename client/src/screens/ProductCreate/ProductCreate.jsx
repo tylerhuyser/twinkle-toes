@@ -5,6 +5,7 @@ import { Redirect } from "react-router-dom";
 import { createProduct } from "../../services/products";
 
 export default function ProductCreate(props) {
+
   const [product, setProduct] = useState({
     name: "",
     imgURL: "",
@@ -16,11 +17,14 @@ export default function ProductCreate(props) {
     tag: ""
   });
 
-  const [review, setReview] = useState({
-    author: "",
-    rating: "",
-    description: "",
-  });
+  const [nameError, setNameError] = useState(false)
+  const [descriptionError, setDescriptionError] = useState(false)
+  const [priceError, setPriceError] = useState(false)
+  const [admin_ratingError, setAdmin_RatingError] = useState(false)
+  const [tagError, setTagError] = useState(false)
+  const [imgURLError, setImgURLError] = useState(false)
+  const [imgURL2Error, setImgURL2Error] = useState(false)
+  const [imgURL3Error, setImgURL3Error] = useState(false)
 
   const [isCreated, setCreated] = useState(false);
 
@@ -41,6 +45,38 @@ export default function ProductCreate(props) {
   if (isCreated) {
     return <Redirect to={`/products`} />;
   }
+
+  function validateForm(e) {
+    e.preventDefault();
+
+    if (product.name === "") {
+      setNameError(true)
+    }
+    if (product.description === "") {
+      setDescriptionError(true)
+    }
+    if (product.price === "") {
+      setPriceError(true)
+    }
+    if (product.admin_rating === "") {
+      setAdmin_RatingError(true)
+    }
+    if (product.tag === "") {
+      setTagError(true)
+    }
+    if (product.imgURL === "") {
+      setImgURLError(true)
+    }
+    if (product.imgURL2 === "") {
+      setImgURL2Error(true)
+    }
+    if (product.imgURL3 === "") {
+      setImgURL3Error(true)
+    }
+    if (nameError === false && descriptionError === false && priceError === false && admin_ratingError === false && tagError === false && imgURLError === false && imgURL2Error === false && imgURL3Error === false) {
+      handleSubmit(e);
+    }
+  };
 
   return (
     <Layout
@@ -79,7 +115,6 @@ export default function ProductCreate(props) {
           className="create-products-container"
           style={{
             // Visual Props:
-            // minHeight: "80vh",
             margin: "20px 0px",
 
             // Container Properties:
@@ -190,7 +225,7 @@ export default function ProductCreate(props) {
                     border: "2px solid #D091C9",
                     borderRadius: "12px",
                     margin: "20px 10px",
-                    padding: "0px 0px 5px 0px",
+                    padding: "5px 0px",
                   }}
                 />
               }
@@ -225,7 +260,7 @@ export default function ProductCreate(props) {
                     border: "2px solid #D091C9",
                     borderRadius: "12px",
                     margin: "20px 10px",
-                    padding: "0px 0px 5px 0px",
+                    padding: "5px 0px",
                   }}
                 />
               }
@@ -260,7 +295,7 @@ export default function ProductCreate(props) {
                     border: "2px solid #D091C9",
                     borderRadius: "12px",
                     margin: "20px 10px",
-                    padding: "0px 0px 5px 0px",
+                    padding: "5px 0px",
                   }}
                 />
               }
@@ -269,7 +304,7 @@ export default function ProductCreate(props) {
 
           <form
             className="create-new-product-form"
-            onSubmit={handleSubmit}
+            onSubmit={validateForm}
             style={{
               // Visual Properties:
               width: "45vw",
@@ -298,11 +333,10 @@ export default function ProductCreate(props) {
             </h4>
 
             <input
-              className="create-name"
+              className={nameError ? "create-name invalid" : "create-name valid"}
               placeholder="Product Name"
               value={product.name}
               name="name"
-              required
               onChange={handleChange}
               type="text"
               autoFocus
@@ -314,9 +348,7 @@ export default function ProductCreate(props) {
                 textAlign: "left",
 
                 width: "100%",
-                border: "none",
 
-                margin: "5px",
                 WebkitBoxShadow: "0 5px 5px -6px lightgray",
                 MozBoxShadow: "0 5px 5px -6px lightgray",
                 boxShadow: "0 5px 5px -6px lightgray",
@@ -324,11 +356,10 @@ export default function ProductCreate(props) {
             />
 
             <input
-              className="create-price"
+              className={priceError ? "create-price invalid" : "create-price valid"}
               placeholder="Product Price"
               value={product.price}
               name="price"
-              required
               onChange={handleChange}
               style={{
                 fontFamily: "Roboto",
@@ -338,9 +369,7 @@ export default function ProductCreate(props) {
                 textAlign: "left",
 
                 width: "100%",
-                border: "none",
 
-                margin: "5px",
                 WebkitBoxShadow: "0 5px 5px -6px lightgray",
                 MozBoxShadow: "0 5px 5px -6px lightgray",
                 boxShadow: "0 5px 5px -6px lightgray",
@@ -348,12 +377,11 @@ export default function ProductCreate(props) {
             />
 
             <textarea
-              className="create-textarea-description"
+              className={descriptionError ? "create-description invalid" : "create-description valid"}
               rows={10}
               placeholder="Product Description..."
               value={product.description}
               name="description"
-              required
               onChange={handleChange}
               style={{
                 fontFamily: "Roboto",
@@ -363,9 +391,7 @@ export default function ProductCreate(props) {
                 textAlign: "left",
 
                 width: "100%",
-                border: "none",
 
-                margin: "5px",
                 WebkitBoxShadow: "0 5px 5px -6px lightgray",
                 MozBoxShadow: "0 5px 5px -6px lightgray",
                 boxShadow: "0 5px 5px -6px lightgray",
@@ -373,11 +399,10 @@ export default function ProductCreate(props) {
             />
 
             <input
-              className="create-rating"
+              className={admin_ratingError ? "create-rating invalid" : "create-rating valid"}
               placeholder="Product Rating (1-5)..."
               value={product.admin_rating}
               name="admin_rating"
-              required
               onChange={handleChange}
               type="number"
               max="5"
@@ -390,9 +415,7 @@ export default function ProductCreate(props) {
                 textAlign: "left",
 
                 width: "100%",
-                border: "none",
 
-                margin: "5px",
                 WebkitBoxShadow: "0 5px 5px -6px lightgray",
                 MozBoxShadow: "0 5px 5px -6px lightgray",
                 boxShadow: "0 5px 5px -6px lightgray",
@@ -402,20 +425,18 @@ export default function ProductCreate(props) {
             <select
               name="tag"
               placeholder="Product Tag"
-              className="create-tag"
+              className={tagError ? "create-tag invalid" : "create-tag valid"}
               onChange={handleChange}
               value={product.tag}
               style={{
                 fontFamily: "Roboto",
                 fontSize: "18px",
-                color: "#5F2758",
+                color: "gray",
                 fontWeight: "300",
                 textAlign: "left",
 
                 width: "100%",
-                border: "none",
 
-                margin: "5px",
                 WebkitBoxShadow: "0 5px 5px -6px lightgray",
                 MozBoxShadow: "0 5px 5px -6px lightgray",
                 boxShadow: "0 5px 5px -6px lightgray",
@@ -429,7 +450,7 @@ export default function ProductCreate(props) {
             </select>
 
             <h4
-              className="review-author-name"
+              className="product-image-links-title"
               style={{
                 fontSize: "18px",
                 letterSpacing: "0.9px",
@@ -444,11 +465,10 @@ export default function ProductCreate(props) {
             </h4>
 
             <input
-              className="create-image-link"
+              className={imgURLError ? "create-image-link invalid" : "create-image-link valid"}
               placeholder="Primary Preview Link"
               value={product.imgURL}
               name="imgURL"
-              required
               onChange={handleChange}
               type="text"
               autoFocus
@@ -460,9 +480,7 @@ export default function ProductCreate(props) {
                 textAlign: "left",
 
                 width: "100%",
-                border: "none",
 
-                margin: "5px",
                 WebkitBoxShadow: "0 5px 5px -6px lightgray",
                 MozBoxShadow: "0 5px 5px -6px lightgray",
                 boxShadow: "0 5px 5px -6px lightgray",
@@ -470,11 +488,10 @@ export default function ProductCreate(props) {
             />
 
             <input
-              className="create-image-link"
+              className={imgURL2Error ? "create-image-link invalid" : "create-image-link valid"}
               placeholder="Image Link"
               value={product.imgURL2}
               name="imgURL2"
-              required
               onChange={handleChange}
               style={{
                 fontFamily: "Roboto",
@@ -484,9 +501,7 @@ export default function ProductCreate(props) {
                 textAlign: "left",
 
                 width: "100%",
-                border: "none",
 
-                margin: "5px",
                 WebkitBoxShadow: "0 5px 5px -6px lightgray",
                 MozBoxShadow: "0 5px 5px -6px lightgray",
                 boxShadow: "0 5px 5px -6px lightgray",
@@ -494,11 +509,10 @@ export default function ProductCreate(props) {
             />
 
             <input
-              className="create-image-link"
+              className={imgURL3Error ? "create-image-link invalid" : "create-image-link valid"}
               placeholder="Image Link"
               value={product.imgURL3}
               name="imgURL3"
-              required
               onChange={handleChange}
               style={{
                 fontFamily: "Roboto",
@@ -508,9 +522,7 @@ export default function ProductCreate(props) {
                 textAlign: "left",
 
                 width: "100%",
-                border: "none",
 
-                margin: "5px",
                 WebkitBoxShadow: "0 5px 5px -6px lightgray",
                 MozBoxShadow: "0 5px 5px -6px lightgray",
                 boxShadow: "0 5px 5px -6px lightgray",
@@ -529,7 +541,7 @@ export default function ProductCreate(props) {
             >
               <button
                 className="submit-button"
-                onSubmit={handleSubmit}
+                onSubmit={validateForm}
                 style={{
                   background: "#DB93D3",
                   width: "20vw",

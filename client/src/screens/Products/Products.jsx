@@ -13,13 +13,12 @@ const Products = (props) => {
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
 
-  const { isDeleted, setIsDeleted } = props
+  const { isDeleted } = props
 
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getProducts();
       setQueriedProducts(products);
-      console.log('in there')
     };
     fetchProducts();
   }, [isDeleted]);

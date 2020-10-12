@@ -1,5 +1,13 @@
 .product-details-page-container-nonscroll {
-  overflow: hidden;
+  /* overflow: hidden; */
+  display: none;
+}
+
+.product-details-page-container-scrollable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .edit-hidden {
@@ -8,11 +16,14 @@
 }
  
 .edit-visible {
-  overflow: hidden;
+  /* overflow: hidden; */
  -webkit-animation: fade-in 1s ease-in both;
 	animation: fade-in 1s ease-in both;
-  position: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-Index: 10;
+  /* overflow: scroll; */
 }
 
 /* ----------------------------------------------

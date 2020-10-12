@@ -1,100 +1,10 @@
-.edit-container{
-  margin:0 auto;
-  display:flex;
-  flex-direction:row;
-  width: 80vw;
-  height: 100vh;
-  justify-content:center;
-  border: 3px solid #D091C9;
-  border-radius: 12px;
-  flex-wrap:wrap;
-  background: #f7ecec90;
-  
+.valid {
+  border: none;
+  margin: 5px;
 }
 
-.edit-component{
-  align-items:center;
-  width:100vw;
-  background:rgba(255,255,255,.7);
-}
-.edit-button-container{
-  margin: 10px;
-}
 
-.edit-update-button, .edit-cancel-button{
-    margin:10px 30px;
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    text-align: center;
-    height: 40px;
-    width: 100px;
-    border-radius: 50px;
-    align-self: center;
-    background-color: #DB93D3;
-    color: white;
-    border: 1px solid #D091C9;
-    box-shadow: 0px 0px 0px 0px #CECECE;
-    cursor: pointer;
-}
-
-.edit-input{
-  padding: 10px;
-}
-
-.edit-description,
-.edit-name,
-.edit-image-link{
-  width:15vw;
-  cursor: pointer;
-  border: 1px solid #D091C9;
-  border-radius: 15px;
-  background: #F7ECEC90;
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-}
-
-.edit-image-link,
-.edit-name,
-.edit-price,
-.edit-rating{
-  text-align:center;
-  cursor: pointer;
-  border: 1px solid #D091C9;
-  border-radius: 15px;
-}
-
-.edit-not-a-page{
-  height:fit-content;
-  width: fit-content;
-
-}
-
-.edit-photos-column,
-.edit-right-column{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  width:35vw;
-  
-}
-
-.edit-photos-row{
-  display:flex;
-  flex-direction:row;
-  justify-content:space-evenly;
-}
-
-.edit-photo-mini{
-  width:100px;
-  height:100px;
-  border: 1px solid #D091C9;
-  border-radius: 12px;
-}
-
-.edit-photo-main{
-  width:400px;
-  height:400px;
-  border: 1px solid #D091C9;
-  border-radius: 12px;
+.invalid {
+  border: 2px solid red;
+  margin: 1px 5px;
 }

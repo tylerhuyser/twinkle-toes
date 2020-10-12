@@ -6,14 +6,6 @@ const Search = (props) => {
 
   let search = props.search;
 
-  // const [isSearched, setSearched] = useState(false)
-
-  // if (isSearched) {
-  //   return (
-  //     <Redirect to={`/search-results`} />
-  //   )
-  // }
-
   return (
     <form className="search-form" tabIndex="-1" onSubmit={(e) => props.handleSubmit(e)} >
       <input

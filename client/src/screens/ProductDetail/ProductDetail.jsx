@@ -27,6 +27,7 @@ const ProductDetail = (props) => {
       setLoaded(true);
     };
     fetchProduct();
+    window.scrollTo(0, 0)
   }, [id]);
 
   const changeVisibility = (e) => {
@@ -53,9 +54,8 @@ const ProductDetail = (props) => {
   }
 
   if (!isLoaded) {
-    return <h1>Loading...</h1>;
+    return <div className="loader"></div>
   }
-
 
   return (
 
@@ -65,11 +65,13 @@ const ProductDetail = (props) => {
       // className={editVisibility ? "product-details-page-hidden" : "product-details-page-visible"}
     >
 
-      <div id="edit-box" className={editVisibility ? "edit-visible" : "edit-hidden"} style={{
+      <div id="edit-products-modual" className={editVisibility ? "edit-visible" : "edit-hidden"} style={{
 
-        position: "fixed",
-        top: "0",
-        left: '0',
+        // position: "fixed",
+        // top: "0",
+        // left: '0',
+        // overflow: "scroll",
+        maxWidth: "100vw",
 
       }}>
         <ProductEdit
@@ -86,14 +88,7 @@ const ProductDetail = (props) => {
         />
       </div>
 
-      <div id="product-details-page-container" className={editVisibility ? "product-details-page-container-nonscroll" : "product-details-page-scrollable"} style={{
-
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-
-      }}>
+      <div id="product-details-page-container" className={editVisibility ? "product-details-page-container-nonscroll" : "product-details-page-scrollable"}>
 
         <div className="product-details-container" style={{
 
@@ -159,21 +154,25 @@ const ProductDetail = (props) => {
 
               display: "flex",
               flexDirection: "row",
-              justifyContent: "space-between",
+              justifyContent: "space-around",
               margin: "10px 0px"
             }}>
 
               <img className="product-detail-image" src={product.imgURL} alt="1" onClick={() => setPrimaryImage(product.imgURL)} style={{
 
-                width: "9vw",
+                minWidth: "10vw",
+                minHeight: "6vw",
+
+                maxWidth: "10vw",
                 maxHeight: "6vw",
 
                 objectFit: "contain",
-                // objectPosition: "50% 50%",
+                // objectPosition: "50% 95%",
 
                 border: "2px solid #D091C9",
-                borderRadius: "12px",
-                padding: "0px 0px 5px 0px",
+                borderRadius: "10px",
+                margin: "20px 10px",
+                padding: "5px 0px",
 
                 cursor: "pointer",
 
@@ -181,15 +180,19 @@ const ProductDetail = (props) => {
 
               <img className="product-detail-image" src={product.imgURL2} alt="2" onClick={() => setPrimaryImage(product.imgURL2)} style={{
 
-                width: "9vw",
+                minWidth: "10vw",
+                minHeight: "6vw",
+
+                maxWidth: "10vw",
                 maxHeight: "6vw",
 
                 objectFit: "contain",
                 // objectPosition: "50% 95%",
 
                 border: "2px solid #D091C9",
-                borderRadius: "12px",
-                padding: "0px 0px 5px 0px",
+                borderRadius: "10px",
+                margin: "20px 10px",
+                padding: "5px 0px",
 
                 cursor: "pointer",
 
@@ -197,15 +200,19 @@ const ProductDetail = (props) => {
 
               <img className="product-detail-image" src={product.imgURL3} alt="3" onClick={() => setPrimaryImage(product.imgURL3)} style={{
 
-                width: "10vw",
+                minWidth: "10vw",
+                minHeight: "6vw",
+
+                maxWidth: "10vw",
                 maxHeight: "6vw",
 
                 objectFit: "contain",
                 // objectPosition: "50% 95%",
 
                 border: "2px solid #D091C9",
-                borderRadius: "12px",
-                padding: "0px 0px 5px 0px",
+                borderRadius: "10px",
+                margin: "20px 10px",
+                padding: "5px 0px",
 
                 cursor: "pointer",
 
@@ -292,7 +299,7 @@ const ProductDetail = (props) => {
                 width: "20vw",
                 height: "35px",
                 borderRadius: "15px",
-                margin: "50px auto",
+                margin: "50px 0px",
 
                 color: "#FFFFFF",
                 fontFamily: "Source Sans Pro",
@@ -310,7 +317,7 @@ const ProductDetail = (props) => {
                 width: "20vw",
                 height: "35px",
                 borderRadius: "15px",
-                margin: "50px auto",
+                margin: "50px 0px",
 
                 color: "#FFFFFF",
                 fontFamily: "Source Sans Pro",
@@ -326,23 +333,25 @@ const ProductDetail = (props) => {
           </div>
         </div>
 
-        <div className="similarItems" style={{
+        {allProducts.length > 1 ?
+        
+          <div className="similar-items-container" style={{
 
-          width: "90vw",
-          display: "flex",
-          flexDirection: "column",
-          margin: "25px",
+            width: "90vw",
+            display: "flex",
+            flexDirection: "column",
+            margin: "25px",
 
-        }}>
-          <h5 style={{
+          }}>
+            <h5 style={{
 
-            fontFamily: "Roboto",
-            fontSize: "32px",
-            color: "#9A7395",
-            letterSpacing: "0.9px",
-            textAlign: "left",
-            fontWeight: "300",
-            margin: "20px 0px",
+              fontFamily: "Roboto",
+              fontSize: "32px",
+              color: "#9A7395",
+              letterSpacing: "0.9px",
+              textAlign: "left",
+              fontWeight: "300",
+              margin: "20px 0px",
 
             }}>SIMILAR ITEMS</h5>
           
@@ -357,7 +366,13 @@ const ProductDetail = (props) => {
             
             </div>
 
-        </div>
+          </div>
+          
+          :
+          
+          <div className="no-similar-products"></div>
+          
+        }
         
           <Reviews reviews={product.reviews} product={product} id={id} loadUpdate={loadUpdate} />
         

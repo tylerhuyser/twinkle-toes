@@ -27,7 +27,6 @@ const HeroCarousel = (props) => {
       <div className="invisible fade" key={idx} style={{
 
         width: "100vw",
-        // height: "70vw",
 
         display: "flex",
 

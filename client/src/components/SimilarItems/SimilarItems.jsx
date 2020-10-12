@@ -33,27 +33,58 @@ export default function SimilarItems(props) {
       display.push(similar.splice(rndm, 1));
     }
     console.log(display)
+    console.log(display[2][0])
   }
 
   genSim();
 
   return (
-    <div className="similar-items-container">
-      <Link to={`/products/${display[0][0]._id}`} className="similar-item-container">
- 
-          <img className="similar-item-image" src={display[0][0].imgURL} alt="similar product one" />
 
-      </Link>
-      <Link to={`/products/${display[1][0]._id}`} className="similar-item-container" >
+    <div className={display[2][0] === undefined ? "similar-items-condensed" : "similar-items"}>
+
+      { display[0][0] === undefined ?
+
+        <div className="empty"></div>
+        
+        :
+        
+        <Link to={`/products/${display[0][0]._id}`} className="similar-item-container">
   
-          <img className="similar-item-image" src={display[1][0].imgURL} alt="similar product two" />
+            <img className="similar-item-image" src={display[0][0].imgURL} alt="similar product one" />
 
-      </Link>
-      <Link to={`/products/${display[2][0]._id}`}className="similar-item-container" >
+        </Link>
 
-          <img className="similar-item-image" src={display[2][0].imgURL} alt="similar product three" />
+      }
 
-      </Link>
+      { display[1][0] === undefined ?
+      
+        <div className="empty"></div>
+        
+        :
+        
+        <Link to={`/products/${display[1][0]._id}`} className="similar-item-container" >
+    
+            <img className="similar-item-image" src={display[1][0].imgURL} alt="similar product two" />
+
+        </Link>
+
+      }
+
+      { display[2][0] === undefined ? 
+        
+        <div className="empty"></div>
+
+        :
+
+        <Link to={`/products/${display[2][0]._id}`}className="similar-item-container" >
+
+            <img className="similar-item-image" src={display[2][0].imgURL} alt="similar product three" />
+
+        </Link>
+
+      }
+
     </div>
+
   );
 };

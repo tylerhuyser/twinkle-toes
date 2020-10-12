@@ -1,4 +1,4 @@
-.primaryUploadIcon{
+.primaryUploadIcon {
 
   min-width: 30vw;
   min-height: 30vw;
@@ -8,15 +8,26 @@
   vertical-align: middle;
 }
 
-.miniUploadIcon{
+.miniUploadIcon {
 
   min-width: 10vw;
   min-height: 6vw;
   margin: 20px 10px; 
   color: #D091C9;
-  font-size: 20px;
+  font-size: 36px;
   vertical-align: middle;
   border: 2px solid #D091C9;
   border-radius: 12px;
   padding: 0px 0px 5px 0px;
+}
+
+.valid {
+  border: none;
+  margin: 5px;
+}
+
+
+.invalid {
+  border: 2px solid red;
+  margin: 1px 5px;
 }

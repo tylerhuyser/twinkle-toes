@@ -1,10 +1,24 @@
 * {box-sizing:border-box}
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+.popular-items-carousel {
+  display: flex;
+  flex-direction: row;
+  min-width: 100vw;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+
+}
+
+.popular-items-cards {
+  flex-grow: 1;
+
+  min-width: 80vw;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
 }
 
 /* Hide the images by default */
@@ -70,4 +84,19 @@
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+@media only screen and (max-width: 750px) {
+  
+  .popular-items-carousel {
+    display: flex;
+    flex-direction: row;
+    min-width: 100vw;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+  
+  }
+
+
 }

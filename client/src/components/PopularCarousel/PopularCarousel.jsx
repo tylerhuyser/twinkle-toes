@@ -134,30 +134,11 @@ const PopularCarousel = (props) => {
   return (
 
 
-    <div className="popular-items-carousel" style={{
-      display: "flex",
-      flexDirection: "row",
-      minWidth: "100vw",
-      alignItems: "center",
-      justifyContent: "center",
-      height: "150px",
-
-    }}>
+    <div className="popular-items-carousel">
 
       <button className="prevPopular" onClick={() => plusSlides(-1)} > &#10094;</button>
 
-      <div className="popularItemsCards" style={{
-
-        flexGrow: "1",
-
-        minWidth: "80vw",
-
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: 'space-between',
-
-
-      }}>
+      <div className="popular-items-cards">
         {popularCarousel}
       </div>
 

@@ -1,9 +1,16 @@
-.similar-items-container {
+.similar-items {
   width: 90vw;
   display:flex;
   flex-direction: row;
   justify-content: space-between;
   
+}
+
+.similar-items-condensed {
+  width: 90vw;
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .similar-item-container {
@@ -12,6 +19,7 @@
   background-color: #F7ECEC;
   border: 3px solid #D091C9;
   border-radius: 12px;
+  margin: 0px 50px 0px 0px;
   padding: 0px 10px;
 
   display: flex;
