@@ -41,8 +41,8 @@
   .product {
 
     background: #F7ECEC;
-    max-width: 15vw;
-    height: 15vw;
+    min-width: 30vw;
+    height: 30vw;
     padding: 10px;
     margin: 10px;
     border: 3px solid #D091C9;
@@ -59,7 +59,11 @@
   .popular-image-container{
 
     background: white;
-    border-radius: 12px;
+    border-radius: 8px;
+    max-height: 95%;
+
+    flex-grow: 1;
+    overflow: hidden;
 
   }
 
@@ -67,11 +71,8 @@
 
     object-fit: scale-down;
     width: 100%;
-    /* height: auto; */
-    max-width: 15vw;
-    max-height: 15vh;
-    border-radius: 8px;
-    padding-top: 2px;
+    height: 25px;
+    border-radius: 2px;
 
   }
 

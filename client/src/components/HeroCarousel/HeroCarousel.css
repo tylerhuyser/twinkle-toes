@@ -104,6 +104,12 @@
 
 @media only screen and (max-width: 750px) {
   
+  .hero-carousel-container {
+    margin-bottom: -40px;
+
+  }
+
+
   .hero-carousel {
     min-width: 100vw;
 

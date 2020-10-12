@@ -141,8 +141,6 @@ const HeroCarousel = (props) => {
   return (
     <div className="hero-carousel-container" style={{
       
-      // position: "relative",
-      // bottom: "100px",
       zIndex: "0",
 
     }} >    

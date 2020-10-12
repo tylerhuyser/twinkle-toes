@@ -45,5 +45,10 @@ code {
   ::-webkit-scrollbar {
     display: none;
   }
+
+  ::-webkit-scrollbar-track {
+    display: none;
+  }
+  
   
 }

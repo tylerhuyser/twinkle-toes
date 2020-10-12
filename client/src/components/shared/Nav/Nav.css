@@ -246,10 +246,11 @@
   .mobile-search-menu-visible {
     background: white;
     font: white;
-    font-size: 24px;
+    font-size: 30px;
 
     max-width: 100%;
     min-height: 75px;
+    max-height: 380px;
     padding: 0px 25px;
 
     z-index: 5;
@@ -264,7 +265,7 @@
   .search-logo {
 
     max-width: 5vw;
-    max-height: 50px;
+    max-height: 75px;
     margin: 0px 0px;
   
   }
