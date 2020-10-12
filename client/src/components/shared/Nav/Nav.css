@@ -133,7 +133,7 @@
   }
 
 
-  #mobile-nav {
+  .mobile-nav-visible {
   
     background: white;
     font: white;
@@ -244,7 +244,29 @@
   }
   
   .mobile-search-menu-visible {
-    display: relative;
+    background: white;
+    font: white;
+    font-size: 24px;
+
+    max-width: 100%;
+    min-height: 75px;
+    padding: 0px 25px;
+
+    z-index: 5;
+    top: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .search-logo {
+
+    max-width: 5vw;
+    max-height: 50px;
+    margin: 0px 0px;
+  
   }
 
 }
