@@ -10,7 +10,9 @@ const Product = (props) => {
       <Link className="product" to={`/products/${props._id}`}>
 
         <div className="product-image-container">
+
           <img className="product-image" src={props.imgURL} alt={props.name} />
+          
         </div>
 
         <div className="star-rating-container" style={{

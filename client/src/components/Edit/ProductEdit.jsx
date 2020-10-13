@@ -109,21 +109,7 @@ export default function ProductEdit(props) {
       }}></div>
 
 
-    <div className="edit-modual-header" style={{
-
-      width: "95vw",
-      height: "100px",
-      padding: "20px 0px",
-      backgroundColor: "white",
-      position: "fixed",
-      top: "0",
-      zIndex: "9",
-      
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "space-between",
-
-    }}>
+    <div className="edit-modual-header">
       <h5
         className="edit-product-title"
           style={{
@@ -152,36 +138,10 @@ export default function ProductEdit(props) {
         
     </div>
 
-    <div
-      className="edit-product-container"
-      style={{
-        // Visual Props:
-        // minHeight: "100vh",
-        margin: "20px 0px",
+      <div className="edit-product-container">
+        
+      <div className="product-images-container-edit">
 
-        // Container Properties:
-        display: "flex",
-        flexDirection: "row",
-
-        // Item Properties:
-        flexGrow: "1",
-      }}
-    >
-      <div
-        className="product-images-container-edit"
-          style={{
-          
-          // Visual Properties:
-          width: "45vw",
-
-          // Container Properties:
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          alignItems: "center",
-
-        }}
-      >
         <div
           className="primary-product-image-edit-container"
           style={{
@@ -218,16 +178,8 @@ export default function ProductEdit(props) {
         </div>
 
         <div
-          className="alternate-product-images-container-edit"
-          style={{
-            width: "35vw",
-
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-around",
-            margin: "10px 0px",
-          }}
-        >
+            className="alternate-product-images-container-edit">
+            
           <img
             className="product-image-preview-edit"
             src={product.imgURL}
@@ -236,22 +188,7 @@ export default function ProductEdit(props) {
               e.target.onerror = null;
               e.target.src =
                 "https://www.flaticon.com/svg/static/icons/svg/1837/1837526.svg";
-            }}
-            style={{
-              minWidth: "10vw",
-              minHeight: "6vw",
-
-              maxWidth: "10vw",
-              maxHeight: "6vw",
-
-              objectFit: "contain",
-
-              border: "2px solid #D091C9",
-              borderRadius: "10px",
-              margin: "20px 10px",
-              padding: "5px 0px",
-            }}
-          />
+            }}/>
 
           <img
             className="product-image-preview-edit"
@@ -261,70 +198,27 @@ export default function ProductEdit(props) {
               e.target.onerror = null;
               e.target.src =
                 "https://www.flaticon.com/svg/static/icons/svg/1837/1837526.svg";
-            }}
-            style={{
-              minWidth: "10vw",
-              minHeight: "6vw",
-
-              maxWidth: "10vw",
-              maxHeight: "6vw",
-
-              objectFit: "contain",
-              // objectPosition: "50% 95%",
-
-              border: "2px solid #D091C9",
-              borderRadius: "10px",
-              margin: "20px 10px",
-              padding: "5px 0px",
-            }}
-          />
+            }}/>
 
           <img
-            className="product-detail-image-edit"
+            className="product-image-preview-edit"
             src={product.imgURL3}
             alt="3"
             onError={(e) => {
               e.target.onerror = null;
               e.target.src =
                 "https://www.flaticon.com/svg/static/icons/svg/1837/1837526.svg";
-            }}
-            style={{
-              minWidth: "10vw",
-              minHeight: "6vw",
-
-              maxWidth: "10vw",
-              maxHeight: "6vw",
-
-              objectFit: "contain",
-              // objectPosition: "50% 95%",
-
-              border: "2px solid #D091C9",
-              borderRadius: "10px",
-              margin: "20px 10px",
-              padding: "5px 0px",
-            }}
-          />
+            }}/>
         </div>
       </div>
 
       <form
         className="edit-product-info-form"
-        onSubmit={validateForm}
-        style={{
-          // Visual Properties:
-          width: "45vw",
-          padding: "10px 10px 20px 10px",
-
-          // Container Properties:
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          alignItems: "flex-start",
-        }}
-      >
+        onSubmit={validateForm}>
         <h4
           className="edit-info-title"
-          style={{
+            style={{
+            color: "#9A7395",
             fontSize: "18px",
             letterSpacing: "0.9px",
             textAlign: "left",
@@ -441,6 +335,7 @@ export default function ProductEdit(props) {
             fontFamily: "Roboto",
             fontSize: "18px",
             color: "#5F2758",
+            backgroundColor: "transparent",
             fontWeight: "300",
             textAlign: "left",
 
@@ -542,60 +437,16 @@ export default function ProductEdit(props) {
         />
 
         <div
-          className="button-container"
-          style={{
-            width: "45vw",
-
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-          }}
-        >
+          className="button-container">
           <button
-            className="submit-button"
-            onClick={validateForm}
-            style={{
-              background: "#DB93D3",
-              width: "20vw",
-              height: "35px",
-              borderRadius: "15px",
-              margin: "50px auto",
-
-              color: "#FFFFFF",
-              fontFamily: "Source Sans Pro",
-              fontSize: "18px",
-              textAlign: "center",
-              letterSpacing: "0.75px",
-              border: "none",
-
-              cursor: "pointer",
-
-            }}
-          >
+            className="edit-submit-buttons"
+            onClick={validateForm}>
             Submit
           </button>
 
           <button
-            className="submit-button"
-            onClick={changeVisibility}
-            style={{
-              background: "#DB93D3",
-              width: "20vw",
-              height: "35px",
-              borderRadius: "15px",
-              margin: "50px 0px",
-
-              color: "#FFFFFF",
-              fontFamily: "Source Sans Pro",
-              fontSize: "18px",
-              textAlign: "center",
-              letterSpacing: "0.75px",
-              border: "none",
-
-              cursor: "pointer",
-
-            }}
-          >
+            className="edit-submit-buttons"
+            onClick={changeVisibility}>
             Cancel
           </button>
         </div>

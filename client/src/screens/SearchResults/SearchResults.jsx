@@ -45,33 +45,36 @@ const SearchResults = (props) => {
 
   return (
     <Layout handleChange={props.handleChange} handleSubmit={props.handleSubmit}>
-      <div style={{
 
-        color: "#9A7395",
-        fontSize: "20px"
-
-      }}>
-
-        RESULTS FOUND: {queriedProducts.length}
-
-      </div>
-      
-      <div className="sort-container" style={{
-
-        margin: "10px 0px",
+      <div className="search-results-page-container">
         
-      }}>
+        <div style={{
 
-        <Sort onSubmit={handleSubmit} onChange={handleSort} sortType={sortType} />
+          color: "#9A7395",
+          fontSize: "20px"
 
-      </div>
+        }}>
 
-        <div className="search-results-container">
-          
-          {searchResultCards}
-        
+          RESULTS FOUND: {queriedProducts.length}
+
         </div>
-      
+        
+        <div className="sort-container" style={{
+
+          margin: "10px 0px",
+          
+        }}>
+
+          <Sort onSubmit={handleSubmit} onChange={handleSort} sortType={sortType} />
+
+        </div>
+
+          <div className="search-results-container">
+            
+            {searchResultCards}
+          
+          </div>
+      </div>
     </Layout>
   );
 };

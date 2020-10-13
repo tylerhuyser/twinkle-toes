@@ -84,15 +84,7 @@ export default function ProductCreate(props) {
       handleChange={props.handleChange}
       handleSubmit={props.handleSubmit}
     >
-      <div
-        className="create-products-page-container"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <div className="create-products-page-container">
         <h5
           className="create-product-title"
           style={{
@@ -111,34 +103,10 @@ export default function ProductCreate(props) {
           CREATE A NEW PRODUCT
         </h5>
 
-        <div
-          className="create-products-container"
-          style={{
-            // Visual Props:
-            margin: "20px 0px",
+        <div className="create-products-container">
 
-            // Container Properties:
-            display: "flex",
-            flexDirection: "row",
+          <div className="edit-product-images-container">
 
-            // Item Properties:
-            flexGrow: "1",
-          }}
-        >
-          <div
-            className="product-detail-images-container"
-            style={{
-              // Visual Properties:
-              width: "45vw",
-              // padding: "10px 10px",
-
-              // Container Properties:
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "flex-start",
-              alignItems: "center",
-            }}
-          >
             <div
               className="primary-product-image-upload-container"
               style={{
@@ -166,11 +134,6 @@ export default function ProductCreate(props) {
                   className="primary-product-detail-image-preview"
                   src={product.imgURL}
                   alt="primary"
-                  // onError={(e) => {
-                  //   e.target.onerror = null;
-                  //   e.target.src =
-                  //     "https://www.flaticon.com/svg/static/icons/svg/1103/1103496.svg";
-                  // }}
                   style={{
                     borderRadius: "12px",
                     width: "30vw",
@@ -184,16 +147,7 @@ export default function ProductCreate(props) {
             </div>
 
             <div
-              className="alternate-product-detail-images-container"
-              style={{
-                width: "35vw",
-
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                margin: "10px 0px",
-              }}
-            >
+              className="alternate-product-detail-images-container">
 
               {product.imgURL === "" ? <i class="fas fa-upload miniUploadIcon" style={{
 
@@ -304,19 +258,7 @@ export default function ProductCreate(props) {
 
           <form
             className="create-new-product-form"
-            onSubmit={validateForm}
-            style={{
-              // Visual Properties:
-              width: "45vw",
-              padding: "10px 10px 20px 10px",
-
-              // Container Properties:
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "flex-start",
-              alignItems: "flex-start",
-            }}
-          >
+            onSubmit={validateForm}>
             <h4
               className="review-author-name"
               style={{
@@ -432,6 +374,7 @@ export default function ProductCreate(props) {
                 fontFamily: "Roboto",
                 fontSize: "18px",
                 color: "gray",
+                backgroundColor: "transparent",
                 fontWeight: "300",
                 textAlign: "left",
 
@@ -529,37 +472,11 @@ export default function ProductCreate(props) {
               }}
             />
 
-            <div
-              className="button-container"
-              style={{
-                width: "45vw",
+            <div className="button-container">
 
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}
-            >
               <button
                 className="submit-button"
-                onSubmit={validateForm}
-                style={{
-                  background: "#DB93D3",
-                  width: "20vw",
-                  height: "35px",
-                  borderRadius: "15px",
-                  margin: "50px auto",
-
-                  color: "#FFFFFF",
-                  fontFamily: "Source Sans Pro",
-                  fontSize: "18px",
-                  textAlign: "center",
-                  letterSpacing: "0.75px",
-                  border: "none",
-
-                  cursor: "pointer",
-
-                }}
-              >
+                onSubmit={validateForm}>
                 Submit
               </button>
             </div>

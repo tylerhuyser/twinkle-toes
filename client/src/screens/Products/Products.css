@@ -1,7 +1,34 @@
+.products-page-container {
+  width: 100vw;
+}
+
+
 .products-container {
   margin: 0 auto;
-  width: 75%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+@media only screen and (max-width: 750px) {
+
+  .products-page-container {
+    position: relative;
+    bottom: -75px;
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+  }
+
+  .products-container {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+
 }

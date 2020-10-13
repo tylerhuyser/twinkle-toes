@@ -61,16 +61,11 @@ const ProductDetail = (props) => {
 
     <Layout
       handleChange={props.handleChange}
-      handleSubmit={props.handleSubmit}
-      // className={editVisibility ? "product-details-page-hidden" : "product-details-page-visible"}
-    >
+      handleSubmit={props.handleSubmit}>
 
       <div id="edit-products-modual" className={editVisibility ? "edit-visible" : "edit-hidden"} style={{
 
-        // position: "fixed",
-        // top: "0",
-        // left: '0',
-        // overflow: "scroll",
+
         maxWidth: "100vw",
 
       }}>
@@ -91,7 +86,6 @@ const ProductDetail = (props) => {
       <div id="product-details-page-container" className={editVisibility ? "product-details-page-container-nonscroll" : "product-details-page-scrollable"}>
 
         <div className="product-details-container">
-
 
           <div className="product-detail-images-container">
 
