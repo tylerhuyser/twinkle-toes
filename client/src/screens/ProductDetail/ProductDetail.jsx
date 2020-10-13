@@ -90,34 +90,10 @@ const ProductDetail = (props) => {
 
       <div id="product-details-page-container" className={editVisibility ? "product-details-page-container-nonscroll" : "product-details-page-scrollable"}>
 
-        <div className="product-details-container" style={{
-
-          // Visual Props:
-          // minHeight: "80vh",
-          margin: "20px 0px",
-
-          // Container Properties:
-          display: "flex",
-
-          // Item Properties:
-          flexGrow: '1',
-
-        }}>
+        <div className="product-details-container">
 
 
-          <div className="product-detail-images-container" style={{
-
-            // Visual Properties:
-            width: "45vw",
-            // padding: "10px 10px",
-
-            // Container Properties:
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            alignItems: "center",
-
-          }}>
+          <div className="product-detail-images-container">
 
             <div className="primary-product-image-container" style={{
 
@@ -148,93 +124,19 @@ const ProductDetail = (props) => {
 
             </div>
 
-            <div className="alternate-product-detail-images" style={{
+            <div className="alternate-product-detail-images">
 
-              width: "35vw",
+              <img className="product-detail-image" src={product.imgURL} alt="1" onClick={() => setPrimaryImage(product.imgURL)}/>
 
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-around",
-              margin: "10px 0px"
-            }}>
+              <img className="product-detail-image" src={product.imgURL2} alt="2" onClick={() => setPrimaryImage(product.imgURL2)}/>
 
-              <img className="product-detail-image" src={product.imgURL} alt="1" onClick={() => setPrimaryImage(product.imgURL)} style={{
-
-                minWidth: "10vw",
-                minHeight: "6vw",
-
-                maxWidth: "10vw",
-                maxHeight: "6vw",
-
-                objectFit: "contain",
-                // objectPosition: "50% 95%",
-
-                border: "2px solid #D091C9",
-                borderRadius: "10px",
-                margin: "20px 10px",
-                padding: "5px 0px",
-
-                cursor: "pointer",
-
-              }} />
-
-              <img className="product-detail-image" src={product.imgURL2} alt="2" onClick={() => setPrimaryImage(product.imgURL2)} style={{
-
-                minWidth: "10vw",
-                minHeight: "6vw",
-
-                maxWidth: "10vw",
-                maxHeight: "6vw",
-
-                objectFit: "contain",
-                // objectPosition: "50% 95%",
-
-                border: "2px solid #D091C9",
-                borderRadius: "10px",
-                margin: "20px 10px",
-                padding: "5px 0px",
-
-                cursor: "pointer",
-
-              }} />
-
-              <img className="product-detail-image" src={product.imgURL3} alt="3" onClick={() => setPrimaryImage(product.imgURL3)} style={{
-
-                minWidth: "10vw",
-                minHeight: "6vw",
-
-                maxWidth: "10vw",
-                maxHeight: "6vw",
-
-                objectFit: "contain",
-                // objectPosition: "50% 95%",
-
-                border: "2px solid #D091C9",
-                borderRadius: "10px",
-                margin: "20px 10px",
-                padding: "5px 0px",
-
-                cursor: "pointer",
-
-              }} />
+              <img className="product-detail-image" src={product.imgURL3} alt="3" onClick={() => setPrimaryImage(product.imgURL3)}/>
 
             </div>
 
           </div>
 
-          <div className="details-container" style={{
-
-            // Visual Properties:
-            width: "45vw",
-            padding: "20px 10px",
-
-            // Container Properties:
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            alignItems: "flex-start",
-
-          }}>
+          <div className="details-container">
             <div className="name" style={{
 
               fontFamily: "Roboto",
@@ -284,65 +186,16 @@ const ProductDetail = (props) => {
 
             }} >{product.description}</div>
 
-            <div className="button-container" style={{
-
-              width: "45vw",
-
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-
-            }}>
-              <button className="edit-button" onClick={(e) => changeVisibility(e)} style={{
-
-                background: "#DB93D3",
-                width: "20vw",
-                height: "35px",
-                borderRadius: "15px",
-                margin: "50px 0px",
-
-                color: "#FFFFFF",
-                fontFamily: "Source Sans Pro",
-                fontSize: "18px",
-                textAlign: "center",
-                letterSpacing: "0.75px",
-                border: "none",
-
-                cursor: "pointer",
-
-              }}>Edit</button>
-              <button className="delete-button" onClick={() => loadDelete(product.id)} style={{
-
-                background: "#DB93D3",
-                width: "20vw",
-                height: "35px",
-                borderRadius: "15px",
-                margin: "50px 0px",
-
-                color: "#FFFFFF",
-                fontFamily: "Source Sans Pro",
-                fontSize: "18px",
-                textAlign: "center",
-                letterSpacing: "0.75px",
-                border: "none",
-
-                cursor: "pointer",
-
-              }}>Delete</button>
+            <div className="button-container">
+              <button className="product-detail-buttons" id="edit-button" onClick={(e) => changeVisibility(e)}>Edit</button>
+              <button className="product-detail-buttons" id="delete-button" onClick={() => loadDelete(product.id)}>Delete</button>
             </div>
           </div>
         </div>
 
         {allProducts.length > 1 ?
         
-          <div className="similar-items-container" style={{
-
-            width: "90vw",
-            display: "flex",
-            flexDirection: "column",
-            margin: "25px",
-
-          }}>
+          <div className="similar-items-container">
             <h5 style={{
 
               fontFamily: "Roboto",

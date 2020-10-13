@@ -65,13 +65,7 @@
 
 
 @media only screen and (max-width: 750px) {
-  /* .app {
 
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  } */
 
   .home-container {
     display: flex;

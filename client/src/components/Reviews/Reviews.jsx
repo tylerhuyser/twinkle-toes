@@ -15,31 +15,9 @@ const Reviews = (props) => {
     
 
     return (
-      <div className="review-container" key={idx} style={{
-          
-        // Visual Properties:
-        width: "45vw",
-        // padding: "10px 10px",
-                          
-        // Container Properties:
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-start",
-        alignItems: "center",
-    
-      }}>
+      <div className="review-container" key={idx}>
 
-        <h4 className="review-author-name" style={{
-
-          fontSize: "18px",
-          letterSpacing: "0.9px",
-          textAlign: "left",
-          fontWeight: "300",
-
-          width: "100%",
-          margin: "25px",
-                        
-        }}>{review.author}</h4>
+        <h4 className="review-author-name">{review.author}</h4>
 
         <div className="star-rating-container" style={{
 
@@ -74,16 +52,7 @@ const Reviews = (props) => {
   if (reviews.length === 0) {
     return (
       <>
-        <div className="reviews-container" style={{
-       
-          width: "90vw",
-
-          display: "flex",
-          flexDirection: "column",
-          color: "#5F2758",
-          margin: "25px",
-       
-        }}>
+        <div className="reviews-container">
           
         <h5 className="review-title" style={{
         
@@ -98,14 +67,8 @@ const Reviews = (props) => {
         
           }}>REVIEWS</h5>
           
-          <div className="reviews-content" style={{
+          <div className="reviews-content">
 
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            // padding: "0px 25px",
-
-          }}>
             <div className="no-reviews-message" style={{
 
               fontSize: "18px",
@@ -129,15 +92,7 @@ const Reviews = (props) => {
     )
   } else {
     return (
-      <div className="reviews-container" style={{
-       
-        width: "90vw",
-
-        display: "flex",
-        flexDirection: "column",
-        margin: "25px",
-        
-      }}>
+      <div className="reviews-container">
 
         <h5 className="review-title" style={{
         
@@ -152,38 +107,11 @@ const Reviews = (props) => {
         
         }}>REVIEWS</h5>
 
-        <div className="reviews-content" style={{
+        <div className="reviews-content">
 
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          
-        }}>
+          <div className="reviews-list">
 
-          <div className="reviews-list" style={{
-          
-            // Visual Properties:
-            width: "45vw",
-            // padding: "0px 25px",
-            // padding: "10px 10px",
-                        
-            // Container Properties:
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            alignItems: "center",
-  
-          }} >
-
-            <div className="average-reviews-star-rating-container-virtual" style={{
-
-            width: "100%",
-
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-
-            }}>
+            <div className="average-reviews-star-rating-container-virtual">
 
               <p className="average-reviews-title" style={{
 
@@ -192,7 +120,7 @@ const Reviews = (props) => {
                 color: "#5F2758",
                 fontWeight: "300",
                 
-              }}>Average User Rating:</p>
+              }}>AVERAGE USER RATING:</p>
               
               <StarRating rating={averageRating} />
 

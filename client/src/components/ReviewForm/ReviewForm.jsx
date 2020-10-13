@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import './ReviewForm.css';
+
 import { updateProduct } from "../../services/products.js";
 
 const ReviewForm = (props) => {
@@ -29,22 +31,6 @@ const ReviewForm = (props) => {
     <form
       className="review-create-form"
       onSubmit={(e) => handleSubmit(e)}
-      style={{
-        // Visual Properties:
-        width: "45vw",
-        minHeight: "100%",
-        // padding: "10px 10px",
-
-        // Container Properties:
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-start",
-        alignItems: "center",
-        padding: "0px 25px",
-
-        border: "3px solid #D091C9",
-        borderRadius: "15px",
-      }}
     >
       <h5
         className="review-form-title"
