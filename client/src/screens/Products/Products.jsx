@@ -13,13 +13,16 @@ const Products = (props) => {
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
 
+  const { isDeleted } = props
+
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getProducts();
       setQueriedProducts(products);
     };
     fetchProducts();
-  }, []);
+  }, [isDeleted]);
+
 
   const handleSort = (type) => {
     setSortType(type);
@@ -60,24 +63,25 @@ const Products = (props) => {
       <Layout
         handleChange={props.handleChange}
         handleSubmit={props.handleSubmit}>
-        <Sort onSubmit={handleSubmit} onChange={handleSort} sortType={sortType} />
-        <div className="products-container">{productsJSX}</div>
-        <button style={{
+        
+        <div className="products-page-container">
+
+          <div className="sort-container" style={{
+
+            margin: "10px 0px",
+
+            }}>
           
-          background: "#DB93D3",
-          width: "150px",
-          height: "35px",
-          borderRadius: "12px",
-          margin: "50px auto",
+            <Sort onSubmit={handleSubmit} onChange={handleSort} sortType={sortType} />
+          
+          </div>
 
-          color: "#FFFFFF",
-          fontFamily: "Source Sans Pro",
-          fontSize: "18px",
-          textAlign: "center",
-          letterSpacing: "0.75px",
-          border: "none",
+          <div className="products-container">{productsJSX}</div>
 
-        }}>Edit Products</button>
+          <button className="products-page-button">Edit Products</button>
+          
+        </div>
+
       </Layout>
     </>
   );

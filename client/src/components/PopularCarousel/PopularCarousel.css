@@ -1,10 +1,24 @@
 * {box-sizing:border-box}
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+.popular-items-carousel {
+  display: flex;
+  flex-direction: row;
+  min-width: 100vw;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+
+}
+
+.popular-items-cards {
+  flex-grow: 1;
+
+  min-width: 80vw;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
 }
 
 /* Hide the images by default */
@@ -37,12 +51,13 @@
 
 /* Position the "next button" to the right */
 .nextPopular {
-  right: 0;
+  /* right: 0;
+  top: 50%; */
   border-radius: 3px 0 0 3px;
 }
 
 .prevPopular {
-  left: 0;
+  /* left: 0; */
   border-radius: 3px 0 0 3px;
 }
 /* On hover, add a black background color with a little bit see-through */
@@ -70,4 +85,26 @@
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+.popular-items-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 750px) {
+  
+  .popular-items-carousel {
+    display: none;
+  
+  }
+
+  .popular-items-mobile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0px 25px;
+  }
+
+
+
 }

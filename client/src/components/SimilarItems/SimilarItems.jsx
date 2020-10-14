@@ -32,28 +32,57 @@ export default function SimilarItems(props) {
       rndm = Math.floor((Math.random() * similar.length));
       display.push(similar.splice(rndm, 1));
     }
-    console.log(display)
   }
 
   genSim();
 
   return (
-    <div className="similar-items-flex-box">
-      <Link to={`/products/${display[0][0]._id}`}>
-        <div className="similar-indiv">
-          <img className="similar-items-pic" src={display[0][0].imgURL} alt="similar product one" />
-        </div>
-      </Link>
-      <Link to={`/products/${display[1][0]._id}`} >
-        <div className="similar-indiv">
-          <img className="similar-items-pic" src={display[1][0].imgURL} alt="similar product two" />
-        </div>
-      </Link>
-      <Link to={`/products/${display[2][0]._id}`} >
-        <div className="similar-indiv">
-          <img className="similar-items-pic" src={display[2][0].imgURL} alt="similar product three" />
-        </div>
-      </Link>
+
+    <div className={display[2][0] === undefined ? "similar-items-condensed" : "similar-items"}>
+
+      { display[0][0] === undefined ?
+
+        <div className="empty"></div>
+        
+        :
+        
+        <Link to={`/products/${display[0][0]._id}`} className="similar-item-container">
+  
+            <img className="similar-item-image" src={display[0][0].imgURL} alt="similar product one" />
+
+        </Link>
+
+      }
+
+      { display[1][0] === undefined ?
+      
+        <div className="empty"></div>
+        
+        :
+        
+        <Link to={`/products/${display[1][0]._id}`} className="similar-item-container" >
+    
+            <img className="similar-item-image" src={display[1][0].imgURL} alt="similar product two" />
+
+        </Link>
+
+      }
+
+      { display[2][0] === undefined ? 
+        
+        <div className="empty"></div>
+
+        :
+
+        <Link to={`/products/${display[2][0]._id}`}className="similar-item-container" >
+
+            <img className="similar-item-image" src={display[2][0].imgURL} alt="similar product three" />
+
+        </Link>
+
+      }
+
     </div>
+
   );
 };

@@ -18,6 +18,7 @@
 .select-wrapper {
   position: relative;
   background-color: aliceblue;
+  background-color: transparent;
 }
 
 .select-wrapper:after {

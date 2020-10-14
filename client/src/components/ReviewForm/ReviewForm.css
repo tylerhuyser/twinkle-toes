@@ -1,0 +1,114 @@
+.review-create-form {
+
+  width: 45vw;
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px 25px;
+
+  border: 3px solid #D091C9;
+  border-radius: 15px;
+
+}
+
+.review-form-title {
+
+  font-family: Roboto;
+  font-size: 18px;
+  color: #5F2758;
+  letter-spacing: 0.9px;
+  text-align: left;
+  font-weight: 300;
+
+  width: 100%;
+  margin: 25px 0px 25px 0px;
+
+}
+
+.review-input-author {
+
+  font-family: Roboto;
+  font-size: 18px;
+  color: #5F2758;
+  font-weight: 300;
+  text-align: left;
+
+  width: 100%;
+  border: none;
+
+  margin: 5px;
+}
+
+.review-input-rating {
+
+  font-family: Roboto;
+  font-size: 18px;
+  color: #5F2758;
+  font-weight: 300;
+  text-align: left;
+
+  width: 100%;
+  border: none;
+
+  margin: 5px;
+
+}
+
+.review-textarea-description {
+
+  font-family: Roboto;
+  font-size: 18px;
+  color: #5F2758;
+  font-weight: 300;
+  text-align: left;
+
+  width: 100%;
+  border: none;
+  flex-grow: 1;
+
+  margin: 5px;
+
+}
+
+.review-submit-button {
+
+  background: #DB93D3;
+  width: 20vw;
+  height: 35px;
+  border-radius: 15px;
+  margin: 50px auto;
+
+  color: #FFFFFF;
+  font-family: Source Sans Pro;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0.75px;
+  border: none;
+
+  cursor: pointer;
+
+}
+
+
+@media only screen and (max-width: 750px) {
+
+  .review-create-form {
+
+    width: 90vw;
+    min-height: 100%;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 25px;
+  
+    border: 3px solid #D091C9;
+    border-radius: 15px;
+  
+  }
+
+}
