@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getProduct, deleteProduct } from "../../services/products";
-import { Redirect, useParams } from "react-router-dom";
+import { Redirect, useParams, useHistory } from "react-router-dom";
 import Layout from "../../components/shared/Layout/Layout";
 import ProductEdit from "../../components/Edit/ProductEdit.jsx";
 import Reviews from "../../components/Reviews/Reviews";
@@ -18,6 +18,7 @@ const ProductDetail = (props) => {
   const [isUpdated, setUpdated] = useState(false);
   const { isDeleted, setIsDeleted } = props;
   const [primaryImage, setPrimaryImage] = useState("")
+  const history = useHistory();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -25,6 +26,8 @@ const ProductDetail = (props) => {
       setProduct(product);
       setPrimaryImage(product.imgURL)
       setLoaded(true);
+      console.log("here 1")
+      console.log({id})
     };
     fetchProduct();
     window.scrollTo(0, 0)
@@ -39,14 +42,13 @@ const ProductDetail = (props) => {
     setUpdated(!isUpdated);
   };
 
+  // Documentation for below: https://www.freecodecamp.org/news/how-to-work-with-react-the-right-way-to-avoid-some-common-pitfalls-fc9eb5e34d9e/
   const loadDelete = async () => {
     await deleteProduct(product._id)
-    setIsDeleted(!isDeleted);
+    console.log("here 2")
+    history.push('/products')
   }
 
-  if (isDeleted) {
-    return <Redirect to={`/products`} />;
-  }
 
   //Documentation for code below ::: https://upmostly.com/tutorials/how-to-refresh-a-page-or-component-in-react#:~:text=If%20set%20to%20true%2C%20the,cached%20version%20of%20the%20page.&text=import%20React%20from%20'react'%3B,refreshPage%7D%3EClick%20to%20reload!\
   if (isUpdated) {
@@ -63,12 +65,8 @@ const ProductDetail = (props) => {
       handleChange={props.handleChange}
       handleSubmit={props.handleSubmit}>
 
-      <div id="edit-products-modual" className={editVisibility ? "edit-visible" : "edit-hidden"} style={{
+      <div id="edit-products-modual" className={editVisibility ? "edit-visible" : "edit-hidden"}>
 
-
-        maxWidth: "100vw",
-
-      }}>
         <ProductEdit
           imgURL={product.imgURL}
           imgURL2={product.imgURL2}
@@ -81,40 +79,18 @@ const ProductDetail = (props) => {
           changeVisibility={changeVisibility}
           loadUpdate={loadUpdate}
         />
+
       </div>
 
-      <div id="product-details-page-container" className={editVisibility ? "product-details-page-container-nonscroll" : "product-details-page-scrollable"}>
+      <div className="product-details-page-container" id={editVisibility ? "product-details-page-container-nonscroll" : "product-details-page-scrollable"}>
 
         <div className="product-details-container">
 
           <div className="product-detail-images-container">
 
-            <div className="primary-product-image-container" style={{
+            <div className="primary-product-image-container">
 
-              width: "35vw",
-
-              backgroundColor: "#F7ECEC",
-              border: "3px solid #D091C9",
-              borderRadius: "12px",
-              padding: "0px 10px",
-
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-
-            }}>
-
-              <img className="primary-product-detail-image" src={primaryImage} alt="primary" style={{
-
-
-                borderRadius: "12px",
-                width: "30vw",
-                height: "30vw",
-                objectFit: "cover",
-                objectPosition: "50% 55%",
-                margin: "20px 10px",
-
-              }} />
+              <img className="primary-product-detail-image" src={primaryImage} alt="primary" />
 
             </div>
 
@@ -192,22 +168,15 @@ const ProductDetail = (props) => {
           <div className="similar-items-container">
             <h5 style={{
 
-              fontFamily: "Roboto",
-              fontSize: "32px",
-              color: "#9A7395",
+              fontSize: "36px",
+              color: "rgb(154, 115, 149)",
               letterSpacing: "0.9px",
               textAlign: "left",
               fontWeight: "300",
-              margin: "20px 0px",
-
+              
             }}>SIMILAR ITEMS</h5>
           
-            <div className="similar-items-carousel" style={{
-             
-              display: "flex",
-              justifyContent: "space-between",
-              
-            }}>
+            <div className="similar-items-carousel">
             
               <SimilarItems allProducts={allProducts} tag={product.tag} id={id} />
             

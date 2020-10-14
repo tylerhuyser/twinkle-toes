@@ -28,23 +28,9 @@ const ReviewForm = (props) => {
   };
 
   return (
-    <form
-      className="review-create-form"
-      onSubmit={(e) => handleSubmit(e)}
-    >
+    <form className="review-create-form" onSubmit={(e) => handleSubmit(e)}>
       <h5
         className="review-form-title"
-        style={{
-          fontFamily: "Roboto",
-          fontSize: "18px",
-          color: "#5F2758",
-          letterSpacing: "0.9px",
-          textAlign: "left",
-          fontWeight: "300",
-
-          width: "100%",
-          margin: "25px 0px 25px 0px",
-        }}
       >
         THOUGHTS?
       </h5>
@@ -58,19 +44,11 @@ const ReviewForm = (props) => {
         autoFocus
         onChange={(e) => handleChange(e)}
         style={{
-          fontFamily: "Roboto",
-          fontSize: "18px",
-          color: "#5F2758",
-          fontWeight: "300",
-          textAlign: "left",
 
-          width: "100%",
-          border: "none",
-
-          margin: "5px",
           WebkitBoxShadow: "0 5px 5px -6px lightgray",
           MozBoxShadow: "0 5px 5px -6px lightgray",
           boxShadow: "0 5px 5px -6px lightgray",
+
         }}
       />
       <input
@@ -81,16 +59,6 @@ const ReviewForm = (props) => {
         required
         onChange={(e) => handleChange(e)}
         style={{
-          fontFamily: "Roboto",
-          fontSize: "18px",
-          color: "#5F2758",
-          fontWeight: "300",
-          textAlign: "left",
-
-          width: "100%",
-          border: "none",
-
-          margin: "5px",
           WebkitBoxShadow: "0 5px 5px -6px lightgray",
           MozBoxShadow: "0 5px 5px -6px lightgray",
           boxShadow: "0 5px 5px -6px lightgray",
@@ -105,18 +73,6 @@ const ReviewForm = (props) => {
         required
         onChange={(e) => handleChange(e)}
         style={{
-          fontFamily: "Roboto",
-          fontSize: "18px",
-          color: "#5F2758",
-          fontWeight: "300",
-          textAlign: "left",
-
-          width: "100%",
-          border: "none",
-          flexGrow: "1",
-
-          margin: "5px",
-
           WebkitBoxShadow: "0 5px 5px -6px lightgray",
           MozBoxShadow: "0 5px 5px -6px lightgray",
           boxShadow: "0 5px 5px -6px lightgray",
@@ -126,24 +82,7 @@ const ReviewForm = (props) => {
         type="submit"
         className="review-submit-button"
         onSubmit={handleSubmit}
-        style={{
-          background: "#DB93D3",
-          width: "20vw",
-          height: "35px",
-          borderRadius: "15px",
-          margin: "50px auto",
-
-          color: "#FFFFFF",
-          fontFamily: "Source Sans Pro",
-          fontSize: "18px",
-          textAlign: "center",
-          letterSpacing: "0.75px",
-          border: "none",
-
-          cursor: "pointer",
-          
-        }}
-      >
+        >
         Submit
       </button>
     </form>

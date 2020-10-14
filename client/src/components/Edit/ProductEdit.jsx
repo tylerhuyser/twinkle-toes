@@ -85,46 +85,14 @@ export default function ProductEdit(props) {
   return (
 
     <div
-    className="edit-products-modual-container"
-      style={{
+    className="edit-products-modual-container">
       
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      backgroundColor: "white",
-      minHeight: "80vh",
-      minWidth: "100vw",
-      maxWidth: "100vw",
-      
-    }}
-    >
-      
-      <div className="floater" style={{
-
-        minHeight: "100px",
-        padding: "20px, 0px",
-        width: "95vw",
-
-      }}></div>
+      <div className="floater"></div>
 
 
     <div className="edit-modual-header">
       <h5
         className="edit-product-title"
-          style={{
-          
-          fontFamily: "Roboto",
-          fontSize: "32px",
-          color: "#9A7395",
-          letterSpacing: "0.9px",
-          textAlign: "left",
-          fontWeight: "300",
-
-          margin: "20px 0px",
-          width: "80vw",
-          flexGrow: "1",
-        }}
       >
           Edit Product
       </h5>
@@ -143,20 +111,8 @@ export default function ProductEdit(props) {
       <div className="product-images-container-edit">
 
         <div
-          className="primary-product-image-edit-container"
-          style={{
-            width: "35vw",
-
-            backgroundColor: "#F7ECEC",
-            border: "3px solid #D091C9",
-            borderRadius: "12px",
-            padding: "0px 10px",
-
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+            className="primary-product-image-edit-container">
+            
           <img
             className="primary-product-image-preview-edit"
             src={product.imgURL}
@@ -165,16 +121,8 @@ export default function ProductEdit(props) {
               e.target.onerror = null;
               e.target.src =
                 "https://www.flaticon.com/svg/static/icons/svg/1103/1103496.svg";
-            }}
-            style={{
-              borderRadius: "12px",
-              width: "30vw",
-              height: "30vw",
-              objectFit: "cover",
-              objectPosition: "50% 55%",
-              margin: "20px 10px",
-            }}
-          />
+              }} />
+            
         </div>
 
         <div
@@ -217,16 +165,6 @@ export default function ProductEdit(props) {
         onSubmit={validateForm}>
         <h4
           className="edit-info-title"
-            style={{
-            color: "#9A7395",
-            fontSize: "18px",
-            letterSpacing: "0.9px",
-            textAlign: "left",
-            fontWeight: "300",
-
-            width: "100%",
-            margin: "0px 0px 25px 0px",
-          }}
         >
           EDIT PRODUCT INFO
         </h4>
@@ -355,15 +293,6 @@ export default function ProductEdit(props) {
 
         <h4
           className="edit-images-title"
-          style={{
-            fontSize: "18px",
-            letterSpacing: "0.9px",
-            textAlign: "left",
-            fontWeight: "300",
-
-            width: "100%",
-            margin: "25px 0px",
-          }}
         >
           PRODUCT IMAGES
         </h4>

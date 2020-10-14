@@ -87,18 +87,6 @@ export default function ProductCreate(props) {
       <div className="create-products-page-container">
         <h5
           className="create-product-title"
-          style={{
-            fontFamily: "Roboto",
-            fontSize: "32px",
-            color: "#9A7395",
-            letterSpacing: "0.9px",
-            textAlign: "left",
-            fontWeight: "300",
-
-            margin: "20px 0px",
-            marginLeft: "10vw",
-            width: "90vw",
-          }}
         >
           CREATE A NEW PRODUCT
         </h5>
@@ -109,20 +97,9 @@ export default function ProductCreate(props) {
 
             <div
               className="primary-product-image-upload-container"
-              style={{
-                width: "35vw",
-
-                backgroundColor: "#F7ECEC",
-                border: "3px solid #D091C9",
-                borderRadius: "12px",
-                padding: "0px 10px",
-
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
             >
-              {product.imgURL === "" ? <i class="fas fa-upload primaryUploadIcon" style={{
+
+              {product.imgURL === "" ? <i className="fas fa-upload primaryUploadIcon" style={{
 
                 display: "flex",
                 alignItems: "center",
@@ -134,14 +111,6 @@ export default function ProductCreate(props) {
                   className="primary-product-detail-image-preview"
                   src={product.imgURL}
                   alt="primary"
-                  style={{
-                    borderRadius: "12px",
-                    width: "30vw",
-                    height: "30vw",
-                    objectFit: "cover",
-                    objectPosition: "50% 55%",
-                    margin: "20px 10px",
-                  }}
                 />
               }
             </div>
@@ -149,7 +118,7 @@ export default function ProductCreate(props) {
             <div
               className="alternate-product-detail-images-container">
 
-              {product.imgURL === "" ? <i class="fas fa-upload miniUploadIcon" style={{
+              {product.imgURL === "" ? <i className="fas fa-upload miniUploadIcon" style={{
 
                 display: "flex",
                 alignItems: "center",
@@ -165,26 +134,10 @@ export default function ProductCreate(props) {
                     e.target.onerror = null;
                     e.target.src =
                       "https://www.flaticon.com/svg/static/icons/svg/1837/1837526.svg";
-                  }}
-                  style={{
-                    minWidth: "10vw",
-                    minHeight: "6vw",
-
-                    maxWidth: "10vw",
-                    maxHeight: "6vw",
-
-                    objectFit: "contain",
-                    // objectPosition: "50% 95%",
-
-                    border: "2px solid #D091C9",
-                    borderRadius: "12px",
-                    margin: "20px 10px",
-                    padding: "5px 0px",
-                  }}
-                />
+                  }}/>
               }
 
-              {product.imgURL2 === "" ? <i class="fas fa-upload miniUploadIcon" style={{
+              {product.imgURL2 === "" ? <i className="fas fa-upload miniUploadIcon" style={{
 
                 display: "flex",
                 alignItems: "center",
@@ -200,26 +153,10 @@ export default function ProductCreate(props) {
                     e.target.onerror = null;
                     e.target.src =
                       "https://www.flaticon.com/svg/static/icons/svg/1837/1837526.svg";
-                  }}
-                  style={{
-                    minWidth: "10vw",
-                    minHeight: "6vw",
-
-                    maxWidth: "10vw",
-                    maxHeight: "6vw",
-
-                    objectFit: "contain",
-                    // objectPosition: "50% 95%",
-
-                    border: "2px solid #D091C9",
-                    borderRadius: "12px",
-                    margin: "20px 10px",
-                    padding: "5px 0px",
-                  }}
-                />
+                  }}/>
               }
 
-              {product.imgURL3 === "" ? <i class="fas fa-upload miniUploadIcon" style={{
+              {product.imgURL3 === "" ? <i className="fas fa-upload miniUploadIcon" style={{
 
                 display: "flex",
                 alignItems: "center",
@@ -235,23 +172,7 @@ export default function ProductCreate(props) {
                     e.target.onerror = null;
                     e.target.src =
                       "https://www.flaticon.com/svg/static/icons/svg/1837/1837526.svg";
-                  }}
-                  style={{
-                    minWidth: "10vw",
-                    minHeight: "6vw",
-
-                    maxWidth: "10vw",
-                    maxHeight: "6vw",
-
-                    objectFit: "contain",
-                    // objectPosition: "50% 95%",
-
-                    border: "2px solid #D091C9",
-                    borderRadius: "12px",
-                    margin: "20px 10px",
-                    padding: "5px 0px",
-                  }}
-                />
+                  }}/>
               }
             </div>
           </div>
@@ -260,17 +181,7 @@ export default function ProductCreate(props) {
             className="create-new-product-form"
             onSubmit={validateForm}>
             <h4
-              className="review-author-name"
-              style={{
-                fontSize: "18px",
-                letterSpacing: "0.9px",
-                textAlign: "left",
-                fontWeight: "300",
-
-                width: "100%",
-                margin: "0px 0px 25px 0px",
-              }}
-            >
+              className="product-info-title">
               PRODUCT INFO
             </h4>
 
@@ -394,15 +305,6 @@ export default function ProductCreate(props) {
 
             <h4
               className="product-image-links-title"
-              style={{
-                fontSize: "18px",
-                letterSpacing: "0.9px",
-                textAlign: "left",
-                fontWeight: "300",
-
-                width: "100%",
-                margin: "25px 0px",
-              }}
             >
               PRODUCT IMAGES
             </h4>
@@ -472,7 +374,7 @@ export default function ProductCreate(props) {
               }}
             />
 
-            <div className="button-container">
+            <div className="create-button-container">
 
               <button
                 className="submit-button"

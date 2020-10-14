@@ -21,13 +21,8 @@ const Home = (props) => {
       allProducts={allProducts}
       setAllProducts={setAllProducts}
       handleChange={props.handleChange}
-      handleSubmit={props.handleSubmit}
-      style={{
-        
-        zIndex: "2",
-
-      }}
-    >
+      handleSubmit={props.handleSubmit}>
+      
       <div className="home-container">
 
         <HeroCarousel currentIndex={currentHeroIndex} setCurrentIndex={setCurrentHeroIndex} />
@@ -49,16 +44,7 @@ const Home = (props) => {
             <PopularCarousel
               allProducts={allProducts}
               popularIndex={popularIndex}
-              setPopularIndex={setPopularIndex} setPopularUpperIndex={setPopularUpperIndex} popularUpperIndex={popularUpperIndex} setPopularLowerIndex={setPopularLowerIndex} popularLowerIndex={popularLowerIndex}
-
-              style={{
-
-              display: "flex",
-              flexWrap: "none",
-              width: "100vw",
-              minWidth: "100vw",
-
-            }} />
+              setPopularIndex={setPopularIndex} setPopularUpperIndex={setPopularUpperIndex} popularUpperIndex={popularUpperIndex} setPopularLowerIndex={setPopularLowerIndex} popularLowerIndex={popularLowerIndex} />
           
           }
 

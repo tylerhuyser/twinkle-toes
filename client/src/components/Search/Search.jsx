@@ -1,6 +1,5 @@
 import React from 'react';
 import './Search.css';
-// import { Redirect } from 'react-router-dom';
 
 const Search = (props) => {
 
@@ -17,13 +16,7 @@ const Search = (props) => {
         type="text"
         autoFocus
       />
-      <button className="search-button" style={{
-        
-        backgroundColor: "transparent",
-        color: "#E67CDA",
-        border: "none",
-
-      }}>
+      <button className="search-button">
         <i className="fas fa-search"></i>
       </button>
 

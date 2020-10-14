@@ -28,6 +28,14 @@
     
 }
 
+.search-button {
+
+  background-color: transparent;
+  color: #E67CDA;
+  border: none;
+  
+}
+
 .search-input::placeholder {
     letter-spacing: .3px;
     color: #E67CDA;
