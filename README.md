@@ -13,7 +13,8 @@
 - Edit Recommended List (Admin)
 - Autofill SearchBar
 - Creating Product Review Feature (Form)
-- Image Preview
+- Image Previews
 - Photo File Upload
 - Payment Page (Form)
 - Shopping Cart
+ 

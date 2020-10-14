@@ -7,61 +7,26 @@ import StarRating from '../StarRating/StarRating';
 
 const Reviews = (props) => {
     
+  const averageRating = props.product.rating;
+
   const { reviews } = props
     
   const REVIEW = reviews.map((review, idx) => {
     
 
     return (
-      <div className="review-container" key={idx} style={{
-          
-        // Visual Properties:
-        width: "45vw",
-        // padding: "10px 10px",
-                          
-        // Container Properties:
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-start",
-        alignItems: "center",
-    
-      }}>
+      <div className="review-container" key={idx}>
 
-        <h4 className="review-author-name" style={{
+        <h4 className="review-author-name">{review.author}</h4>
 
-          fontSize: "18px",
-          letterSpacing: "0.9px",
-          textAlign: "left",
-          fontWeight: "300",
-
-          width: "100%",
-          marginTop: "0px",
-                        
-        }}>{review.author}</h4>
+        <div className="star-rating-container-details">
             
-        <StarRating rating={review.rating} style={{
-                
-          margin: "5px",
-          width: "100%",
+          <StarRating rating={review.rating} />
 
-          display: "flex",
-          alignContent: "flex-start",
-              
-        }} />
+        </div>
             
-        <h6 className="review-copy" style={{
-                
-          fontFamily: "Source Sans Pro",
-          fontSize: "12px",
-          color: "#5F2758",
-          fontWeight: "500",
-          textAlign: "left",
-                
-          marginBottom: "25px",
-          paddingRight: "10px",
-              
-              
-        }} >{review.description}</h6>
+          <h6 className="review-copy">{review.description}</h6>
+
       </div>
     )
   })
@@ -69,90 +34,42 @@ const Reviews = (props) => {
   if (reviews.length === 0) {
     return (
       <>
-        <div className="reviews-container" style={{
-       
-          width: "90vw",
-
-          display: "flex",
-          flexDirection: "column",
-          color: "#5F2758",
-          margin: "25px",
-       
-        }}>
+        <div className="reviews-container">
           
-        <h5 className="review-title" style={{
-        
-          fontFamily: "Roboto",
-          fontSize: "32px",
-          color: "#9A7395",
-          letterSpacing: "0.9px",
-          textAlign: "left",
-          fontWeight: "300",
+        <h5 className="review-title">REVIEWS</h5>
+          
+          <div className="reviews-content">
+
+            <div className="no-reviews-message">
               
-          margin: "20px 0px",
-        
-          }}>REVIEWS</h5>
+              No Reviews for this Product.
+               
+          </div>
           
-          <div className="reviews-content" style={{
-
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-
-}}>
-          <div>No Reviews for this Product</div>
-          
-          <ReviewForm product={props.product} id={props.id} />
+            <ReviewForm product={props.product} id={props.id} />
           </div>
         </div>
       </>
     )
   } else {
     return (
-      <div className="reviews-container" style={{
-       
-        width: "90vw",
+      <div className="reviews-container">
 
-        display: "flex",
-        flexDirection: "column",
-        margin: "25px",
-        
-      }}>
+        <h5 className="review-title">REVIEWS</h5>
 
-        <h5 className="review-title" style={{
-        
-          fontFamily: "Roboto",
-          fontSize: "32px",
-          color: "#9A7395",
-          letterSpacing: "0.9px",
-          textAlign: "left",
-          fontWeight: "300",
+        <div className="reviews-content">
+
+          <div className="reviews-list">
+
+            <div className="average-reviews-star-rating-container-virtual">
+
+              <p className="average-reviews-title">AVERAGE USER RATING:</p>
               
-          margin: "20px 0px",
-        
-        }}>REVIEWS</h5>
+              <StarRating rating={averageRating} />
 
-        <div className="reviews-content" style={{
+            </div>
 
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          
-        }}>
-          <div className="reviews-list" style={{
-          
-            // Visual Properties:
-            width: "45vw",
-            padding: "0px 10px",
-            // padding: "10px 10px",
-                        
-            // Container Properties:
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            alignItems: "center",
-  
-          }} >
+
               {REVIEW} 
             </div>
           

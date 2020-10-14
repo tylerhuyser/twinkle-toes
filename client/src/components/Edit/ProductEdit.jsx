@@ -17,6 +17,15 @@ export default function ProductEdit(props) {
     loadUpdate
   } = props;
 
+  const [nameError, setNameError] = useState(false)
+  const [descriptionError, setDescriptionError] = useState(false)
+  const [priceError, setPriceError] = useState(false)
+  const [admin_ratingError, setAdmin_RatingError] = useState(false)
+  const [tagError, setTagError] = useState(false)
+  const [imgURLError, setImgURLError] = useState(false)
+  const [imgURL2Error, setImgURL2Error] = useState(false)
+  const [imgURL3Error, setImgURL3Error] = useState(false)
+
   const handleChange = (e) => {
     const { name, value } = e.target
     setProduct({
@@ -35,154 +44,345 @@ export default function ProductEdit(props) {
     rating: rating
   })
 
-
-
-
   const handleSubmit = async (event) => {
     event.preventDefault()
     await updateProduct(id, product)
     loadUpdate()
   }
 
+  function validateForm(e) {
+    e.preventDefault();
+
+    if (product.name === "") {
+      setNameError(true)
+    }
+    if (product.description === "") {
+      setDescriptionError(true)
+    }
+    if (product.price === "") {
+      setPriceError(true)
+    }
+    if (product.admin_rating === "") {
+      setAdmin_RatingError(true)
+    }
+    if (product.tag === "") {
+      setTagError(true)
+    }
+    if (product.imgURL === "") {
+      setImgURLError(true)
+    }
+    if (product.imgURL2 === "") {
+      setImgURL2Error(true)
+    }
+    if (product.imgURL3 === "") {
+      setImgURL3Error(true)
+    }
+    if (nameError === false && descriptionError === false && priceError === false && admin_ratingError === false && tagError === false && imgURLError === false && imgURL2Error === false && imgURL3Error === false) {
+      handleSubmit(e);
+    }
+  };
 
   return (
-    <div className="edit-not-a-page">
-      <div className="edit-component">
 
-        <form className="edit-container" onSubmit={handleSubmit}>
-          <div id="edit-photos-column">
-            <div className="edit-input">Display Photo:
-              <br />
-              <img
-                className="edit-photo-main"
-                alt='primary-display'
-                src={product.imgURL}
-                name='imgURL'
-              />
-              <br />
-              <input
-                className="edit-image-link"
-                placeholder="Primary Preview Link"
-                value={product.imgURL}
-                name='imgURL'
-                required
-                onChange={handleChange}
-                type='text'
-              />
-            </div>
-            <div className="edit-photos-row">
-              <div className="edit-input">Products Page Sees:
-                <br />
-                <img
-                  className="edit-photo-mini"
-                  alt='mini-primary-display'
-                  src={product.imgURL}
-                  name='imgURL'
-                />
-              </div>
+    <div
+    className="edit-products-modual-container">
+      
+      <div className="floater"></div>
 
-              <div className="edit-input">Second Angle:
-                <br />
-                <img
-                  className="edit-photo-mini"
-                  alt='mini-2-display'
-                  src={product.imgURL2}
-                  name='imgURL2'
-                />
-                <br />
-                <input
-                  className="edit-image-link"
-                  placeholder='Angle Two'
-                  value={product.imgURL2}
-                  name='imgURL2'
-                  required
-                  onChange={handleChange}
-                />
-              </div>
 
-              <div className="edit-input">Third Angle:
-                <br />
-                <img
-                  className="edit-photo-mini"
-                  alt='mini-3-display'
-                  src={product.imgURL3}
-                  name='imgURL3'
-                />
-                <br />
-                <input
-                  className="edit-image-link"
-                  placeholder='Image Link'
-                  value={product.imgURL3}
-                  name='imgURL3'
-                  required
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-          </div>
+    <div className="edit-modual-header">
+      <h5
+        className="edit-product-title"
+      >
+          Edit Product
+      </h5>
+        
+        <i className="fas fa-times" style={{
+        
+          fontSize: "48px",
+          margin: "20px 0px",
 
-          <article id="edit-right-column">
-            <div className="edit-input">Shoe Name:
-            <br />
-              <input
-                className="edit-name"
-                placeholder='Product Name'
-                value={product.name}
-                name='name'
-                required
-                autoFocus
-                onChange={handleChange}
-              />
-            </div>
+      }} onClick={changeVisibility}></i>
+        
+    </div>
 
-            <div className="edit-input">Rating:
-            <br />
-              <input
-                className="edit-rating"
-                placeholder='Rated _/5'
-                value={product.admin_rating}
-                name='admin_rating'
-                required
-                onChange={handleChange}
-                type='number'
-                max="5"
-                min="0"
-              />
-            </div>
+      <div className="edit-product-container">
+        
+      <div className="product-images-container-edit">
 
-            <div className="edit-input">Price:
-            <br />
-              $<input
-                className="edit-price"
-                placeholder='Price'
-                value={product.price}
-                name='price'
-                required
-                onChange={handleChange}
-              />
-            </div>
+        <div
+            className="primary-product-image-edit-container">
+            
+          <img
+            className="primary-product-image-preview-edit"
+            src={product.imgURL}
+            alt="primary-edit"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src =
+                "https://www.flaticon.com/svg/static/icons/svg/1103/1103496.svg";
+              }} />
+            
+        </div>
 
-            <div className="edit-input">Description:
-            <br />
-              <textarea
-                className="edit-description"
-                rows={10}
-                placeholder='Description'
-                value={product.description}
-                name='description'
-                required
-                onChange={handleChange}
-              />
-            </div>
-          </article>
-          <div className='edit-button-container'>
-            <button type='submit' className="edit-update-button" onClick={(e) => handleSubmit(e)}>Update</button>
-            <button type='cancel' className="edit-cancel-button" onClick={changeVisibility}>Cancel</button>
-          </div>
+        <div
+            className="alternate-product-images-container-edit">
+            
+          <img
+            className="product-image-preview-edit"
+            src={product.imgURL}
+            alt="1"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src =
+                "https://www.flaticon.com/svg/static/icons/svg/1837/1837526.svg";
+            }}/>
 
-        </form>
+          <img
+            className="product-image-preview-edit"
+            src={product.imgURL2}
+            alt="2"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src =
+                "https://www.flaticon.com/svg/static/icons/svg/1837/1837526.svg";
+            }}/>
+
+          <img
+            className="product-image-preview-edit"
+            src={product.imgURL3}
+            alt="3"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src =
+                "https://www.flaticon.com/svg/static/icons/svg/1837/1837526.svg";
+            }}/>
+        </div>
       </div>
-    </div >
+
+      <form
+        className="edit-product-info-form"
+        onSubmit={validateForm}>
+        <h4
+          className="edit-info-title"
+        >
+          EDIT PRODUCT INFO
+        </h4>
+
+        <input
+          className={nameError ? "edit-name invalid" : "edit-name valid"}
+          placeholder="Product Name"
+          value={product.name}
+          name="name"
+          required
+          onChange={handleChange}
+          type="text"
+          autoFocus
+          style={{
+            fontFamily: "Roboto",
+            fontSize: "18px",
+            color: "#5F2758",
+            fontWeight: "300",
+            textAlign: "left",
+
+            width: "100%",
+
+            WebkitBoxShadow: "0 5px 5px -6px lightgray",
+            MozBoxShadow: "0 5px 5px -6px lightgray",
+            boxShadow: "0 5px 5px -6px lightgray",
+          }}
+        />
+
+        <input
+          className={priceError ? "edit-price invalid" : "edit-price valid"}
+          placeholder="Product Price"
+          value={product.price}
+          name="price"
+          required
+          onChange={handleChange}
+          style={{
+            fontFamily: "Roboto",
+            fontSize: "18px",
+            color: "#5F2758",
+            fontWeight: "300",
+            textAlign: "left",
+
+            width: "100%",
+
+            WebkitBoxShadow: "0 5px 5px -6px lightgray",
+            MozBoxShadow: "0 5px 5px -6px lightgray",
+            boxShadow: "0 5px 5px -6px lightgray",
+          }}
+        />
+
+        <textarea
+          className={descriptionError ? "edit-description invalid" : "edit-description valid"}
+          rows={10}
+          placeholder="Product Description..."
+          value={product.description}
+          name="description"
+          required
+          onChange={handleChange}
+          style={{
+            fontFamily: "Roboto",
+            fontSize: "18px",
+            color: "#5F2758",
+            fontWeight: "300",
+            textAlign: "left",
+
+            width: "100%",
+ 
+            WebkitBoxShadow: "0 5px 5px -6px lightgray",
+            MozBoxShadow: "0 5px 5px -6px lightgray",
+            boxShadow: "0 5px 5px -6px lightgray",
+          }}
+        />
+
+        <input
+          className={admin_ratingError ? "edit-rating invalid" : "edit-rating valid"}
+          placeholder="Product Rating (1-5)..."
+          value={product.admin_rating}
+          name="admin_rating"
+          required
+          onChange={handleChange}
+          type="number"
+          max="5"
+          min="0"
+          style={{
+            fontFamily: "Roboto",
+            fontSize: "18px",
+            color: "#5F2758",
+            fontWeight: "300",
+            textAlign: "left",
+
+            width: "100%",
+ 
+            WebkitBoxShadow: "0 5px 5px -6px lightgray",
+            MozBoxShadow: "0 5px 5px -6px lightgray",
+            boxShadow: "0 5px 5px -6px lightgray",
+          }}
+        />
+
+        <select
+          name="edit-tag"
+          placeholder="Product Tag"
+          className={tagError ? "edit-tag invalid" : "edit-tag valid"}
+          onChange={handleChange}
+          value={product.tag}
+          style={{
+            fontFamily: "Roboto",
+            fontSize: "18px",
+            color: "#5F2758",
+            backgroundColor: "transparent",
+            fontWeight: "300",
+            textAlign: "left",
+
+            width: "100%",
+ 
+            WebkitBoxShadow: "0 5px 5px -6px lightgray",
+            MozBoxShadow: "0 5px 5px -6px lightgray",
+            boxShadow: "0 5px 5px -6px lightgray",
+          }}
+        >
+          <option disabled value="">
+            Product Tag
+          </option>
+          <option value="street">Street</option>
+          <option value="formal">Formal</option>
+        </select>
+
+        <h4
+          className="edit-images-title"
+        >
+          PRODUCT IMAGES
+        </h4>
+
+        <input
+          className={imgURLError ? "edit-image-link invalid" : "edit-image-link valid"}
+          placeholder="Primary Preview Link"
+          value={product.imgURL}
+          name="imgURL"
+          required
+          onChange={handleChange}
+          type="text"
+          autoFocus
+          style={{
+            fontFamily: "Roboto",
+            fontSize: "18px",
+            color: "#5F2758",
+            fontWeight: "300",
+            textAlign: "left",
+
+            width: "100%",
+
+            WebkitBoxShadow: "0 5px 5px -6px lightgray",
+            MozBoxShadow: "0 5px 5px -6px lightgray",
+            boxShadow: "0 5px 5px -6px lightgray",
+          }}
+        />
+
+        <input
+          className={imgURL2Error ? "edit-image-link invalid" : "edit-image-link valid"}
+          placeholder="Image Link"
+          value={product.imgURL2}
+          name="imgURL2"
+          required
+          onChange={handleChange}
+          style={{
+            fontFamily: "Roboto",
+            fontSize: "18px",
+            color: "#5F2758",
+            fontWeight: "300",
+            textAlign: "left",
+
+            width: "100%",
+
+            WebkitBoxShadow: "0 5px 5px -6px lightgray",
+            MozBoxShadow: "0 5px 5px -6px lightgray",
+            boxShadow: "0 5px 5px -6px lightgray",
+          }}
+        />
+
+        <input
+          className={imgURL3Error ? "edit-image-link invalid" : "edit-image-link valid"}
+          placeholder="Image Link"
+          value={product.imgURL3}
+          name="imgURL3"
+          required
+          onChange={handleChange}
+          style={{
+            fontFamily: "Roboto",
+            fontSize: "18px",
+            color: "#5F2758",
+            fontWeight: "300",
+            textAlign: "left",
+
+            width: "100%",
+ 
+            WebkitBoxShadow: "0 5px 5px -6px lightgray",
+            MozBoxShadow: "0 5px 5px -6px lightgray",
+            boxShadow: "0 5px 5px -6px lightgray",
+          }}
+        />
+
+        <div
+          className="button-container">
+          <button
+            className="edit-submit-buttons"
+            onClick={validateForm}>
+            Submit
+          </button>
+
+          <button
+            className="edit-submit-buttons"
+            onClick={changeVisibility}>
+            Cancel
+          </button>
+        </div>
+        </form>
+        
+    </div>
+  </div>
   );
 };
 

@@ -1,11 +1,16 @@
 .search-results-container {
-  /* margin: 0 auto; */
-  /* width: 75%; */
+ 
   display: flex;
-  /* flex-wrap: wrap; */
-  /* justify-content: center; */
+
 }
 
-.sort-container {
-  
+@media only screen and (max-width: 750px) {
+  .search-results-page-container {
+    position: relative;
+    bottom: -75px;
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+  }
 }

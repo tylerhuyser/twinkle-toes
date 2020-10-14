@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import './Nav.css'
 import { Link } from 'react-router-dom'
 import Search from '../../Search/Search.jsx'
 
@@ -6,70 +8,33 @@ const Nav = (props) => {
 
   const { allProducts, setAllProducts } = props;
 
+  const [searchVisibility, setSearchVisibility] = useState(false);
+  const [menuVisibility, setMenuVisibility] = useState(false);
+
+  const changeMenuVisibility = (e) => {
+    e.preventDefault();
+    setMenuVisibility(!menuVisibility);
+  };
+
+  const changeSearchVisibility = (e) => {
+    e.preventDefault();
+    setSearchVisibility(!searchVisibility);
+  };
+
+
   return (
-    <nav style={{
+    <nav className="nav-container">
+    
+      <div className="desktop-nav">
 
-      zIndex: "5",
-
-    }}>
-      <div className="nav" style={{
-
-        // Physical Properties
-        width: "100vw",
-        height: "100px",
-        padding: "20px 50px",
-
-        // Position Properties
-        zIndex: "5",
-        top: "0",
-
-        // Container Properties
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-
-      }}>
-
-        <div className="logo-containers" style={{
-
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "nowrap",
-          width: "30vw",
-
-        }}>
+        <div className="logo-containers">
           <Link to="/">
-            <img src="https://i.imgur.com/LUBayko.png" alt="Logo" style={{
-
-              maxWidth: "5vw",
-              maxHeight: "50px",
-              margin: "0px 30px"
-
-            }} />
+            <img src="https://i.imgur.com/LUBayko.png" alt="Logo" className="logo" />
           </Link>
 
-          <Link className="site-name" to="/" style={{
+          <Link className="site-name-link" to="/">
 
-            backgroundColor: "transparent",
-
-            display: "flex",
-            justifyContent: "center",
-            alignContent: "center",
-
-            textDecoration: "none",
-            textdecorationLine: "none",
-            maxWidth: "25vw",
-
-          }}>
-
-            <p style={{
-
-              color: "#E67CDA",
-              fontSize: "18px",
-              letterSpacing: "-1px",
-              minWidth: "150px",
-
-            }}>TWINKLE TOES
+            <p className="site-name">TWINKLE TOES
             </p>
 
           </Link>
@@ -83,35 +48,53 @@ const Nav = (props) => {
           handleSubmit={props.handleSubmit}
         />
 
-        <div className="links" style={{
-
-          display: "flex",
-          justifyContent: "flex-end",
-          alignItems: "center",
-          width: "30vw",
-
-        }}>
-          <Link className="link" to="/products" style={{
-
-            textDecoration: "none",
-            textdecorationLine: "none",
-            fontSize: "14px",
-            color: "#E67CDA",
-            textAlign: "right",
-
-          }}>Products</Link>
-          <Link className="link" to="/add-product" style={{
-
-            textDecoration: "none",
-            textdecorationLine: "none",
-            fontSize: "14px",
-            color: "#E67CDA",
-            textAlign: "right",
-            margin: "0px 30px",
-
-          }}>Add Product</Link>
+        <div className="header-links">
+          <Link className="products-link" to="/products">Products</Link>
+          <Link className="add-products-link" to="/add-product">Add Product</Link>
         </div>
       </div>
+
+      <div className={searchVisibility ? "mobile-nav-hidden" : "mobile-nav-visible"} id="mobile-nav">
+        <i className="fas fa-bars" onClick={(e) => changeMenuVisibility(e)}></i>
+
+        <div className="logo-containers">
+          <Link to="/">
+            <img src="https://i.imgur.com/LUBayko.png" alt="Logo" className="logo" />
+          </Link>
+
+          <Link className="site-name-link" to="/">
+
+            <p className="site-name">TWINKLE TOES
+            </p>
+
+          </Link>
+        </div>
+
+        <i className="fas fa-search" onClick={(e) => changeSearchVisibility(e)}></i>
+      </div>
+
+      <div id="mobile-menu" className={menuVisibility ? "mobile-menu-visible" : "mobile-menu-hidden"}>
+    
+        <Link className="mobile-products-link" to="/products">Products</Link>
+        <Link className="mobile-add-products-link" to="/add-product">Add Product</Link>
+
+      </div>
+
+      
+      <div id="mobile-search-menu" className={searchVisibility ? "mobile-search-menu-visible" : "mobile-search-menu-hidden"}>
+        <img src="https://i.imgur.com/LUBayko.png" alt="Logo" className="search-logo" />  
+        
+        <Search classname="search"
+            allProducts={allProducts}
+            setAllProducts={setAllProducts}
+            handleChange={props.handleChange}
+            handleSubmit={props.handleSubmit}
+        />
+        
+        <i className="fas fa-times" onClick={(e) => changeSearchVisibility(e)}></i>
+      </div>
+      
+
     </nav>
   )
 
