@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getProduct, deleteProduct } from "../../services/products";
-import { Redirect, useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import Layout from "../../components/shared/Layout/Layout";
 import ProductEdit from "../../components/Edit/ProductEdit.jsx";
 import Reviews from "../../components/Reviews/Reviews";
@@ -16,7 +16,6 @@ const ProductDetail = (props) => {
   const { id } = useParams();
   const [editVisibility, setEditVisibility] = useState(false);
   const [isUpdated, setUpdated] = useState(false);
-  const { isDeleted, setIsDeleted } = props;
   const [primaryImage, setPrimaryImage] = useState("")
   const history = useHistory();
 
