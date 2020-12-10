@@ -13,7 +13,7 @@ const main = async () => {
         "imgURL3": "https://i.imgur.com/Qd7i5PI.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "price": "300.00",
-        "admin_rating": 3,
+        "admin_rating": 2,
         "tag": "street"
       },
       {

@@ -103,43 +103,34 @@ The following components and functionns were prioritized for post-MVP:
 
 ## Wireframes
 
-Home Page
+**Home Page**
 
 <img src="https://i.imgur.com/0i0fjBP.png" width=60%>
 
-Product Gallery
+**Product Gallery**
 
 <img src="https://i.imgur.com/j9iBn6S.png" width=60%>
 
-Product Detail
+**Product Detail**
 
 <img src="https://i.imgur.com/3SoKOfR.png" width=60%>
 
-Search Page
+**Search Page**
 
 <img src="https://i.imgur.com/TCsqNWK.png" width=60%>
 
-Add Products
+**Add Products**
 
 <img src="https://i.imgur.com/HcN9Alx.png" width=60%>
 
+## Functionality & Sample Code
 
-### Links -:
-##### Team Expectation Setting - Project 3 :  https://docs.google.com/document/d/1qkPLK8iWniHyru0pKPx-ybMxSJCS4-iFh_CfrPPPQeM/edit?usp=sharing
-##### Project Tasks: https://github.com/ichillous/twinkle-toes/projects/1?add_cards_query=is%3Aopen
-##### Whimsical Diagram: https://whimsical.com/4oJc6MUqnQfvPVC6Q4j3To
-##### MVP:
-- full CRUD
-- make CSS as close to UXDI as possible
-- build a deployed backend
-- create react app with a minimum of six components
-- npm dependencies
-##### Post MVP items: 
-- Edit Recommended List (Admin)
-- Autofill SearchBar
-- Creating Product Review Feature (Form)
-- Image Previews
-- Photo File Upload
-- Payment Page (Form)
-- Shopping Cart
- 
+### Custom-Made Carousels
+
+### Review Stars Component
+
+### Edit Product Modal
+
+### Product Sort
+
+### Product Sort
