@@ -56,7 +56,50 @@ The following components and functionns were prioritized for post-MVP:
 
 ## Component Heirarchy
 
-![Twinkle Toes Component Heirarchy](https://i.imgur.com/knWSWxm.png)
+<img src="https://i.imgur.com/knWSWxm.png" width=60%>
+
+### Repo Structure
+
+```
+|_db
+             |_connection.js (connects to MongoDB)
+|_models
+             |_product.js (model for one product)
+|_seed
+             |_products.js (contains product seed data)
+|_controllers
+             |_products.js
+|_routes
+             |_products.js
+|_client
+             |_src
+                  |_app.js
+                  |_components
+                              |_Edit
+                              |_HeroCarousel
+                              |_PopularCarousel
+                              |_PopularProduct
+                              |_Product
+                              |_ReviewForm
+                              |_Reviews
+                              |_Search
+                              |_shared
+                              |_SimilarItems
+                              |_Sort
+                              |_StarRating
+                  |_screens
+                              |_Home
+                              |_ProductCreate
+                              |_ProductDetail
+                              |_Products
+                              |_SearchResults
+                  |_services
+
+                              |_apiConfig.js
+                              |_products.js
+                  |_utils
+                              |_sort.js
+```
 
 ## Wireframes
 
