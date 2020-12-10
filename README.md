@@ -131,6 +131,6 @@ The following components and functionns were prioritized for post-MVP:
 
 ### Edit Product Modal
 
-### Product Sort
+### Delete Product
 
 ### Product Sort
