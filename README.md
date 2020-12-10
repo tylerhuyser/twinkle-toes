@@ -61,19 +61,24 @@ The following components and functionns were prioritized for post-MVP:
 ## Wireframes
 
 Home Page
+
 <img src="https://i.imgur.com/0i0fjBP.png" width=60%>
 
 Product Gallery
-![Twinkle Toes Wireframe 2](https://i.imgur.com/j9iBn6S.png)
+
+<img src="https://i.imgur.com/j9iBn6S.png" width=60%>
 
 Product Detail
-![Twinkle Toes Wireframe 3](https://i.imgur.com/3SoKOfR.png)
+
+<img src="https://i.imgur.com/3SoKOfR.png" width=60%>
 
 Search Page
-![Twinkle Toes Wireframe 4](https://i.imgur.com/TCsqNWK.png)
+
+<img src="https://i.imgur.com/TCsqNWK.png" width=60%>
 
 Add Products
-![Twinkle Toes Wireframe 5](https://i.imgur.com/HcN9Alx.png)
+
+<img src="https://i.imgur.com/HcN9Alx.png" width=60%>
 
 
 ### Links -:
