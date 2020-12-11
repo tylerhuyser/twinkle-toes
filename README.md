@@ -2,7 +2,7 @@
 
 **Twinkle Toes** is an e-commerce store that specializes in everyone's favorite accessory: sparkley shoes.
 
-[Deployed Site](https://sharp-kilby-04a8bc.netlify.app/) can be accessed here.
+[Deployed Site](https://twinkle-toes-portfolio.netlify.app/) can be accessed here.
 
 ## Description
 
