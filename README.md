@@ -353,6 +353,29 @@ const changeVisibility = (e) => {
 
 ### Delete Product
 
+An unexpected challenge lay in the 'delete product' function. The desired functionality is as follows: 
+
+* An admin wishes to delete a specific product
+* The admin navigates to that products page and clicks 'delete'
+* The admin is then rerouted to the products directory, which displays all remaining products
+
+When we first attempted to create the desired effect, we noticed an issue: the recently deleted product would continue to display on the rerouted product directory page. It wouldn't disappear until the user hit refresh.
+
+In order to solve this issue, we used React Hook useState to create a switch that would toggle when a component is deleted.
+
+```
+
+const [isDeleted, setIsDeleted] = useState(false);
+
+```
+
+However, when placed inside the Product Detail component, the following error occurred:
+
+<img src="https://i.imgur.com/lqZsB8J.png" width="80%">
+
+After watching this [incredibly helpful](https://www.youtube.com/watch?v=8BNdxFzMeVg&feature=emb_title) video by [Kent Dodds](https://kentcdodds.com/) on YouTube, we realized that we were *almost* on the right track.
+
+Instead of placing the React Hook "switch" within the Product Detail component, we had to place it one tier above, in order to create the desired effect. Voila!
 
 
 ### Product Sort
