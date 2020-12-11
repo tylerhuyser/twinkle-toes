@@ -130,9 +130,10 @@ The following components and functionns were prioritized for post-MVP:
 The Twinkle Toes landing page includes two carousels built from scratch. 
 
 #### Hero Carousel
-The first, known as the *Hero Carousel*, sits at the top of the page. The Hero Carousel rotates through various images, creating a dynamic banner. Users are able to cycle through these images sequentially (using the arrow icons) or directly (using the dot-shaped indicators at the bottom of the page). A pink dot indicates the hero image currently on display, whereas a white dot indicates an inactive image in the set.
 
-The challenge was creating a function that could handle both methods of sifting through the series of hero images. 
+The first, known as the *Hero Carousel*, serves as a dynamic banner that rotates through various images at the top of the page. Users are able to cycle through these images sequentially (using the arrow icons) or nonsequentially (using the dot-shaped indicators at the bottom of the page). A pink dot indicates the hero image currently on display, whereas a white dot indicates an inactive image in the set.
+
+The challenge was creating a function that could handle both methods of sifting through the series of hero images. Furthermore, as these slides shift, this function needs to toggle the class of active and inactive slides.
 
 ```
  // Below creates a set of divs containing each hero slide
@@ -259,9 +260,20 @@ The challenge was creating a function that could handle both methods of sifting 
 
 #### Popular Items Carousel
 
+The *Popular Items Carousel* highlights the highest rated products on the Twinkle Toes site. Unlike the Hero Carousel, the Popular Items Carousel displays five items cards at a time. 
 
+This carousel posed the unique challenge of keep track of the order of these item cards as users cycle through the display.
 
 ```
+
+// The Below React Hooks keep track of the popular items and the range of indices on display.
+
+  const [popularCarousel, setPopularCarousel] = useState([]);
+
+  const { popularLowerIndex, setPopularLowerIndex } = props;
+  const { popularUpperIndex, setPopularUpperIndex } = props;
+
+// The below snippet illustrates demonstrates how the array of slides is altered using a spread operator and prevState.
 
   function plusSlides(n) {
 
@@ -283,97 +295,114 @@ The challenge was creating a function that could handle both methods of sifting 
         return [popularItemCards[tempLowerIndex], ...prevPopularCarousel]
       });
 
-    } else if ((n === (-1)) && (tempUpperIndex === 0)) {
-     
-      popularCarousel.pop()
-      setPopularCarousel(popularCarousel)
-      
-      tempLowerIndex -= 1
-      tempUpperIndex = (popularItemCards.length - 1);
+    [...]
 
-      setPopularLowerIndex(tempLowerIndex)
-      setPopularUpperIndex(tempUpperIndex)
-
-      setPopularCarousel(prevPopularCarousel => {
-        return [popularItemCards[tempLowerIndex], ...prevPopularCarousel]
-      })
-    
-    } else if ((n === (-1)) && (tempLowerIndex !== 0)) {
-
-      popularCarousel.pop()
-      setPopularCarousel(popularCarousel)
-
-      tempUpperIndex -= 1;
-      tempLowerIndex -= 1;
-
-      setPopularLowerIndex(tempLowerIndex)
-      setPopularUpperIndex(tempUpperIndex)
-
-      setPopularCarousel(prevPopularCarousel => {
-        return [popularItemCards[tempLowerIndex], ...prevPopularCarousel]
-      });
-
-    } else if (n === 1 && (tempUpperIndex === (popularItemCards.length - 1))) {
-
-      popularCarousel.shift()
-      setPopularCarousel(popularCarousel)
-
-      tempUpperIndex = 0;
-      tempLowerIndex += 1
-
-      setPopularLowerIndex(tempLowerIndex)
-      setPopularUpperIndex(tempUpperIndex)
-
-      setPopularCarousel(prevPopularCarousel => {
-        return [...prevPopularCarousel, popularItemCards[tempUpperIndex]]
-      });
-
-    }  else if (n === 1 && (tempLowerIndex === (popularItemCards.length - 1))) {
-
-      popularCarousel.shift()
-      setPopularCarousel(popularCarousel)
-      
-      tempUpperIndex += 1;
-      tempLowerIndex = 0;
-
-      setPopularLowerIndex(tempLowerIndex)
-      setPopularUpperIndex(tempUpperIndex)
-
-      setPopularCarousel(prevPopularCarousel => {
-        return [...prevPopularCarousel, popularItemCards[tempUpperIndex]]
-      });
-
-    } else if (n === 1 && (tempUpperIndex !== (popularItemCards.length - 1))) {
-
-      popularCarousel.shift()
-      setPopularCarousel(popularCarousel)
-
-      tempUpperIndex += 1
-      tempLowerIndex += 1
-
-      setPopularLowerIndex(tempLowerIndex)
-      setPopularUpperIndex(tempUpperIndex)
-
-      setPopularCarousel(prevPopularCarousel => {
-        return [...prevPopularCarousel, popularItemCards[tempUpperIndex]]
-      });
     };
   };
 
 ```
 
-
-
-The Twinkle Toes landing page features two carousels, each built from scratch. First, the "Hero" carousel, highlights 
-
 ### Review Stars Component
+
+This component pictorally presents users with the rating of each item on site. Each item is scored from one (1) to five (5). 
+
+The unique challenge that this component posed was creating a function that could generate the accurate number of stars for each item.
+
+```
+
+// The below snippet illustrates how a for loop was used in combination with an if/else conditional to render the accurate number of stars with conditional formatting.
+
+<div className="review-stars-container">
+      {[...Array(5)].map((star, idx) => {
+        if (idx < props.rating) {
+          return (
+            <span className="review-star" key={idx}><FaStar color="#F4A2B6" /></span>
+          )
+        } else {
+          return (
+            <span className="review-star" key={idx}><FaStar color="#C7C7CC" /></span>
+          )
+        }
+      })}
+    </div>
+
+```
 
 ### Edit Product Modal
 
+The *Edit Product Modal* appears when an admin wishes to alter information about a product. 
+
+The React Hook useState is employed in order to toggle visibility of the modal. When state is set to "false", the modal's "display" CSS property is set to none. When state is set to "true", the modal's "display" CSS property is set to "flex".
+
+```
+
+const [editVisibility, setEditVisibility] = useState(false);
+
+const changeVisibility = (e) => {
+  e.preventDefault();
+  setEditVisibility(!editVisibility);
+};
+
+<div id="edit-products-modual" className={editVisibility ? "edit-visible" : "edit-hidden"}>
+
+  <ProductEdit />
+
+</div>
+
+```
+
 ### Delete Product
+
+
 
 ### Product Sort
 
+The product sort feature allows users to sort products either alphabetically or by price. 
+
+In order to create the sort util, we had to leverage our knowledge of sorting algorithms. Due to its simplicity, we used a Bubble Sorting algorithm for this application.
+
+In addition, a sorting function was used in order to create a dynamic array of products to populat the Popular Products Carousel (see above).
+
+```
+
+const compareKey = key =>
+  (a, b) => {
+    if (a[key] < b[key]) {
+      return -1
+    }
+    if (a[key] > b[key]) {
+      return 1
+    }
+    return 0
+  }
+
+export const AZ = arr => arr.sort(compareKey('name'))
+export const ZA = arr => arr.sort(compareKey('name')).reverse()
+export const lowestFirst = arr => arr.sort((a, b) => parseInt(a.price) - parseInt(b.price))
+export const highestFirst = arr => arr.sort((a, b) => parseInt(b.price) - parseInt(a.price))
+export const lowestRatingFirst = arr => arr.sort((a, b) => parseInt(a.admin_rating) - parseInt(b.admin_rating))
+export const highestRatingFirst = arr => arr.sort((a, b) => parseInt(b.admin_rating) - parseInt(a.admin_rating))
+
+```
+
 ### Hamburger Menu
+
+To optimize the layout for mobile browsers, we created a hamburger menu. 
+
+The hamburger menu declutters the navigation bar by condensing options visible to the user. If a user wishes to navigate to a specific section of the site, they can do so by clicking on the menu icon and expanding the drop down menu.
+
+```
+
+const [menuVisibility, setMenuVisibility] = useState(false);
+
+<div id="mobile-menu" className={menuVisibility ? "mobile-menu-visible" : "mobile-menu-hidden"}>
+    
+  <Link className="mobile-products-link" to="/products">Products</Link>
+
+  <Link className="mobile-add-products-link" to="/add-product">Add Product</Link>
+
+</div>
+
+```
 
 
