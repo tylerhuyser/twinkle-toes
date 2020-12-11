@@ -127,6 +127,117 @@ The following components and functionns were prioritized for post-MVP:
 
 ### Custom-Made Carousels
 
+The Twinkle Toes landing page includes two carousels built from scratch. 
+
+The first, known as the *Hero Carousel*, sits at the top of the page. The Hero Carousel rotates through various images, creating a dynamic banner. Users are able to cycle through these images sequentially (using the arrow icons) or directly (using the dot-shaped indicators at the bottom of the page).
+
+The challenge was creating a function that could handle both methods of sifting through the series of hero images.
+
+```
+
+  function plusSlides(n) {
+
+    let tempLowerIndex = popularLowerIndex
+    let tempUpperIndex = popularUpperIndex
+
+    if ((n === (-1)) && (tempLowerIndex === 0)) {
+
+      popularCarousel.pop()
+      setPopularCarousel(popularCarousel)
+
+      tempLowerIndex = (popularItemCards.length - 1)
+      tempUpperIndex -= 1;
+
+      setPopularLowerIndex(tempLowerIndex)
+      setPopularUpperIndex(tempUpperIndex)
+
+      setPopularCarousel(prevPopularCarousel => {
+        return [popularItemCards[tempLowerIndex], ...prevPopularCarousel]
+      });
+
+    } else if ((n === (-1)) && (tempUpperIndex === 0)) {
+     
+      popularCarousel.pop()
+      setPopularCarousel(popularCarousel)
+      
+      tempLowerIndex -= 1
+      tempUpperIndex = (popularItemCards.length - 1);
+
+      setPopularLowerIndex(tempLowerIndex)
+      setPopularUpperIndex(tempUpperIndex)
+
+      setPopularCarousel(prevPopularCarousel => {
+        return [popularItemCards[tempLowerIndex], ...prevPopularCarousel]
+      })
+    
+    } else if ((n === (-1)) && (tempLowerIndex !== 0)) {
+
+      popularCarousel.pop()
+      setPopularCarousel(popularCarousel)
+
+      tempUpperIndex -= 1;
+      tempLowerIndex -= 1;
+
+      setPopularLowerIndex(tempLowerIndex)
+      setPopularUpperIndex(tempUpperIndex)
+
+      setPopularCarousel(prevPopularCarousel => {
+        return [popularItemCards[tempLowerIndex], ...prevPopularCarousel]
+      });
+
+    } else if (n === 1 && (tempUpperIndex === (popularItemCards.length - 1))) {
+
+      popularCarousel.shift()
+      setPopularCarousel(popularCarousel)
+
+      tempUpperIndex = 0;
+      tempLowerIndex += 1
+
+      setPopularLowerIndex(tempLowerIndex)
+      setPopularUpperIndex(tempUpperIndex)
+
+      setPopularCarousel(prevPopularCarousel => {
+        return [...prevPopularCarousel, popularItemCards[tempUpperIndex]]
+      });
+
+    }  else if (n === 1 && (tempLowerIndex === (popularItemCards.length - 1))) {
+
+      popularCarousel.shift()
+      setPopularCarousel(popularCarousel)
+      
+      tempUpperIndex += 1;
+      tempLowerIndex = 0;
+
+      setPopularLowerIndex(tempLowerIndex)
+      setPopularUpperIndex(tempUpperIndex)
+
+      setPopularCarousel(prevPopularCarousel => {
+        return [...prevPopularCarousel, popularItemCards[tempUpperIndex]]
+      });
+
+    } else if (n === 1 && (tempUpperIndex !== (popularItemCards.length - 1))) {
+
+      popularCarousel.shift()
+      setPopularCarousel(popularCarousel)
+
+      tempUpperIndex += 1
+      tempLowerIndex += 1
+
+      setPopularLowerIndex(tempLowerIndex)
+      setPopularUpperIndex(tempUpperIndex)
+
+      setPopularCarousel(prevPopularCarousel => {
+        return [...prevPopularCarousel, popularItemCards[tempUpperIndex]]
+      });
+    };
+  };
+
+```
+
+
+
+The Twinkle Toes landing page features two carousels, each built from scratch. First, the "Hero" carousel, highlights 
+
 ### Review Stars Component
 
 ### Edit Product Modal
@@ -134,3 +245,7 @@ The following components and functionns were prioritized for post-MVP:
 ### Delete Product
 
 ### Product Sort
+
+### Hamburger Menu
+
+
