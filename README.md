@@ -129,9 +129,137 @@ The following components and functionns were prioritized for post-MVP:
 
 The Twinkle Toes landing page includes two carousels built from scratch. 
 
-The first, known as the *Hero Carousel*, sits at the top of the page. The Hero Carousel rotates through various images, creating a dynamic banner. Users are able to cycle through these images sequentially (using the arrow icons) or directly (using the dot-shaped indicators at the bottom of the page).
+#### Hero Carousel
+The first, known as the *Hero Carousel*, sits at the top of the page. The Hero Carousel rotates through various images, creating a dynamic banner. Users are able to cycle through these images sequentially (using the arrow icons) or directly (using the dot-shaped indicators at the bottom of the page). A pink dot indicates the hero image currently on display, whereas a white dot indicates an inactive image in the set.
 
-The challenge was creating a function that could handle both methods of sifting through the series of hero images.
+The challenge was creating a function that could handle both methods of sifting through the series of hero images. 
+
+```
+ // Below creates a set of divs containing each hero slide
+
+  let heroSlides = heroImages.map((element, idx) => {
+    return (
+      <div className="invisible fade" key={idx} style={{
+
+        width: "100vw",
+
+        display: "flex",
+
+      }}>
+        <img src={element} alt={idx} key={idx} style={{
+
+          width: "100%",
+          height: "60vw",
+          objectFit: "cover",
+
+        }} />
+      </div>
+    )
+  })
+
+// Below function creates dot-shaped indicators that correspond with each slide.
+
+  function createHeroCarouselButtons() {
+    let buttons = [];
+    for (let i = 0; i < heroImages.length; i++) {
+      buttons[i] =
+        <span className="hero-dot" key={i} onClick={() => currentSlide(i)} ></span>
+    }
+    return buttons
+  }
+  
+// Below function allows users to shuffle through the slides either sequentially or directly.
+
+  function showSlides(n) {
+ 
+    if (n === undefined) {
+      n = 0
+    }
+
+    heroSlides.forEach((element, idx) => {
+      if (idx === n) {
+        const selectedSlide = heroSlides[idx].props.children
+
+        heroSlides[idx] = {
+          ...heroSlides[idx], props: {
+            className: "visible fade", children:
+              selectedSlide
+          }
+        }
+      }
+      if (idx !== n) {
+        const selectedSlide = heroSlides[idx].props.children
+
+        heroSlides[idx] = {
+          ...heroSlides[idx], props: {
+            className: "invisible fade", children:
+              selectedSlide
+          }
+        }
+      }
+    }
+    )
+
+    heroCarouselButtons.forEach((element, idx) => {
+      if (idx === n) {
+        const buttonFunction = heroCarouselButtons[idx].props.onClick
+
+        heroCarouselButtons[idx] = {
+          ...heroCarouselButtons[idx], props: {
+            className: "hero-dot hero-active", onClick:
+              buttonFunction
+          }
+        }
+      }
+      if (idx !== n) {
+
+        const buttonFunction = heroCarouselButtons[idx].props.onClick
+
+        heroCarouselButtons[idx] = {
+          ...heroCarouselButtons[idx], props: {
+            className: "hero-dot", onClick:
+              buttonFunction
+          }
+        }
+
+      }
+    }
+    )
+    setCurrentIndex(n)
+    setHeroCarousel(heroSlides)
+    setHeroButtons(heroCarouselButtons)
+  }
+
+  function currentSlide(n) {
+    showSlides(n);
+  };
+
+  function plusSlides(n) {
+    let tempIndex = currentIndex
+
+    if ((n === (-1)) && (currentIndex === 0)) {
+
+      tempIndex = (heroSlides.length -= 1);
+
+    };
+    if (n === (-1) && (currentIndex !== 0)) {
+      tempIndex -= 1;
+    };
+    if (n === 1 && (currentIndex === (heroSlides.length - 1))) {
+      tempIndex = 0;
+    };
+    if (n === 1 && (currentIndex !== (heroSlides.length - 1))) {
+      tempIndex += 1;
+    };
+
+    showSlides(tempIndex)
+  };
+
+```
+
+#### Popular Items Carousel
+
+
 
 ```
 
