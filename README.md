@@ -308,13 +308,13 @@ This carousel posed the unique challenge of keep track of the order of these ite
 
 ### Review Stars Component
 
-<img src="https://imgur.com/838617ba-1c80-46d9-897d-60ee34d2d1f1" width=60%>
+<img src="https://i.imgur.com/d665ZIB.png" width=60%>
 
 This component pictorally presents users with the rating of each item on site. Each item is scored from one (1) to five (5). 
 
 The unique challenge that this component posed was creating a function that could generate the accurate number of stars for each item.
 
-<img src="https://imgur.com/1e8a448d-30e1-4666-83a8-c5077c513b9f" width=60%>
+<img src="https://i.imgur.com/7o2kQWf.png" width=60%>
 
 ```
 
