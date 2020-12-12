@@ -338,7 +338,7 @@ The unique challenge that this component posed was creating a function that coul
 
 ### Edit Product Modal
 
-<iframe src="https://media3.giphy.com/media/MQ3SuXWTQFMSbUVTST/giphy.gif" width=60%>
+<img src="https://media3.giphy.com/media/MQ3SuXWTQFMSbUVTST/giphy.gif" width=60%>
 
 The *Edit Product Modal* appears when an admin wishes to alter information about a product. 
 
@@ -363,7 +363,7 @@ const changeVisibility = (e) => {
 
 ### Delete Product
 
-<iframe src="https://i.imgur.com/u7rIrZ3.mp4" width=60%>
+<img src="https://i.imgur.com/u7rIrZ3.mp4" width=60%>
 
 An unexpected challenge lay in the 'delete product' function. The desired functionality is as follows: 
 
@@ -424,7 +424,7 @@ export const highestRatingFirst = arr => arr.sort((a, b) => parseInt(b.admin_rat
 
 ### Hamburger Menu
 
-<iframe src="https://i.imgur.com/T7ZnXYF.mp4" width=60%>
+<img src="https://media1.giphy.com/media/34htxW4zKNgIUfMXPc/giphy.gif" width=60%>
 
 To optimize the layout for mobile browsers, we created a hamburger menu. 
 
