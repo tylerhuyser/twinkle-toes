@@ -338,7 +338,7 @@ The unique challenge that this component posed was creating a function that coul
 
 ### Edit Product Modal
 
-<iframe src="https://i.imgur.com/QZFvDWV.mp4" width=60%>
+<img src="https://media3.giphy.com/media/MQ3SuXWTQFMSbUVTST/giphy.gif" width=60%>
 
 The *Edit Product Modal* appears when an admin wishes to alter information about a product. 
 
