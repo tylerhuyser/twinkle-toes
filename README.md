@@ -131,7 +131,7 @@ The Twinkle Toes landing page includes two carousels built from scratch.
 
 #### Hero Carousel
 
-<img src="https://media.giphy.com/media/MQ3SuXWTQFMSbUVTST/source.gif" width="60%">
+<img src="https://media2.giphy.com/media/MQ3SuXWTQFMSbUVTST/giphy.gif" width="60%">
 
 The first, known as the *Hero Carousel*, serves as a dynamic banner that rotates through various images at the top of the page. Users are able to cycle through these images sequentially (using the arrow icons) or nonsequentially (using the dot-shaped indicators at the bottom of the page). A pink dot indicates the hero image currently on display, whereas a white dot indicates an inactive image in the set.
 
