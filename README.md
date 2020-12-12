@@ -363,7 +363,7 @@ const changeVisibility = (e) => {
 
 ### Delete Product
 
-<img src="https://i.imgur.com/u7rIrZ3.mp4" width=60%>
+<img src="https://media4.giphy.com/media/QpQ8RNQvByrwIStIpi/giphy.gif" width=60%>
 
 An unexpected challenge lay in the 'delete product' function. The desired functionality is as follows: 
 
