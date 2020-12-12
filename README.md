@@ -131,7 +131,7 @@ The Twinkle Toes landing page includes two carousels built from scratch.
 
 #### Hero Carousel
 
-<iframe src="https://i.imgur.com/WttLw8d.mp4" width=60%>
+<img src="https://media3.giphy.com/media/MQ3SuXWTQFMSbUVTST/giphy.gif" width=60%>
 
 The first, known as the *Hero Carousel*, serves as a dynamic banner that rotates through various images at the top of the page. Users are able to cycle through these images sequentially (using the arrow icons) or nonsequentially (using the dot-shaped indicators at the bottom of the page). A pink dot indicates the hero image currently on display, whereas a white dot indicates an inactive image in the set.
 
@@ -338,7 +338,7 @@ The unique challenge that this component posed was creating a function that coul
 
 ### Edit Product Modal
 
-<img src="https://media3.giphy.com/media/MQ3SuXWTQFMSbUVTST/giphy.gif" width=60%>
+<iframe src="https://media3.giphy.com/media/MQ3SuXWTQFMSbUVTST/giphy.gif" width=60%>
 
 The *Edit Product Modal* appears when an admin wishes to alter information about a product. 
 
