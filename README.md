@@ -131,6 +131,8 @@ The Twinkle Toes landing page includes two carousels built from scratch.
 
 #### Hero Carousel
 
+<iframe src="https://i.imgur.com/WttLw8d.mp4" width=60%>
+
 The first, known as the *Hero Carousel*, serves as a dynamic banner that rotates through various images at the top of the page. Users are able to cycle through these images sequentially (using the arrow icons) or nonsequentially (using the dot-shaped indicators at the bottom of the page). A pink dot indicates the hero image currently on display, whereas a white dot indicates an inactive image in the set.
 
 The challenge was creating a function that could handle both methods of sifting through the series of hero images. Furthermore, as these slides shift, this function needs to toggle the class of active and inactive slides.
@@ -260,6 +262,8 @@ The challenge was creating a function that could handle both methods of sifting 
 
 #### Popular Items Carousel
 
+<img src="https://i.imgur.com/UWAj4Rx.gif" width=60%>
+
 The *Popular Items Carousel* highlights the highest rated products on the Twinkle Toes site. Unlike the Hero Carousel, the Popular Items Carousel displays five items cards at a time. 
 
 This carousel posed the unique challenge of keep track of the order of these item cards as users cycle through the display.
@@ -304,9 +308,13 @@ This carousel posed the unique challenge of keep track of the order of these ite
 
 ### Review Stars Component
 
+<img src="https://imgur.com/838617ba-1c80-46d9-897d-60ee34d2d1f1" width=60%>
+
 This component pictorally presents users with the rating of each item on site. Each item is scored from one (1) to five (5). 
 
 The unique challenge that this component posed was creating a function that could generate the accurate number of stars for each item.
+
+<img src="https://imgur.com/1e8a448d-30e1-4666-83a8-c5077c513b9f" width=60%>
 
 ```
 
@@ -330,6 +338,8 @@ The unique challenge that this component posed was creating a function that coul
 
 ### Edit Product Modal
 
+<iframe src="https://i.imgur.com/QZFvDWV.mp4" width=60%>
+
 The *Edit Product Modal* appears when an admin wishes to alter information about a product. 
 
 The React Hook useState is employed in order to toggle visibility of the modal. When state is set to "false", the modal's "display" CSS property is set to none. When state is set to "true", the modal's "display" CSS property is set to "flex".
@@ -352,6 +362,8 @@ const changeVisibility = (e) => {
 ```
 
 ### Delete Product
+
+<iframe src="https://i.imgur.com/u7rIrZ3.mp4" width=60%>
 
 An unexpected challenge lay in the 'delete product' function. The desired functionality is as follows: 
 
@@ -379,6 +391,8 @@ Instead of placing the React Hook "switch" within the Product Detail component, 
 
 
 ### Product Sort
+
+<img src="https://i.imgur.com/VvcbK4U.gif" width=60%>
 
 The product sort feature allows users to sort products either alphabetically or by price. 
 
@@ -409,6 +423,8 @@ export const highestRatingFirst = arr => arr.sort((a, b) => parseInt(b.admin_rat
 ```
 
 ### Hamburger Menu
+
+<iframe src="https://i.imgur.com/T7ZnXYF.mp4" width=60%>
 
 To optimize the layout for mobile browsers, we created a hamburger menu. 
 
