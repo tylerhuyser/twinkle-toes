@@ -1,4 +1,4 @@
-import api from './apiConfig'
+import api from './apiConfigMongoDB.js'
 
 export const getProducts = async () => {
   try {
