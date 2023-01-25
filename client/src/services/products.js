@@ -1,8 +1,11 @@
-import api from './apiConfigMongoDB.js'
+import apiMongoDB from './apiConfigMongoDB.js'
+import api from './apiConfig'
 
 export const getProducts = async () => {
   try {
-      const response = await api.get('/products')
+    console.group('before getProducts')
+    const response = await apiMongoDB.get('/products')
+    console.log(response)
       return response.data
   } catch (error) {
       throw error

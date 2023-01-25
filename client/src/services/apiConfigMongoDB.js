@@ -1,5 +1,18 @@
 import axios from 'axios'
 
+let apiUrl
+
+const apiUrls = {
+    production: 'https://data.mongodb-api.com/app/data-czidv/endpoint/data/v1/action/findOne',
+    development: 'http://localhost:3000/api'
+}
+
+if (window.location.hostname === 'localhost') {
+    apiUrl = apiUrls.development
+} else {
+    apiUrl = apiUrls.production
+}
+
 var data = JSON.stringify({
   "collection": "products",
   "database": "twinkleToesProductsDatabase",
@@ -10,7 +23,7 @@ var data = JSON.stringify({
 });
 
 var config = {
-  url: 'https://data.mongodb-api.com/app/data-czidv/endpoint/data/v1/action/findOne',
+  url: apiUrl,
   headers: {
     'Content-Type': 'application/json',
     'Access-Control-Request-Headers': '*',
@@ -21,6 +34,6 @@ var config = {
 
 console.log(config)
 
-const api = axios.create(config)
+const apiMongoDB = axios.create(config)
 
-export default api
+export default apiMongoDB

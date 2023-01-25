@@ -19,6 +19,7 @@ function App() {
   useEffect(() => {
 
     const fetchProducts = async () => {
+      console.log('before 1st useEFFECT')
       const products = await getProducts()
       console.log(products)
       setAllProducts(products)
