@@ -23,7 +23,7 @@ var data = JSON.stringify({
 });
 
 var config = {
-  url: apiUrl,
+  baseURL: apiUrl,
   headers: {
     'Content-Type': 'application/json',
     'Access-Control-Request-Headers': '*',
