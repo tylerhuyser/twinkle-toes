@@ -73,13 +73,6 @@ const Nav = (props) => {
         <i className="fas fa-search" onClick={(e) => changeSearchVisibility(e)}></i>
       </div>
 
-      <div id="mobile-menu" className={menuVisibility ? "mobile-menu-visible" : "mobile-menu-hidden"}>
-    
-        <Link className="mobile-products-link" to="/products">Products</Link>
-        <Link className="mobile-add-products-link" to="/add-product">Add Product</Link>
-
-      </div>
-
       
       <div id="mobile-search-menu" className={searchVisibility ? "mobile-search-menu-visible" : "mobile-search-menu-hidden"}>
         <img src="https://i.imgur.com/LUBayko.png" alt="Logo" className="search-logo" />  
@@ -94,6 +87,12 @@ const Nav = (props) => {
         <i className="fas fa-times" onClick={(e) => changeSearchVisibility(e)}></i>
       </div>
       
+      <div id="mobile-menu" className={menuVisibility ? "mobile-menu-visible" : "mobile-menu-hidden"}>
+    
+        <Link className="mobile-products-link" to="/products">Products</Link>
+        <Link className="mobile-add-products-link" to="/add-product">Add Product</Link>
+
+      </div>
 
     </nav>
   )
