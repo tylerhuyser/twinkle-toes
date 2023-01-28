@@ -8,7 +8,7 @@ const apiUrls = {
 }
 
 if (window.location.hostname === 'localhost') {
-    apiUrl = apiUrls.development
+    apiUrl = apiUrls.production
 } else {
     apiUrl = apiUrls.production
 }
@@ -25,8 +25,8 @@ var data = JSON.stringify({
 var config = {
   baseURL: apiUrl,
   headers: {
+    "Access-Control-Allow-Origin": "*",
     'Content-Type': 'application/json',
-    'Access-Control-Request-Headers': '*',
     'api-key': `${process.env.REACT_APP_MONGODB_API_KEY}`,
   },
   data: data
