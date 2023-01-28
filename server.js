@@ -10,13 +10,15 @@ const PORT = process.env.PORT || 3000
 
 const corsOptions ={
   origin:'*', //or whatever port your frontend is using
-  credentials:true,            
+  credentials: true,  
+  preflightContinue: false,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   optionSuccessStatus:200
 }
 
 const app = express();
-app.use(cors())
-app.options('*', cors())
+app.use(cors(corsOptions))
+// app.options('*', cors())
 // app.use(function(req, res, next) {
 //   res.header("Access-Control-Allow-Origin", '*');
 //   res.header("Access-Control-Allow-Credentials", true);
