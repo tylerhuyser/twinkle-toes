@@ -9,7 +9,7 @@ const db = require('./db/connection')
 const PORT = process.env.PORT || 3000
 
 const corsOptions ={
-  origin:'http://localhost:3000', //or whatever port your frontend is using
+  origin:'*', //or whatever port your frontend is using
   credentials:true,            
   optionSuccessStatus:200
 }
