@@ -8,13 +8,17 @@ const apiUrls = {
 }
 
 if (window.location.hostname === 'localhost') {
-    apiUrl = apiUrls.development
+    apiUrl = apiUrls.production
 } else {
     apiUrl = apiUrls.production
 }
 
 const api = axios.create({
-    baseURL: apiUrl
+  baseURL: apiUrl,
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+    "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+  }
 })
 
 export default api
