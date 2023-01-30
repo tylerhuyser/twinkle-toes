@@ -7,8 +7,8 @@ const PopularProduct = (props) => {
 
   return (
     <>
-      <Link className="popular-product" to={`/products/${props._id}`}>
-        <div className="popular-image-container">
+      <Link className="popular-product-container" to={`/products/${props._id}`}>
+        <div className="popular-product-image-container">
           <img className="popular-product-image" src={props.imgURL} alt={props.name} />
         </div>
       </Link>

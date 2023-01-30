@@ -7,15 +7,15 @@ export default function Footer() {
   return (
     <footer>
       <div className="footer-div">
-        <p className="copyright">Copyright © TWINKLE TOES 2020</p>
+        <p className="footer-copy" id="copyright">Copyright © TWINKLE TOES 2023</p>
         <div className="contact-info-desktop">
-          <p className="contact-info">Contact<br />
+          <p className="footer-copy" id="contact-info">Contact<br />
           ______________________<br />
           2654 Addmont St, Brooklyn NY, 22321<br />
           347.677.3427</p>
         </div>
         <div className="contact-info-mobile">
-          <p className="contact-info">Contact<br />
+          <p className="footer-copy" id="contact-info">Contact<br />
           ______________________<br />
           2654 Addmont St,<br /> Brooklyn, NY<br /> 22321<br />
           347.677.3427</p>

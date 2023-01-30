@@ -1,26 +1,5 @@
 * {box-sizing:border-box}
 
-.popular-items-carousel {
-  display: flex;
-  flex-direction: row;
-  min-width: 100vw;
-  align-items: center;
-  justify-content: center;
-  height: 150px;
-
-}
-
-.popular-items-cards {
-  flex-grow: 1;
-
-  min-width: 80vw;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-}
-
 /* Hide the images by default */
 .invisible {
   display: none;
@@ -30,81 +9,101 @@
   display: block;
 }
 
-/* Next & previous buttons */
-.prevPopular, .nextPopular {
-  cursor: pointer;
-  /* position: absolute;
-  top: 50%; */
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: #D091C9;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  background: transparent;
-  outline: none;
-  border: none;
+.popular-items-carousel-container {
+  width: 100%;
+  max-width: 100vw;;
 }
 
-/* Position the "next button" to the right */
-.nextPopular {
-  /* right: 0;
-  top: 50%; */
-  border-radius: 3px 0 0 3px;
-}
-
-.prevPopular {
-  /* left: 0; */
-  border-radius: 3px 0 0 3px;
-}
-/* On hover, add a black background color with a little bit see-through */
-.prevPopular:hover, .nextPopular:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-.popular-items-mobile {
+.popular-items-carousel-desktop {
   display: none;
 }
 
-@media only screen and (max-width: 750px) {
-  
-  .popular-items-carousel {
-    display: none;
-  
-  }
+
+.popular-items-mobile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 25px;
+}
+
+@media only screen and (min-width: 375px) {
+
+}
+
+@media only screen and (min-width: 481px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 1024px) {
 
   .popular-items-mobile {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 0px 25px;
+    display: none;
   }
 
+  .popular-items-carousel-desktop {
+    display: flex;
+    flex-direction: row;
+    min-width: 100vw;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+  }
 
+  .popular-items-cards-container {
+    flex-grow: 1;
+  
+    min-width: 80vw;
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  
+  }
+  
+  /* Next & previous buttons */
+  .prev-button, .next-button {
+    cursor: pointer;
+    /* position: absolute;
+    top: 50%; */
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #D091C9;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background: transparent;
+    outline: none;
+    border: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .prev-button {
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .next-button {
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev-buttonr:hover, .next-button:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 1600px) {
 
 }

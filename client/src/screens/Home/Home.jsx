@@ -25,17 +25,20 @@ const Home = (props) => {
       
       <div className="home-container">
 
-        <HeroCarousel currentIndex={currentHeroIndex} setCurrentIndex={setCurrentHeroIndex} />
+        <div className='body-section' id="hero-section">
 
-        <div className="hero-copy">
-          <div className="tagline">We Sparkle. You Shine.</div>
+          <HeroCarousel currentIndex={currentHeroIndex} setCurrentIndex={setCurrentHeroIndex} />
 
-          <div className="store-description">Welcome to Twinkle Toes, your source for the best glittery shoes in the world. As a pioneer in the sparkle-only online shoe industry, Twinkle Toes has been bedazzling the feet of our customers since 2012. Today we are an online shopping destination for everyone seeking a little flare; a shining beacon amongst the Internet’s selection of conventional shoe retailers.</div>
         </div>
 
-        <div className="popular-items-carousel-container">
+        <div className="body-section" id="hero-title-section">
+          <div className="hero-copy title-copy" id="hero-title">We Sparkle. You Shine.</div>
+          <div className="hero-copy subtitle-copy" id="hero-subtitle">Welcome to Twinkle Toes, your source for the best glittery shoes in the world. As a pioneer in the sparkle-only online shoe industry, Twinkle Toes has been bedazzling the feet of our customers since 2012. Today we are an online shopping destination for everyone seeking a little flare; a shining beacon amongst the Internet’s selection of conventional shoe retailers.</div>
+        </div>
 
-          <div className="popular-items-title">Popular Items</div>
+        <div className="body-section" id="popular-items-section">
+
+          <div className='popular-items-copy title-copy' id="popular-items-title">Popular Items</div>
 
           {allProducts.length === 0 ? <div class="loader"></div>
 
@@ -50,7 +53,7 @@ const Home = (props) => {
 
         </div>
 
-        <Link to="/products"><button className="home-products-button">Products</button></Link>
+        <Link to="/products"><button className="body-section-button subtitle-copy" id="home-products-button">Products</button></Link>
 
       </div>
     </Layout>

@@ -1,47 +1,58 @@
 .nav-container {
-
-  flex-grow: 1;
-  width: 100%;
+  width: 100vw;
   z-index: 5;
+  box-shadow: 0px 1px 10px 0px lightgray;
 
+  position: fixed;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .desktop-nav {
-
-  max-width: 100%;
-  height: 100px;
-  padding: 20px 50px;
-
-  z-index: 5;
-  top: 0;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: none;
 }
 
-.mobile-nav-visible {
-  
-  display: none;
 
+.mobile-nav-hidden {
+  display: none;
+}
+
+
+.mobile-nav-visible {
+
+  background: white;
+  font: white;
+  font-size: 24px;
+
+  width: 100%;
+  max-width: 100vw;
+  height: 75px;
+  padding: 0px 25px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .logo-containers {
 
   display: flex;
   flex-direction: row;
-  flex-flow: nowrap;
-  width: 30vw;
   align-items: center;
+  justify-content: center;
+  width: 50vw;
 
 }
 
 .logo {
-
-  max-width: 5vw;
-  max-height: 50px;
-  margin: 18px 30px;
-
+  display: none;
 }
 
 .site-name-link {
@@ -53,221 +64,163 @@
 
   text-decoration: none;
   text-decoration-line: none;
-  max-width: 25vw;
+  width: 100%;
 }
 
 .site-name {
   color: #E67CDA;
-  font-size: 18px;
-  letter-spacing: -1px;
-  min-width: 150px;
-
+  font-size: 24px;
+  width: 100%;
 }
 
-.header-links {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 30vw;
-  margin: 18px 0px;
-
-}
-
-.products-link {
-
-  text-decoration: none;
-  text-decoration-line: none;
-  font-size: 14px;
-  color: #E67CDA;
-  text-align: right;
-  margin: 0px 30px;
-}
-
-.add-products-link {
-
-  text-decoration: none;
-  text-decoration-line: none;
-  font-size: 14px;
-  color: #E67CDA;
-  text-align: right;
-  margin: 0px 30px;
-
-}
+/* MOBILE HAMBURGER MENU CSS BELOW */
 
 .mobile-menu-hidden {
   display: none;
 }
-
+  
 .mobile-menu-visible {
-  display: none;
+  display: block;
+  position: relative;
+  top: -1;
+
+  background-color: white;
+
+  padding: 10px 25px 10px 25px;
 }
+
+.mobile-add-products-link, .mobile-products-link {
+  min-width: 100vw;
+  display: block;
+
+  color: #E67CDA;
+  font-size: 18px;
+  text-align: left;
+  margin: 0px 0px 15px 0px;
+
+  text-decoration: none;
+  text-decoration-line: none;
+}
+
+/* MOBILE SEARCH NAV CSS BELOW */
 
 .mobile-search-menu-hidden {
   display: none;
 }
 
 .mobile-search-menu-visible {
-  display: none;
+  background: white;
+  font: white;
+  font-size: 30px;
+
+  width: 100%;
+  max-width: 100vw;
+  height: 75px;
+  max-height: 380px;
+  padding: 0px 25px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-logo {
+
+  width: 20px;
+  height: 30px;
+
 }
 
 
-@media only screen and (max-width: 750px) {
+@media only screen and (min-width: 375px) {
 
+}
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+}
+
+@media only screen and (min-width: 1280px) {
   .nav-container {
-    flex-grow: 1;
-    width: 100%;
-    z-index: 5;  
-    
-    display: block;
-    box-shadow: 0px 1px 10px 0px lightgray;
-    
-    position: fixed;
+    box-shadow: none;
+  }
+  
+  .mobile-nav-visible {
+  
+    display: none;
+  
   }
 
   .desktop-nav {
-    display: none;
-  }
 
-  .mobile-nav-hidden {
-    display: none;
-  }
-
-
-  .mobile-nav-visible {
+    width: 100%;
+    max-width: 100vw;
+    height: 100px;
+    padding: 20px 50px;
   
-    background: white;
-    font: white;
-    font-size: 24px;
-
-    max-width: 100%;
-    min-height: 75px;
-    padding: 0px 25px;
-
-    z-index: 5;
-    top: 0;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
 
   .logo-containers {
-
-    display: flex;
-    flex-direction: row;
-    flex-flow: nowrap;
-    min-width: 50vw;
-    align-items: center;
-    justify-content: center;
-  
+    width: 30vw;
   }
-
+  
   .logo {
-
-    max-width: 5vw;
-    max-height: 50px;
-    margin: 0px 30px;
-    display: none;
-  
+    display: block;
+    width: 30px;
+    height: 50px;
   }
-
-  .site-name-link {
-    background-color: transparent;
   
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  
-    text-decoration: none;
-    text-decoration-line: none;
-    max-width: 25vw;
-    margin: 0px 30px;
-  }
-
   .site-name {
-    color: #E67CDA;
-    font-size: 24px;
-    letter-spacing: -1px;
-    min-width: 200px;
-  
+    font-size: 18px;
   }
 
-  .header-links {
+  .desktop-header-links {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    width: 100vw;
-  
+    width: 30vw;
   }
-
-  .products-link {
-
+  
+  .products-link, .add-products-link {
     text-decoration: none;
     text-decoration-line: none;
     font-size: 14px;
     color: #E67CDA;
     text-align: right;
-
+    margin-left: 50px;
   }
 
-  .mobile-menu-hidden {
+  .mobile-menu-hidden,  .mobile-menu-visible, .mobile-search-menu-hidden, .mobile-search-menu-visible {
     display: none;
   }
-  
-  .mobile-menu-visible {
-    display: block;
-    position: relative;
-    top: -1;
+}
 
-    background-color: white;
+@media only screen and (min-width: 1600px) {
 
-    padding: 10px 25px 10px 25px;
-
+  .site-name {
+    font-size: 24px;
   }
 
-  .mobile-add-products-link, .mobile-products-link {
-    min-width: 100vw;
-    display: block;
-
-    color: #E67CDA;
-    font-size: 18px;
-    text-align: left;
-    margin: 0px 0px 15px 0px;
-
-    text-decoration: none;
-    text-decoration-line: none;
-  }
-
-  .mobile-search-menu-hidden {
-    display: none;
-  }
-  
-  .mobile-search-menu-visible {
-    background: white;
-    font: white;
-    font-size: 30px;
-
-    max-width: 100%;
-    min-height: 75px;
-    max-height: 380px;
-    padding: 0px 25px;
-
-    z-index: 5;
-    top: 0;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .search-logo {
-
-    max-width: 5vw;
-    max-height: 75px;
-    margin: 0px 0px;
-  
+  .products-link, .add-products-link {
+    font-size: 20px;
+    margin-left: 75px;
   }
 
 }

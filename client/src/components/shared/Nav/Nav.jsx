@@ -48,7 +48,7 @@ const Nav = (props) => {
           handleSubmit={props.handleSubmit}
         />
 
-        <div className="header-links">
+        <div className="desktop-header-links">
           <Link className="products-link" to="/products">Products</Link>
           <Link className="add-products-link" to="/add-product">Add Product</Link>
         </div>
@@ -70,7 +70,7 @@ const Nav = (props) => {
           </Link>
         </div>
 
-        <i className="fas fa-search" onClick={(e) => changeSearchVisibility(e)}></i>
+        <i className="fas fa-search" onClick={(e) => { changeSearchVisibility(e) }}></i>
       </div>
 
       

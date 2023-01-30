@@ -1,38 +1,42 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
+import { Route, Switch, useHistory } from 'react-router-dom';
+import { getProducts } from './services/products';
+
 import Home from './screens/Home/Home';
 import Products from './screens/Products/Products';
 import ProductCreate from './screens/ProductCreate/ProductCreate';
 import ProductDetail from './screens/ProductDetail/ProductDetail';
 import SearchResults from './screens/SearchResults/SearchResults';
-import { Route, Switch, useHistory } from 'react-router-dom';
-import { getProducts } from './services/products';
+
+import './App.css';
 
 
 function App() {
 
   const [allProducts, setAllProducts] = useState([]);
-  const history = useHistory();
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [isDeleted, setIsDeleted] = useState(false);
+  const [mount, setMount] = useState(false)
+  const history = useHistory();
 
   useEffect(() => {
 
     const fetchProducts = async () => {
-      console.log('before 1st useEFFECT')
       const products = await getProducts()
-      console.log(products)
       setAllProducts(products)
     }
     fetchProducts()
   }, [isDeleted])
+
+  useEffect(() => {
+    setMount(true)
+  }, [allProducts])
 
   const handleChange = (e) => {
 
     if (e.target.value.length > 2) {
       const newQueriedProducts = allProducts.filter(product => product.name.toLowerCase().includes(e.target.value.toLowerCase()))
       setQueriedProducts(newQueriedProducts)
-
     }
   }
 
@@ -40,17 +44,16 @@ function App() {
     e.preventDefault()
     handleSearch(e)
   }
+
   const handleSearch = (e) => {
-
     history.push('/search-results')
-
   }
 
   return (
   
   <>
 
-      { allProducts.length === 0 ? <div className="loader"></div>
+      { !mount ? <div className="loader"></div>
 
         :
 

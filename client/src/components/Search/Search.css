@@ -1,32 +1,38 @@
 .search-form {
-    color: #E67CDA;
-    border: 1px solid #E67CDA;
-    border-radius: 90px;
-    height: 26px;
-    max-width: 200px;
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0px 30px;
-    width: 200px;
-    padding: 2px 10px;
-    flex-shrink: 1;
+  color: #E67CDA;
+  border: 2px solid #E67CDA;
+  border-radius: 90px;
+  height: 30px;
+  width: 50vw;
+  background-color: transparent;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0px 5px;
+  flex-shrink: 1;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
- 
+
 .search-input {
-    background-color: transparent;
-    max-width: 30vw;
-    height: 10px;
-    max-height: 70px;
-    font-size: 14px;
-    letter-spacing: 0.1px;
-    margin: 0px;
-    border-radius: 90px;
-    border: none;
-    
+  background-color: transparent;
+  width: 80%;
+  height: 30px;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  margin: 0px;
+  border-radius: 90px;
+  border: none; 
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .search-button {
@@ -45,7 +51,6 @@
 
 .fas {
   background-color: transparent;
-  padding-right: 5px;
   color: #E67CDA;
 }
 
@@ -57,41 +62,39 @@
   outline:none !important;
 }
 
-/* .search-form:focus {
-  outline:5px solid purple;
-} */
+@media only screen and (min-width: 375px) {
 
-
-@media only screen and (max-width: 750px) {
-
-  .search-form {
-    color: #E67CDA;
-    border: 2px solid #E67CDA;
-    border-radius: 90px;
-    height: 22px;
-    max-width: 250px;
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0.5em 0;
-    padding: 5px 2px;
-    width: 50%;
-    flex-shrink: 1;
 }
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+}
+
+@media only screen and (min-width: 1280px) {
+  .search-form {
+    border: 1px solid #E67CDA;
+    width: 30vw;
+    padding: 0px 10px;
+  }
 
  
-.search-input {
-    background-color: transparent;
-    max-width: 30vw;
-    height: 10px;
-    max-height: 70px;
-    font-size: 14px;
-    letter-spacing: 0.1px;
-    margin: 0px;
-    border-radius: 90px;
-    border: none; 
+  .search-input {
+    
+  }
 }
+
+@media only screen and (min-width: 1600px) {
+
+  .search-input {
+    font-size: 20px;
+  }
 
 }

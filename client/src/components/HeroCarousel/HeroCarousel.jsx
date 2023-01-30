@@ -24,20 +24,8 @@ const HeroCarousel = (props) => {
   // Below creates a set of divs containing each hero slide
   let heroSlides = heroImages.map((element, idx) => {
     return (
-      <div className="invisible fade" key={idx} style={{
-
-        width: "100vw",
-
-        display: "flex",
-
-      }}>
-        <img src={element} alt={idx} key={idx} style={{
-
-          width: "100%",
-          height: "60vw",
-          objectFit: "cover",
-
-        }} />
+      <div className="carousel-image invisible fade" key={idx}>
+        <img className="carousel-image" id="hero-carousel-image" src={element} alt={idx} key={idx} />
       </div>
     )
   })
@@ -150,12 +138,12 @@ const HeroCarousel = (props) => {
         {heroCarousel}
       </div>
     
-      <button className="prev" onClick={() => plusSlides(-1)} > &#10094;</button>
-      <button className="next" onClick={() => plusSlides(1)} > &#10095;</button>
+      <button className="carousel-buttons prev-button" id="hero-prev-button" onClick={() => plusSlides(-1)} > &#10094;</button>
+      <button className="carousel-buttons next-button" id="hero-next-button" onClick={() => plusSlides(1)} > &#10095;</button>
       
       <br></br>
   
-      <div className="hero-carousel-buttons" style={{
+      <div className="carousel-buttons-container" id="carousel-slide-buttons-container" style={{
           textAlign: "center",
           zIndex: "1",
 

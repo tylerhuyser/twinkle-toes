@@ -1,18 +1,5 @@
 * {box-sizing:border-box}
 
-.hero-carousel-buttons {
-  position: relative;
-  bottom: 75px;
-}
-
-/* @media only screen and (max-width: 750px) {
-  .hero-carousel-buttons {
-
-    bottom: 50px;
-
-  }
-} */
-
 /* Hide the images by default */
 .invisible {
   display: none;
@@ -20,16 +7,29 @@
 
 .visible {
   display: block;
-  /* height: 80vh;
-  width: 100vw;
-  object-fit: cover; */
 }
 
-/* Next & previous buttons */
-.prev, .next {
+.hero-carousel-container {
+  margin-bottom: -40px;
+}
+
+.hero-carousel {
+  width: 100%;
+  max-width: 100vw;
+
+}
+
+.carousel-buttons-container {
+  position: relative;
+  bottom: 50px;
+}
+
+.prev-button, .next-button {
+  position: absolute;
+  top: 15%;
+
   cursor: pointer;
   position: absolute;
-  top: 25%;
   width: auto;
   margin-top: -22px;
   padding: 16px;
@@ -44,29 +44,18 @@
   border: none;
 }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+.prev-button {
+  left: 0%;
 }
 
-.prev {
-  left: 0;
-  border-radius: 3px 0 0 3px;
+.next-button {
+  right: 0%;
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
+.prev-button:hover, .next-button:hover {
   background-color: rgba(0,0,0,0.8);
 }
-
-/* @media only screen and (max-width: 750px) {
-  .prev .next {
-    position: absolute;
-    top: 12%;
-
-  }
-} */
 
 /* The dots/bullets/indicators */
 .hero-dot {
@@ -82,6 +71,12 @@
 
 .hero-active, .hero-dot:hover {
   background-color: #E1BADD;
+}
+
+.carousel-image {
+  width: 100vw;
+  height: 30vh;
+  object-fit: cover;
 }
 
 /* Fading animation */
@@ -102,36 +97,58 @@
   to {opacity: 1}
 }
 
-@media only screen and (max-width: 750px) {
-  
-  .hero-carousel-container {
-    margin-bottom: -40px;
+@media only screen and (min-width: 375px) {
 
-  }
+}
 
+@media only screen and (min-width: 481px) {
 
-  .hero-carousel {
-    min-width: 100vw;
+}
 
-  }
-  
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 1024px) {
+
   .hero-carousel-buttons {
-
-    bottom: 50px;
-
+    bottom: 75px;
   }
 
-  .prev {
-    position: absolute;
-    top: 15%;
-    left: 0%;
-
+    /* Next & previous buttons */
+  .prev-button, .next-button {
+    top: 25%;
   }
 
-  .next {
-    position: absolute;
-    top: 15%;
-    right: 0%;
+  /* Position the "next button" to the right */
+  .prev-button {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .next-button {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
 
+  .carousel-image {
+    height: 60vh;
   }
 }
+
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 1600px) {
+
+}
+
+
+
+/* @media only screen and (max-width: 750px) {
+  .prev .next {
+    position: absolute;
+    top: 12%;
+
+  }
+} */
