@@ -15,6 +15,7 @@
 
 .body-section {
   padding: 25px 10px;
+  height: 100%;
   width: 100%;
 
   display: flex;
@@ -83,7 +84,7 @@
   width: 40vw;
   height: 5vh;
   border-radius: 12px;
-  margin: 10px 0px 25px 0px;
+  margin: 10px 0px 50px 0px;
   border: none;
   cursor: pointer;
 
@@ -98,22 +99,29 @@
 }
 
 @media only screen and (min-width: 481px) {
+  .subtitle-copy {
+    font-size: 14px;
+  }
 
+  #home-products-button {
+    font-size: 18px;
+    height: 7vh;
+  }
 }
 
 @media only screen and (min-width: 768px) {
+  #popular-items-title {
+    font-size: 24px;
+  }
 
+  #home-products-button {
+    font-size: 24px;
+    height: 7vh;
+    margin-bottom: 50px;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
-
-  .home-container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top: -100px;
-  
-  }
 
   #hero-title {
     font-family: Roboto;
@@ -154,7 +162,7 @@
     width: 150px;
     height: 35px;
     border-radius: 12px;
-    margin: 50px auto;
+    margin: 50px 0px 75px 0px;
   
     color: #FFFFFF;
     font-family: Source Sans Pro;
@@ -169,7 +177,10 @@
 }
 
 @media only screen and (min-width: 1200px) {
-
+  .home-container {
+    top: 75px;
+  
+  }
 }
 
 @media only screen and (min-width: 1600px) {

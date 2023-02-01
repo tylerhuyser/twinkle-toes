@@ -25,11 +25,7 @@
 }
 
 .prev-button, .next-button {
-  position: absolute;
-  top: 15%;
-
   cursor: pointer;
-  position: absolute;
   width: auto;
   margin-top: -22px;
   padding: 16px;
@@ -50,6 +46,11 @@
 
 .next-button {
   right: 0%;
+}
+
+#hero-prev-button, #hero-next-button {
+  position: absolute;
+  top: 15%;
 }
 
 /* On hover, add a black background color with a little bit see-through */
@@ -102,11 +103,15 @@
 }
 
 @media only screen and (min-width: 481px) {
-
+  .carousel-image {
+    height: 40vh;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-
+  .carousel-image {
+    height: 50vh;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -116,7 +121,7 @@
   }
 
     /* Next & previous buttons */
-  .prev-button, .next-button {
+  #hero-prev-button, #hero-next-button {
     top: 25%;
   }
 
@@ -125,18 +130,21 @@
     left: 0;
     border-radius: 3px 0 0 3px;
   }
+  
   .next-button {
     right: 0;
     border-radius: 3px 0 0 3px;
   }
 
   .carousel-image {
-    height: 60vh;
+    height: 66vh;
   }
 }
 
 @media only screen and (min-width: 1200px) {
-
+  .carousel-image {
+    height: 70vh;
+  }
 }
 
 @media only screen and (min-width: 1600px) {

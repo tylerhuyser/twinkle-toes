@@ -164,14 +164,14 @@
 
     width: 100%;
     max-width: 100vw;
-    height: 100px;
+    height: 125px;
     padding: 20px 50px;
   
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 10%,rgba(255,255,255,0) 100%);
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
