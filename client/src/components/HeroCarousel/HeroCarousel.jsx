@@ -140,7 +140,7 @@ const HeroCarousel = (props) => {
     
       <button className="carousel-buttons prev-button" id="hero-prev-button" onClick={() => plusSlides(-1)} > &#10094;</button>
       <button className="carousel-buttons next-button" id="hero-next-button" onClick={() => plusSlides(1)} > &#10095;</button>
-      
+       
       <br></br>
   
       <div className="carousel-buttons-container" id="carousel-slide-buttons-container" style={{
