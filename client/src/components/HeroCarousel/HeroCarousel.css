@@ -11,6 +11,7 @@
 
 .hero-carousel-container {
   margin-bottom: -40px;
+  z-index: 0;
 }
 
 .hero-carousel {
@@ -20,6 +21,8 @@
 }
 
 .carousel-buttons-container {
+  text-align: center;
+  z-index: 1;
   position: relative;
   bottom: 50px;
 }
@@ -50,7 +53,7 @@
 
 #hero-prev-button, #hero-next-button {
   position: absolute;
-  top: 15%;
+  top: 15vh;
 }
 
 /* On hover, add a black background color with a little bit see-through */
@@ -106,11 +109,19 @@
   .carousel-image {
     height: 40vh;
   }
+
+  #hero-prev-button, #hero-next-button {
+    top: 20vh;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   .carousel-image {
     height: 50vh;
+  }
+
+  #hero-prev-button, #hero-next-button {
+    top: 25vh;
   }
 }
 
@@ -122,7 +133,7 @@
 
     /* Next & previous buttons */
   #hero-prev-button, #hero-next-button {
-    top: 25%;
+    top: 33vh;
   }
 
   /* Position the "next button" to the right */
@@ -130,7 +141,7 @@
     left: 0;
     border-radius: 3px 0 0 3px;
   }
-  
+
   .next-button {
     right: 0;
     border-radius: 3px 0 0 3px;
@@ -144,6 +155,10 @@
 @media only screen and (min-width: 1200px) {
   .carousel-image {
     height: 70vh;
+  }
+
+  #hero-prev-button, #hero-next-button {
+    top: 35vh;
   }
 }
 

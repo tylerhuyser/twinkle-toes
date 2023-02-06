@@ -127,11 +127,7 @@ const HeroCarousel = (props) => {
   };
 
   return (
-    <div className="hero-carousel-container" style={{
-      
-      zIndex: "0",
-
-    }} >    
+    <div className="hero-carousel-container">    
       
       <div className="hero-carousel" style={{
       }}>
@@ -143,11 +139,7 @@ const HeroCarousel = (props) => {
        
       <br></br>
   
-      <div className="carousel-buttons-container" id="carousel-slide-buttons-container" style={{
-          textAlign: "center",
-          zIndex: "1",
-
-        }}>
+      <div className="carousel-buttons-container" id="carousel-slide-buttons-container">
         {heroButtons}
       </div>
 
