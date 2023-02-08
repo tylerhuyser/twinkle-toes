@@ -15,8 +15,9 @@
 
 .products-container {
   padding: 25px 10px;
+  padding-top: 10px;
   height: 100%;
-  width: 100%;
+  width: 100vw;
 
   display: flex;
   flex-direction: column;
@@ -61,9 +62,26 @@
     height: 7vh;
     margin-bottom:  50px;
   }
+
+  .products-container {
+    padding: 25px;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .products-page-button {
+
+    margin-bottom: 25px;
+  
+  }
 }
 
 @media only screen and (min-width: 1024px) {
+  .products-container {
+    justify-content: center;
+  }
+  
   .products-page-button {
     background: #DB93D3;
     width: 150px;
@@ -79,6 +97,7 @@
     border: none;
     cursor: pointer;
   }
+
 }
 
 @media only screen and (min-width: 1280px) {

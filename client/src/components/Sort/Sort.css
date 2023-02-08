@@ -1,43 +1,68 @@
-.sort {
+.sort-container {
+  width: 100%;
+  margin: 0px;
+  margin-top: 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sort-wrapper {
+  width: 80vw;
+  height: 34px;
+  padding: 5px;
+
+  border: 2px solid rgba(230, 167, 205);
+  border-radius: 18px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.sort-input {
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
+  border: none;
+
+  width: calc(80vw - 10px);
+  padding-left: 5px;
+
+  color: rgba(230, 167, 205);
+  font-size: 16px;
+  font-weight: 550;
+  font-style: italic;
+  letter-spacing: 0.9px;
 }
 
-.select {
-  padding: 8px 12px;
+.sort-input:focus {
+  outline:none !important;
 }
-.option {
-  background-color: white;
+
+.sort-option {
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
-}
-.select-wrapper {
-  position: relative;
-  background-color: aliceblue;
-  background-color: transparent;
+  background-color: white;
 }
 
-.select-wrapper:after {
-  font-family: FontAwesome;
-  content: "\f107";
-  font-size: 24px;
-  size: 2x;
-  position: absolute;
-  top: 7px;
-  right: 20px;
-  color: black;
-  pointer-events: none;
-}
-
-select::-ms-expand {
+/* select::-ms-expand {
   display: none;
+} */
+
+
+.fa-chevron-down {
+  color: #E67CDA;
+  font-size: 20px;
+  position: relative;
+  right: 5px;
+  top: 0px;
 }
 
-.sort {
+/* .sort-wrapper {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -62,9 +87,9 @@ select::-ms-expand {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
+} */
 
-.sort-container {
+/* .sort-container {
   margin: 0 auto;
   width: 86vw;
   display: flex;
@@ -72,4 +97,58 @@ select::-ms-expand {
 
   color: #E67CDA;
   
+} */
+
+@media only screen and (min-width: 375px) {
+
+}
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
+  .sort-container {
+    margin-bottom: 10px;
+  }
+
+  .sort-input {
+    font-weight: 500;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .sort-wrapper {
+    height: 40px;
+    border: 2px solid rgba(230, 167, 205);
+  }
+
+  .sort-input {
+    font-weight: 500;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+
+  .sort-container {
+    display: flex;
+    justify-content: flex-end;
+
+    width: calc(100% - 100px);
+    color: #E67CDA;
+    
+  }
+
+  .sort-wrapper {
+    width: 20vw;
+  }
+
+  .fa-chevron-down {
+    top: 2px;
+  }
+
+}
+
+@media only screen and (min-width: 1600px) {
 }

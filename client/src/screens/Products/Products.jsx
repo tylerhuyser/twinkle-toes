@@ -66,11 +66,7 @@ const Products = (props) => {
         
         <div className="products-page-container">
 
-          <div className="sort-container" style={{
-
-            margin: "10px 0px",
-
-            }}>
+          <div className="sort-container">
           
             <Sort onSubmit={handleSubmit} onChange={handleSort} sortType={sortType} />
           
