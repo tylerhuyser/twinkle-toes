@@ -178,7 +178,7 @@
 
 @media only screen and (min-width: 1200px) {
   .home-container {
-    top: 75px;
+    top: 0px;
   
   }
 }
