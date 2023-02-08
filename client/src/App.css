@@ -24,27 +24,24 @@
   100% { transform: rotate(360deg); }
 }
 
-
-@media only screen and (max-width: 750px) {
-.app {
-
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  }
-
-.home-container {
-
+@media only screen and (min-width: 375px) {
 
 }
 
-.tagline {
-  font-size: 24px;
-
+@media only screen and (min-width: 480px) {
 
 }
 
+@media only screen and (min-width: 768px) {
 
+}
 
+@media only screen and (min-width: 1024px) {
+
+}
+
+@media only screen and (min-width: 1280px) {
+}
+
+@media only screen and (min-width: 1600px) {
 }

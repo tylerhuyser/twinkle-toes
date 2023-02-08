@@ -1,50 +1,103 @@
 .products-page-container {
-  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+  top: 75px;
+  width: 100%;
+  max-width: 100vw;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .products-container {
-  margin: 0 auto;
-  width: 90%;
+  padding: 25px 10px;
+  height: 100%;
+  width: 100%;
+
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .products-page-button {
 
   background: #DB93D3;
-  width: 150px;
-  height: 35px;
+  width: 40vw;
+  height: 5vh;
   border-radius: 12px;
-  margin: 50px auto;
-
-  color: #FFFFFF;
-  font-family: Source Sans Pro;
-  font-size: 18px;
-  text-align: center;
-  letter-spacing: 0.75px;
+  margin: 10px 0px 50px 0px;
   border: none;
+  cursor: pointer;
+
+  font-size: 18px;
+  color: white;
+  letter-spacing: 0.75px;
 
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (min-width: 375px) {
 
+}
+
+@media only screen and (min-width: 480px) {
+  .products-page-button {
+    font-size: 18px;
+    height: 7vh;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .products-page-button {
+    font-size: 24px;
+    height: 7vh;
+    margin-bottom:  50px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .products-page-button {
+    background: #DB93D3;
+    width: 150px;
+    height: 35px;
+    border-radius: 12px;
+    margin: 50px 0px 75px 0px;
+  
+    color: #FFFFFF;
+    font-family: Source Sans Pro;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0.75px;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
   .products-page-container {
-    position: relative;
-    bottom: -75px;
-    margin: 20px 20px;
-    display: flex;
-    flex-direction: column;
-    width: 90vw;
+    top: 125px;
   }
 
   .products-container {
-    margin: 0 auto;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    padding: 20px 50px;
+    
+    flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
+  .products-page-button {
+    margin: 50px 0px 200px 0px;
+  }
+}
 
+@media only screen and (min-width: 1600px) {
 }
