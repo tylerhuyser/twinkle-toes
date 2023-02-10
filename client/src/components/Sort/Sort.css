@@ -21,11 +21,11 @@
 }
 
 .sort-input {
-  -webkit-appearance: none;
+  /* -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
   -o-appearance: none;
-  appearance: none;
+  appearance: none; */
   border: none;
 
   width: calc(80vw - 10px);
@@ -42,12 +42,20 @@
   outline:none !important;
 }
 
-.sort-option {
+.sort-input:active {
+  background-color: white;
+}
+
+.sort-input:hover {
+  background-color: blue;;
+}
+
+/* .sort-option {
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
   background-color: white;
-}
+} */
 
 /* select::-ms-expand {
   display: none;

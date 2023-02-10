@@ -59,6 +59,7 @@
 @media only screen and (min-width: 768px) {
   .products-page-button {
     font-size: 24px;
+    width: 25vw;
     height: 7vh;
     margin-bottom:  50px;
   }
@@ -84,14 +85,12 @@
   
   .products-page-button {
     background: #DB93D3;
-    width: 150px;
-    height: 35px;
+    width: 20vw;
     border-radius: 12px;
     margin: 50px 0px 75px 0px;
   
     color: #FFFFFF;
     font-family: Source Sans Pro;
-    font-size: 18px;
     text-align: center;
     letter-spacing: 0.75px;
     border: none;

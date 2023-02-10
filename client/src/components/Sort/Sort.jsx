@@ -21,7 +21,7 @@ const Sort = (props) => {
           <option className="sort-option" value="price-descending">&nbsp; Price, high to low &nbsp;</option>
         </select>
       
-        <FontAwesomeIcon icon={faChevronDown} />
+        {/* <FontAwesomeIcon icon={faChevronDown} /> */}
 
       </div>
   );
