@@ -41,7 +41,6 @@ const ReviewForm = (props) => {
         value={review.author}
         name="author"
         required
-        autoFocus
         onChange={(e) => handleChange(e)}
         style={{
 

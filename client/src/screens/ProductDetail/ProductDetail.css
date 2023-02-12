@@ -1,8 +1,22 @@
-#product-details-page-container-nonscroll {
+.product-details-page-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  top: 75px;
+  width: 100vw;
+  padding: 25px 10px;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#product-details-page-nonscroll {
   display: none;
 }
 
-#product-details-page-container-scrollable {
+#product-details-page-scrollable {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,13 +74,9 @@
 
 .product-details-container{
 
-  /* // Visual Props: */
-  margin: 20px 0px;
-
-  /* // Container Properties: */
   display: flex;
-
-  /* // Item Properties: */
+  flex-direction: column;
+  align-items: center;
   flex-grow: 1;
 
 }
@@ -74,25 +84,25 @@
 .product-detail-images-container {
 
   /* // Visual Properties: */
-  width: 45vw;
+  width: 90vw;
 
   /* // Container Properties: */
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
 
 }
 
 .primary-product-image-container {
-
-  width: 35vw;
-
   background-color: #F7ECEC;
+  width: 50vw;
+  height: 50vw;
+  padding: 10px;
+
   border: 3px solid #D091C9;
   border-radius: 12px;
-  padding: 0px 10px;
-
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,40 +111,38 @@
 
 .primary-product-detail-image {
 
-  border-radius: 12px;
-  width: 30vw;
-  height: 30vw;
+  width: calc(50vw - 40px);
+  height: calc(50vw - 40px);
   object-fit: cover;
   object-position: 50% 55%;
-  margin: 20px 10px;
+  border-radius: 12px;
 
 }
-
 
 .alternate-product-detail-images {
 
-  width: 35vw;
+  width: 20vw;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
-  margin: 10px 0px;
+  align-items: center;
+
+  /* display: none; */
 
 }
 
-.product-detail-image{
-
-  min-width: 10vw;
-  min-height: 6vw;
-
-  max-width: 10vw;
-  max-height: 6vw;
+.product-detail-image {
+  
+  width: calc(50vw / 4);
+  height: calc(50vw / 4);
 
   object-fit: contain;
  
   border: 2px solid #D091C9;
   border-radius: 10px;
-  margin: 20px 10px;
+  /* margin: 20px 10px; */
+  margin: 10px 0px;
   padding: 5px 0px;
 
   cursor: pointer;
@@ -143,8 +151,9 @@
 
 .details-container {
 
-  width: 45vw;
-  padding: 20px 10px;
+  width: 90vw;
+  padding: 0px;
+  margin: 20px 20px 0px 20px;
 
   display: flex;
   flex-direction: column;
@@ -164,7 +173,7 @@
 
 }
 
-.similar-items-carousl {
+.similar-items-carousel {
 
   display: flex;
   justify-content: space-between;
@@ -173,21 +182,26 @@
 
 .button-container {
 
-  width: 45vw;
+  width: 80vw;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  margin: 10px auto;
 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .product-detail-buttons {
 
   background: #DB93D3;
-  width: 20vw;
+  width: 50vw;
   height: 35px;
   border-radius: 15px;
-  margin: 50px 0px;
+  margin: 10px;
 
   color: #FFFFFF;
   font-family: Source Sans Pro;
@@ -204,135 +218,101 @@
   width: 90vw;
   display: flex;
   flex-direction: column;
-  margin: 25px;
+  margin: 10px 20px;
 
 }
 
 
-@media only screen and (max-width: 750px) {
+@media only screen and (min-width: 375px) {
 
+}
 
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 1024px) {
   .product-details-page-container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    bottom: -75px;
-    width: 100vw;
-  
+    padding: 25px;
+    margin-bottom: 100px;
   }
 
   .product-details-container{
-
-    /* // Visual Props: */
-    margin: 20px 0px 0px 0px;
-  
-    /* // Container Properties: */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  
-    /* // Item Properties: */
-    flex-grow: 1;
-  
+    flex-direction: row;
+    margin: 20px 0px;
   }
 
   .product-detail-images-container {
 
-    /* // Visual Properties: */
-    width: 90vw;
+    width: 45vw;
   
-    /* // Container Properties: */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .primary-product-image-container {
+    height: 40vw;
+    width: 40vw;
+  }
+
+  .primary-product-detail-image {
+    height: calc(40vw - 40px);
+    width: calc(40vw - 40px);
   }
 
   .alternate-product-detail-images {
 
-    width: 25vw;
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: 10px 0px;
+    width: 40vw;
+    flex-direction: row;
+    justify-content: space-between;
   
   }
 
   .product-detail-image{
 
-    min-width: 20vw;
-    min-height: 12vw;
-  
-    max-width: 20vw;
-    max-height: 12vw;
-  
-    object-fit: contain;
-   
-    border: 2px solid #D091C9;
-    border-radius: 10px;
-    margin: 20px 10px;
-    padding: 5px 0px;
-  
-    cursor: pointer;
+    height: 12vw;
+    width: 12vw;
+    margin: 20px 0px;
   
   }
 
   .details-container {
 
-    width: 90vw;
-    padding: 0px;
-    margin: 20px 20px 0px 20px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    width: 45vw;
+    padding: 20px 10px;
+    margin: 0px;
+    
   }
-
 
   .button-container {
 
-    width:80vw;
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px auto;
+    width: 45vw;
+    flex-direction: row;
   
   }
 
   .product-detail-buttons {
 
-    background: #DB93D3;
-    width: 50vw;
-    height: 35px;
-    border-radius: 15px;
-    margin: 10px;
-
-    color: #FFFFFF;
-    font-family: Source Sans Pro;
-    font-size: 18px;
-    text-align: center;
-    letter-spacing: 0.75px;
-    border: none;
-
-    cursor: pointer;
-  }
-
-
-  .similar-items-container {
-
-    width: 90vw;
-    display: flex;
-    flex-direction: column;
-    margin: 10px 20px;
+    width: 20vw;
+    margin: 50px 0px;
   
   }
 
+  .similar-items-container {
+    margin: 25px;
+  }
 
+}
 
+@media only screen and (min-width: 1280px) {
+  .product-details-page-container {
+    top: 125px;
+  }
+}
 
+@media only screen and (min-width: 1600px) {
 }
