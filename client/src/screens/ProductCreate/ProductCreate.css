@@ -3,6 +3,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  position: relative;
+  top: 125px;
+
+  margin-bottom: 75px;
 }
 
 .create-product-title {
@@ -218,7 +223,8 @@
   .create-products-page-container {
 
     position: relative;
-    bottom: -75px;
+    top: 75px;
+    margin-bottom: 0px;
     margin: 20px 20px;
     display: flex;
     flex-direction: column;
@@ -294,7 +300,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
   
   }
 

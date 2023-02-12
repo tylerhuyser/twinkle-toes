@@ -12,7 +12,7 @@
   box-sizing: border-box;
 }
 
-#product-details-page-nonscroll {
+#product-details-page-container-nonscroll {
   display: none;
 }
 

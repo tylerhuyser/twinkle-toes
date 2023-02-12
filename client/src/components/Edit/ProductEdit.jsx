@@ -177,7 +177,6 @@ export default function ProductEdit(props) {
           required
           onChange={handleChange}
           type="text"
-          autoFocus
           style={{
             fontFamily: "Roboto",
             fontSize: "18px",
@@ -305,7 +304,6 @@ export default function ProductEdit(props) {
           required
           onChange={handleChange}
           type="text"
-          autoFocus
           style={{
             fontFamily: "Roboto",
             fontSize: "18px",

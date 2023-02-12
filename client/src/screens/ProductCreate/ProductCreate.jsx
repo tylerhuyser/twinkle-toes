@@ -192,7 +192,6 @@ export default function ProductCreate(props) {
               name="name"
               onChange={handleChange}
               type="text"
-              autoFocus
               style={{
                 fontFamily: "Roboto",
                 fontSize: "18px",
@@ -316,7 +315,6 @@ export default function ProductCreate(props) {
               name="imgURL"
               onChange={handleChange}
               type="text"
-              autoFocus
               style={{
                 fontFamily: "Roboto",
                 fontSize: "18px",
