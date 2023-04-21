@@ -315,7 +315,7 @@ export default function ProductCreate(props) {
               name="imgURL"
               onChange={handleChange}
               type="text"
-              style={{
+              style={{ 
                 fontFamily: "Roboto",
                 fontSize: "18px",
                 color: "#5F2758",
