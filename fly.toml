@@ -1,0 +1,18 @@
+app = "twinkletoes-backend"
+primary_region = "iad"
+
+[env]
+  NODE_ENV = "production"
+
+[build]
+  builder = "heroku/buildpacks:20"
+
+[[services]]
+  internal_port = 3000
+  processes = ["app"]
+  protocol = "tcp"
+
+  [[services.ports]]
+    port = 80
+  [[services.ports]]
+    port = 443
