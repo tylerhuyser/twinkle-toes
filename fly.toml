@@ -19,4 +19,4 @@ primary_region = "iad"
 
 [build.resources]
   cpu = 1
-  memory = "1GB"
+  memory = "512MB"
