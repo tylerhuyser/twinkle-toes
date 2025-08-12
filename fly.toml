@@ -16,3 +16,7 @@ primary_region = "iad"
     port = 80
   [[services.ports]]
     port = 443
+
+[build.resources]
+  cpu = 1
+  memory = "1GB"
