@@ -5,7 +5,7 @@ primary_region = "iad"
   NODE_ENV = "production"
 
 [build]
-  builder = "heroku/buildpacks:latest"
+  builder = "heroku/buildpacks:23"
 
 [[services]]
   internal_port = 3000
