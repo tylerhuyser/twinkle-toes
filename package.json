@@ -2,7 +2,7 @@
   "name": "twinkle-toes",
   "version": "1.0.0",
   "description": "- full CRUD - make CSS as close to UXDI as possible - build a deployed backend - create react app with a minimum of six components - npm dependencies ##### Post MVP items:  - Edit Recommended List (Admin) - Autofill SearchBar - Creating Product Review Feature (Form) - Image Preview - Photo File Upload - Payment Page (Form) - Shopping Cart",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
