@@ -4,9 +4,6 @@ primary_region = "iad"
 [env]
   NODE_ENV = "production"
 
-[build]
-  builder = "heroku/buildpacks:22"
-
 [[services]]
   internal_port = 3000
   processes = ["app"]
