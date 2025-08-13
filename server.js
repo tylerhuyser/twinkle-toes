@@ -41,23 +41,23 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
 
 // // Health check route
 // app.get('/health', (req, res) => {
-  const mongoose = require('mongoose');
-  const connectionState = mongoose.connection.readyState;
+//   const mongoose = require('mongoose');
+//   const connectionState = mongoose.connection.readyState;
   
-  let status = 'unknown';
-  switch (connectionState) {
-    case 0: status = 'disconnected'; break;
-    case 1: status = 'connected'; break;
-    case 2: status = 'connecting'; break;
-    case 3: status = 'disconnecting'; break;
-  }
+//   let status = 'unknown';
+//   switch (connectionState) {
+//     case 0: status = 'disconnected'; break;
+//     case 1: status = 'connected'; break;
+//     case 2: status = 'connecting'; break;
+//     case 3: status = 'disconnecting'; break;
+//   }
 
-  res.json({
-    status: 'ok',
-    db: status
-  });
-});
+//   res.json({
+//     status: 'ok',
+//     db: status
+//   });
+// });
 
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+// db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
+// app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
