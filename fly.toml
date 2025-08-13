@@ -3,6 +3,7 @@ primary_region = "iad"
 
 [env]
   NODE_ENV = "production"
+  PORT = "3000"
 
 [http_service]
   internal_port = 3000
