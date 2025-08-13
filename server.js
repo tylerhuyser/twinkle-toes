@@ -14,8 +14,14 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(bodyParser.json())
 app.use(logger('dev'))
 
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok' });
+});
 app.use('/api', productsRoutes);
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
+db.once('open', () => {
+  console.log('MongoDB connected successfully!');
+});
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))

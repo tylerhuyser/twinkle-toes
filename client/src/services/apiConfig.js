@@ -3,7 +3,7 @@ import axios from 'axios'
 let apiUrl
 
 const apiUrls = {
-    production: 'https://twinkle-toes-portfolio.herokuapp.com/api',
+    production: 'https://twinkle-toes.fly.dev/api',
     development: 'http://localhost:3000/api'
 }
 
